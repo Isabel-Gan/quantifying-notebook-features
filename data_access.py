@@ -1,7 +1,10 @@
 import pandas as pd
 import json
+import urllib
 
 df_nb = pd.read_csv('test-dataset/notebooks_sample.csv')
+
+''' file access '''
 
 # uses the csv file to find the corresponding repository id given a notebook id
 def get_repo_id(nb_id):
@@ -35,6 +38,24 @@ def get_nb(nb_id):
         except:
             return None
 
+''' repo access '''
+
+# returns the languages used in the repo of the notebook as a python dictionary object
+def get_languages(nb_id):
+
+    # open the metadata file
+    repo_meta = get_repo_metadata(nb_id)
+
+    # get the url 
+    languages_url = repo_meta['languages_url']
+    response = urllib.urlopen(languages_url)
+
+    # access the api link to get the data
+    languages_data = json.loads(response.read())
+    return languages_data
+
+''' notebook access'''
+
 # given a notebook id, returns the cells in the notebook as a python list
 def get_cells(nb_id):
 
@@ -49,6 +70,8 @@ def get_cells(nb_id):
         return nb['worksheets'][0]['cells']
     else:
         return None
+
+''' misc '''
 
 # prints a json file, but nice
 def print_json(json_file):
