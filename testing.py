@@ -11,5 +11,4 @@ def test_func(func):
         print(str(nb_id) + " : " + str(func(nb_id)))
 
 # PUT TESTS HERE
-test_func(md_quant.markdown_prop)
     

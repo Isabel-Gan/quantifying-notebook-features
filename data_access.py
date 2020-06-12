@@ -71,6 +71,16 @@ def get_cells(nb_id):
     else:
         return None
 
+# given a notebook id, returns the markdown cells as a python list
+def get_md_cells(nb_id):
+
+    # get the cells 
+    cells = get_cells(nb_id)
+
+    # filter down to only markdown cells
+    md_cells = filter(lambda cell: cell['cell_type'] == "markdown", cells)
+    return md_cells
+
 ''' misc '''
 
 # prints a json file, but nice
