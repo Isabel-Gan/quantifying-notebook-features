@@ -8,7 +8,7 @@ def get_repo_id(nb_id):
     nb_row = df_nb.loc[df_nb['nb_id'] == nb_id]
     return int(nb_row['repo_id'])
 
-# given a notebook id, returns the metadata (as a json file) of its repository
+# given a notebook id, returns the metadata (as a python dictionary object) of its repository
 def get_repo_metadata(nb_id):
 
     # get the file path
@@ -22,7 +22,7 @@ def get_repo_metadata(nb_id):
         except:
             return None
 
-# given a notebook id, returns the notebook file as a json file
+# given a notebook id, returns the notebook file as a python dictionary object
 def get_nb(nb_id):
 
     # get the file path
@@ -35,6 +35,23 @@ def get_nb(nb_id):
         except:
             return None
 
+# given a notebook id, returns the cells in the notebook as a python list
+def get_cells(nb_id):
+
+    # get the notebook file
+    nb = get_nb(nb_id)
+
+    # get the cells
+    keys = nb.keys()
+    if 'cells' in keys:
+        return nb['cells']
+    elif 'worksheets' in keys:
+        return nb['worksheets'][0]['cells']
+    else:
+        return None
+
 # prints a json file, but nice
 def print_json(json_file):
     print(json.dumps(json_file, indent=4))
+
+# tests - delete later
