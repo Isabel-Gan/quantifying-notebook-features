@@ -1,6 +1,6 @@
 import pandas as pd
 import json
-import urllib
+import urllib.request as urllib
 
 df_nb = pd.read_csv('test-dataset/notebooks_sample.csv')
 
@@ -53,6 +53,29 @@ def get_languages(nb_id):
     # access the api link to get the data
     languages_data = json.loads(response.read())
     return languages_data
+
+# returns the data of the owner of the repo as a python dictionary object
+def get_owner(nb_id):
+
+    # open the metadata file
+    repo_meta = get_repo_metadata(nb_id)
+
+    # return the correct field
+    return repo_meta['owner']
+
+# returns the data from the url of the owner of the repo as a python dictionary object
+def get_owner_url(nb_id):
+
+    # get the owner data
+    owner_data = get_owner(nb_id)
+
+    # get the url
+    owner_url = owner_data['url']
+    response = urllib.urlopen(owner_url)
+
+    # access the api link to get the data
+    owner_url_data = json.loads(response.read())
+    return owner_url_data
 
 ''' notebook access'''
 

@@ -1,5 +1,12 @@
-import markdown_quant as md_quant 
+import sys
 
+# import all the scripts
+import data_access as data   
+import markdown_analysis as md_analysis
+import notebook_analysis as nb_analysis 
+import repo_analysis 
+
+# ids of notebooks to test
 nb_ids = [165313, 219322, 333748, 439119, 464706, 
             466289, 492523, 531968, 578489, 602217,
             681455, 884271, 958849, 972366, 972721,
@@ -8,7 +15,11 @@ nb_ids = [165313, 219322, 333748, 439119, 464706,
 # prints out the results of running a function on all notebooks
 def test_func(func):
     for nb_id in nb_ids:
-        print(str(nb_id) + " : " + str(func(nb_id)))
+        try:
+            print(str(nb_id) + " : " + str(func(nb_id)))
+        except:
+            print("error in notebook " + str(nb_id))
+            raise
 
 # PUT TESTS HERE
-    
+test_func(nb_analysis.has_author)
