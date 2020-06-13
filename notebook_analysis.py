@@ -32,7 +32,13 @@ def has_author(nb_id):
 
         # scan all the lines in the cell
         for line in lines:
-            if (author_name in line) | (author_login in line):
-                return True
+
+            if author_name != None:
+                if author_name in line:
+                    return True
+
+            if author_login != None:
+                if author_login in line:
+                    return True
 
     return False

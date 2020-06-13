@@ -18,7 +18,7 @@ def test_func(func):
         try:
             print(str(nb_id) + " : " + str(func(nb_id)))
         except:
-            print("error in notebook " + str(nb_id))
+            print("error in notebook " + str(nb_id) + " repository " + str(data.get_repo_id(nb_id)))
             raise
 
 # PUT TESTS HERE

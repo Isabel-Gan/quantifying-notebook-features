@@ -1,8 +1,6 @@
 import pandas as pd
 import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
-import GitHubAPI_Crawler.util
-
 
 api = GitHubAPI()
 df_nb = pd.read_csv('test-dataset/notebooks_sample.csv')
