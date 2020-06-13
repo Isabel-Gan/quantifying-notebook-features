@@ -4,13 +4,13 @@ import json
 from typing import Iterable
 from random import randint
 import os.path
-from util import language_tool
-import fetch_raw_diff
+from GitHubAPI_Crawler.util import language_tool
+import GitHubAPI_Crawler.fetch_raw_diff
 import logging
 import os.path
-import init
-from fetch_raw_diff import *
-from util import localfile
+import GitHubAPI_Crawler.init as init
+from GitHubAPI_Crawler.fetch_raw_diff import *
+from GitHubAPI_Crawler.util import localfile
 
 # try:
 #     import settings

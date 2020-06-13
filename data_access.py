@@ -1,8 +1,18 @@
 import pandas as pd
 import json
-import urllib.request as urllib
+from GitHubAPI_Crawler.github_api import GitHubAPI
+import GitHubAPI_Crawler.util
 
+
+api = GitHubAPI()
 df_nb = pd.read_csv('test-dataset/notebooks_sample.csv')
+
+''' api access '''
+
+# strips the github api url down to just the path so it works with the api crawler
+def strip_url(url):
+    new_url = url.replace("https://api.github.com/", "")
+    return new_url
 
 ''' file access '''
 
@@ -46,13 +56,11 @@ def get_languages(nb_id):
     # open the metadata file
     repo_meta = get_repo_metadata(nb_id)
 
-    # get the url 
+    # get the url and access api to get the data
     languages_url = repo_meta['languages_url']
-    response = urllib.urlopen(languages_url)
+    response = api.request(strip_url(languages_url))
 
-    # access the api link to get the data
-    languages_data = json.loads(response.read())
-    return languages_data
+    return response
 
 # returns the data of the owner of the repo as a python dictionary object
 def get_owner(nb_id):
@@ -69,13 +77,11 @@ def get_owner_url(nb_id):
     # get the owner data
     owner_data = get_owner(nb_id)
 
-    # get the url
+    # get the url and access api to get the data
     owner_url = owner_data['url']
-    response = urllib.urlopen(owner_url)
+    response = api.request(strip_url(owner_url))
 
-    # access the api link to get the data
-    owner_url_data = json.loads(response.read())
-    return owner_url_data
+    return response
 
 ''' notebook access'''
 
