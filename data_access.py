@@ -106,7 +106,17 @@ def get_md_cells(nb_id):
 
     # filter down to only markdown cells
     md_cells = filter(lambda cell: cell['cell_type'] == "markdown", cells)
-    return md_cells
+    return list(md_cells)
+
+# given a notebook id, returns the code cells as a python list
+def get_code_cells(nb_id):
+
+    # get the cells
+    cells = get_cells(nb_id)
+
+    # filter down to only code cells
+    code_cells = filter(lambda cell: cell['cell_type'] == "code", cells)
+    return list(code_cells)
 
 ''' misc '''
 

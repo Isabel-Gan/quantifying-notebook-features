@@ -42,3 +42,23 @@ def has_author(nb_id):
                     return True
 
     return False
+
+''' feature - proportion of code cells with output '''
+
+# counts the number of code cells with output
+def output_cells(nb_id):
+
+    # get code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # filter and get the length of the filtered list
+    output_cells = list(filter(lambda cell : len(cell['outputs']) > 0, code_cells))
+    return len(output_cells)
+
+# calculates the proportion of code cells with output
+def output_cell_prop(nb_id):
+
+    num_code_cells = len(data.get_code_cells(nb_id))
+    num_output_cells = output_cells(nb_id)
+
+    return float(num_output_cells) / float(num_code_cells)
