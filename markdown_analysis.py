@@ -1,4 +1,5 @@
 import data_access as data
+import re
 
 ''' feature - amount of markdown cells in the notebook '''
 
@@ -66,6 +67,24 @@ def longer_ending(nb_id):
             if len(cell['source']) > md_average:
                 return True
     
+    return False
+
+''' feature - equations '''
+
+def has_equations(nb_id):
+
+    # pattern to look for equation (math mode)
+    pattern = "\$([\S\s]+)\$"
+
+    # get all the markdown cells
+    md_cells = data.get_md_cells(nb_id)
+
+    # search the markdown cells for equations
+    for cell in md_cells:
+        for line in cell['source']:
+            if re.search(pattern, line):
+                return True
+
     return False
 
 # tests - delete later
