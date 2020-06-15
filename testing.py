@@ -22,4 +22,4 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(nb_analysis.output_cell_prop)
+test_func(repo_analysis.num_contributors)

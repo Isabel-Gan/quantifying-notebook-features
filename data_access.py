@@ -48,15 +48,15 @@ def get_nb(nb_id):
 
 ''' repo access '''
 
-# returns the languages used in the repo of the notebook as a python dictionary object
-def get_languages(nb_id):
+# returns the resulting python object from requesting the api at the given repository field
+def get_repo_field(nb_id, field):
 
     # open the metadata file
     repo_meta = get_repo_metadata(nb_id)
 
-    # get the url and access api to get the data
-    languages_url = repo_meta['languages_url']
-    response = api.request(strip_url(languages_url))
+    # get the url and access the api to get the data
+    url = repo_meta[field]
+    response = api.request(strip_url(url))
 
     return response
 
