@@ -1,8 +1,8 @@
 # compiled python
 *.pyc
 
-# folder for helping local script writing
-notebooks-json
-
 # example analysis to help script writing
 example_analysis.ipynb
+
+# python file for doing data exploration
+playground.py
