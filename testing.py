@@ -1,17 +1,21 @@
+import pandas as pd
+
 # import all the scripts
 import data_access as data   
 import markdown_analysis as md_analysis
 import notebook_analysis as nb_analysis 
 import repo_analysis 
 
+''' testing a single function at a time - print out results '''
 # ids of notebooks to test
-nb_ids = [165313, 219322, 333748, 439119, 464706, 
-            466289, 492523, 531968, 578489, 602217,
-            681455, 884271, 958849, 972366, 972721,
-            1019165, 1047986, 1051197, 1081631, 1124656]
+nb_ids = [602217, 1051197, 466289, 958849, 972721, 1019165,
+            972366, 219322, 464706, 333748, 1047986, 1124656,
+            492523, 1081631, 681455, 531968, 578489, 165313,
+            439119, 884271]
 
 # prints out the results of running a function on all notebooks
 def test_func(func):
+    print("testing " + str(func))
     for nb_id in nb_ids:
         try:
             print(str(nb_id) + " : " + str(func(nb_id)))
@@ -20,6 +24,10 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
+# test_func(md_analysis.longer_beginning)
+# test_func(md_analysis.longer_ending)
+
+''' testing all functions - print out results '''
 
 # functions to give to test_all
 feature_tests = [md_analysis.longer_beginning, md_analysis.longer_ending, nb_analysis.has_author, 
@@ -32,4 +40,43 @@ def test_all():
         print("testing " + str(feature))
         test_func(feature)
 
-test_all()
+# test_all()
+
+''' testing all functions - comparing results for correctness '''
+
+# dictionary object relating functions to their specific field in the csv
+function_columns = {
+    'longer_beginning' : md_analysis.longer_beginning,
+    'longer_ending' : md_analysis.longer_ending,
+    'has_author' : nb_analysis.has_author,
+    'has_equation' : md_analysis.has_equations
+}
+
+# load in the results csv file
+df_results = pd.read_csv('test-dataset/testing_results.csv')
+
+# tests all objects in the dictionary against their corresponding functions
+def check_results():
+
+    # for each field to test against
+    for field in function_columns:
+
+        print("testing " + str(field))
+
+        # for each notebook in the testing dataset
+        for nb_id in nb_ids:
+
+            # check if the function result is equal to what's in the table
+            func_res = function_columns[field](nb_id)
+            true_res = int(df_results.loc[df_results['nb_id'] == nb_id][field])
+
+            if func_res != true_res:
+                print("notebook " + str(nb_id) + ":")
+                print("function returns " + str(func_res))
+                print("true result is " + str(true_res))
+                print("\n")
+        
+        print("\n")
+
+check_results()
+
