@@ -94,7 +94,14 @@ def get_cells(nb_id):
     if 'cells' in keys:
         return nb['cells']
     elif 'worksheets' in keys:
-        return nb['worksheets'][0]['cells']
+
+        # go through each worksheet and return all cells
+        total_cells = []
+        for cell_group in nb['worksheets']:
+            total_cells += cell_group['cells']
+        
+        return total_cells
+        
     else:
         return None
 
