@@ -5,6 +5,7 @@ import data_access as data
 import markdown_analysis as md_analysis
 import notebook_analysis as nb_analysis 
 import repo_analysis 
+import keyword_analysis as kw_analysis
 
 ''' testing a single function at a time - print out results '''
 # ids of notebooks to test
@@ -24,8 +25,9 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-# test_func(md_analysis.longer_beginning)
-# test_func(md_analysis.longer_ending)
+test_func(kw_analysis.count_exploratory_keywords)
+test_func(kw_analysis.count_pipeline_keywords)
+test_func(kw_analysis.count_sharing_keywords)
 
 ''' testing all functions - print out results '''
 
@@ -78,5 +80,5 @@ def check_results():
         
         print("\n")
 
-check_results()
+# check_results()
 
