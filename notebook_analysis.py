@@ -62,3 +62,45 @@ def output_cell_prop(nb_id):
     num_output_cells = output_cells(nb_id)
 
     return float(num_output_cells) / float(num_code_cells)
+
+''' feature - images (tables/graphs) as output '''
+
+# counts the number of output cells that contain an image (including graphs)
+def count_images(nb_id):
+
+    # get code cells
+    output_cells = data.get_code_cells(nb_id)
+
+    # for each code cell, checks the outputs if they have an image
+    image_outputs = 0
+    for cell in output_cells:
+        for output in cell['outputs']:
+
+            # field associated with displaying an image
+            if output['output_type'] == "display_data":
+
+                # double-check that an image is actually being displayed
+                keys = output.keys()
+                if "png" in keys:
+                    image_outputs += 1
+                    break
+                elif "data" in keys:
+                    if "image/png" in output['data'].keys():
+                        image_outputs += 1
+                        break
+    
+    return image_outputs
+
+# calculates the proportion of output cells that contain an image or table
+def image_prop(nb_id):
+
+    num_image_outputs = count_images(nb_id)
+    num_table_outputs = 0 # REPLACE LATER
+    num_outputs = output_cells(nb_id)
+
+    # if there are no output cells, immediately return
+    if num_outputs == 0:
+        return -1
+
+    return float(num_image_outputs + num_table_outputs) / float(num_outputs)
+

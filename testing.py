@@ -25,9 +25,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(kw_analysis.count_exploratory_keywords)
-test_func(kw_analysis.count_pipeline_keywords)
-test_func(kw_analysis.count_sharing_keywords)
+test_func(nb_analysis.image_prop)
 
 ''' testing all functions - print out results '''
 
