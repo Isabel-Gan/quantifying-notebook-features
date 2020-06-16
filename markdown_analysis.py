@@ -42,7 +42,7 @@ def longer_beginning(nb_id):
 
     # if there are no markdown cells, immediately return
     if md_average == 0:
-        return False
+        return None
 
     # check the first five notebook cells
     first_five_cells = data.get_cells(nb_id)[:4]
@@ -61,7 +61,7 @@ def longer_ending(nb_id):
 
     # if there are no markdown cells, immediately return
     if md_average == 0:
-        return False
+        return None
 
     # check the last five markdown cells
     last_five_cells = data.get_cells(nb_id)[-5:]
