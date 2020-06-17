@@ -12,13 +12,41 @@ def get_username(nb_id):
     author_url_data = data.get_owner_url(nb_id)
     return author_url_data['login']
 
+# gathers the usernames and names of contributors to the repository
+def get_contributors(nb_id):
+
+    # get contributor data
+    contributors_data = data.get_repo_field(nb_id, 'contributors_url')
+
+    # get author data to prevent duplicates
+    author_name = get_author(nb_id)
+    author_user = get_username(nb_id)
+
+    # for each contributor, get their login and name:
+    names = []
+    for contributor in contributors_data:
+        contributor_data = data.get_url(contributor['url'])
+        name = contributor_data['name']
+        login = contributor_data['login']
+
+        # check for existence and duplicates
+        if name != None and name != author_name:
+            names += [name]
+
+        if login != None and login != author_user:
+            names += [login]
+
+    return names
+
 # searches all cells for instances of an author username or name
 def has_author(nb_id):
 
     # get all the cells and author names
     cells = data.get_cells(nb_id)
+
     author_name = get_author(nb_id)
     author_login = get_username(nb_id)
+    all_names = get_contributors(nb_id) + [author_name, author_login]
 
     # check each cell for an author
     for cell in cells:
@@ -33,12 +61,9 @@ def has_author(nb_id):
         # scan all the lines in the cell
         for line in lines:
 
-            if author_name != None:
-                if author_name in line:
-                    return True
-
-            if author_login != None:
-                if author_login in line:
+            # check all possible authors
+            for name in all_names:
+                if name != None and name in line:
                     return True
 
     return False

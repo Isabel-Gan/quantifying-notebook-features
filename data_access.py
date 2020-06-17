@@ -12,6 +12,11 @@ def strip_url(url):
     new_url = url.replace("https://api.github.com/", "")
     return new_url
 
+# returns the data from the given user url as a python dictionary object
+def get_url(url):
+    response = api.request(strip_url(url))
+    return response
+
 ''' file access '''
 
 # uses the csv file to find the corresponding field given a notebook id

@@ -26,7 +26,6 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(data.get_path)
 
 ''' testing all functions - print out results '''
 
@@ -76,6 +75,7 @@ def check(field):
                 print("\n")
 
 # PUT TESTS HERE
+check('has_author')
 
 ''' testing all functions - comparing results for correctness '''
 
