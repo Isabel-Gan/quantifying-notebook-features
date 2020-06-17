@@ -65,7 +65,7 @@ def output_cell_prop(nb_id):
 
 ''' feature - images (tables/graphs) as output '''
 
-# counts the number of output cells that contain an image (including graphs)
+# counts the number of output cells that contain an image (including graphs) or table
 def count_images(nb_id):
 
     # get code cells
@@ -73,6 +73,7 @@ def count_images(nb_id):
 
     # for each code cell, checks the outputs if they have an image
     image_outputs = 0
+    has_image = False
     for cell in output_cells:
         for output in cell['outputs']:
 
@@ -83,11 +84,27 @@ def count_images(nb_id):
                 keys = output.keys()
                 if "png" in keys:
                     image_outputs += 1
-                    break
+                    has_image = True
+
                 elif "data" in keys:
                     if "image/png" in output['data'].keys():
                         image_outputs += 1
+                        has_image =  True
+
+            # fields associated with displaying a table
+            elif 'data' in output.keys() and 'text/html' in output['data'].keys():
+
+                # double-check that a table is actually being displayed
+                for line in output['data']['text/html']:
+                    if "</table>" in line:
+                        image_outputs += 1
+                        has_image = True
                         break
+            
+            # if image already found, stop checking this output cell
+            if has_image:
+                has_image = False
+                break
     
     return image_outputs
 
@@ -95,12 +112,11 @@ def count_images(nb_id):
 def image_prop(nb_id):
 
     num_image_outputs = count_images(nb_id)
-    num_table_outputs = 0 # REPLACE LATER
     num_outputs = output_cells(nb_id)
 
     # if there are no output cells, immediately return
     if num_outputs == 0:
-        return -1
+        return None
 
-    return float(num_image_outputs + num_table_outputs) / float(num_outputs)
+    return float(num_image_outputs) / float(num_outputs)
 

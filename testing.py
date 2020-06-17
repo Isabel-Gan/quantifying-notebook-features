@@ -32,12 +32,13 @@ test_func(nb_analysis.image_prop)
 # functions to give to test_all
 feature_tests = [md_analysis.longer_beginning, md_analysis.longer_ending, nb_analysis.has_author, 
                 md_analysis.has_equations, repo_analysis.jupyter_prop, nb_analysis.output_cell_prop,
-                md_analysis.markdown_prop, repo_analysis.num_contributors]
+                md_analysis.markdown_prop, repo_analysis.num_contributors, nb_analysis.image_prop,
+                kw_analysis.count_exploratory_keywords, kw_analysis.count_pipeline_keywords, 
+                kw_analysis.count_sharing_keywords]
 
 # tests all functions in list above on all notebooks in the test dataset
 def test_all():
     for feature in feature_tests:
-        print("testing " + str(feature))
         test_func(feature)
 
 # test_all()

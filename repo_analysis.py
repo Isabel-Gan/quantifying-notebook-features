@@ -23,7 +23,7 @@ def jupyter_prop(nb_id):
 
     # if language data not recorded/jupyter notebook not in data
     else:
-        return -1
+        return None
 
 ''' feature - contributors '''
 
