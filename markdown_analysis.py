@@ -82,6 +82,10 @@ def has_equations(nb_id):
     # get all the markdown cells
     md_cells = data.get_md_cells(nb_id)
 
+    # if there are no markdown cells, return immediately
+    if len(md_cells) == 0:
+        return None
+
     # search the markdown cells for equations
     for cell in md_cells:
         for line in cell['source']:

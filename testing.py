@@ -66,14 +66,15 @@ def check(field):
         true_res = int(df_results.loc[df_results['nb_id'] == nb_id][field])
 
         if func_res != true_res:
-            print("notebook " + str(nb_id) + ":")
-            print("function returns " + str(func_res))
-            print("true result is " + str(true_res))
-            print("\n")
+
+            # check for none result
+            if not (func_res == None and true_res == -1):
+                print("notebook " + str(nb_id) + ":")
+                print("function returns " + str(func_res))
+                print("true result is " + str(true_res))
+                print("\n")
 
 # PUT TESTS HERE
-check('longer_beginning')
-check('longer_ending')
 
 ''' testing all functions - comparing results for correctness '''
 
@@ -85,5 +86,5 @@ def check_results():
         check(field)
         print("\n")
 
-# check_results()
+check_results()
 
