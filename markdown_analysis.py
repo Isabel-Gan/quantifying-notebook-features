@@ -1,4 +1,5 @@
 import data_access as data
+import html2text 
 import re
 
 ''' feature - amount of markdown cells in the notebook '''
@@ -14,14 +15,14 @@ def markdown_prop(nb_id):
 ''' feature - longer markdown cells in the beginning/end of the notebook '''
 
 # minimum margin to be greater than the avg. markdown cell
-min_margin = 70
+min_margin = 80
 
 def get_char_length(md_cell):
 
     # sum the lengths of all lines of source in the cell
     length = 0
     for line in md_cell['source']:
-        length += len(line)
+        length += len(html2text.html2text(line).strip())
     
     return length
 
