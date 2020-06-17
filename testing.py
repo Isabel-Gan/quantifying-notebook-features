@@ -75,7 +75,8 @@ def check(field):
                 print("\n")
 
 # PUT TESTS HERE
-check('has_author')
+check('longer_beginning')
+check('longer_ending')
 
 ''' testing all functions - comparing results for correctness '''
 

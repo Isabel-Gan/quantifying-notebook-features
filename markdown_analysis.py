@@ -14,9 +14,18 @@ def markdown_prop(nb_id):
 ''' feature - longer markdown cells in the beginning/end of the notebook '''
 
 # minimum margin to be greater than the avg. markdown cell
-min_margin = 2
+min_margin = 70
 
-# calculates the average length of markdown cells in a notebook
+def get_char_length(md_cell):
+
+    # sum the lengths of all lines of source in the cell
+    length = 0
+    for line in md_cell['source']:
+        length += len(line)
+    
+    return length
+
+# calculates the average length of markdown cells in a notebook (by characer)
 def markdown_average(nb_id):
 
     # get markdown cells
@@ -26,7 +35,7 @@ def markdown_average(nb_id):
     # calculate the length sum of markdown cells
     len_sum = 0
     for md_cell in md_cells:
-        len_sum += len(md_cell['source'])
+        len_sum += get_char_length(md_cell)
 
     # calculate and return the average length
     if num_md == 0:
@@ -48,7 +57,7 @@ def longer_beginning(nb_id):
     first_five_cells = data.get_cells(nb_id)[:4]
     for cell in first_five_cells:
         if cell['cell_type'] == "markdown":
-            if len(cell['source']) >= (md_average + min_margin):
+            if get_char_length(cell) >= (md_average + min_margin):
                 return True
 
     return False
@@ -67,7 +76,7 @@ def longer_ending(nb_id):
     last_five_cells = data.get_cells(nb_id)[-5:]
     for cell in last_five_cells:
         if cell['cell_type'] == "markdown":
-            if len(cell['source']) >= (md_average + min_margin):
+            if get_char_length(cell) >= (md_average + min_margin):
                 return True
     
     return False
