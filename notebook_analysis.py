@@ -145,3 +145,32 @@ def image_prop(nb_id):
 
     return float(num_image_outputs) / float(num_outputs)
 
+''' feature - language '''
+
+# returns the language of the notebook as a string
+def get_language(nb_id):
+
+    # get the notebook file
+    nb = data.get_nb(nb_id)
+
+    # look for the language
+    language = ""
+    keys = nb.keys()
+    
+    # check if language is stored in the cells or notebook metadata
+    if 'worksheets' in keys:
+
+        # then language data is in each cell, get code cells and get the language from one of them
+        code_cells = data.get_code_cells(nb_id)
+        for cell in code_cells:
+            if language != "":
+                break
+            else:
+                language = cell['language']
+    
+    else:
+        # then language data is in the metadata
+        language = nb['metadata']['kernelspec']['language']
+    
+    return language
+            

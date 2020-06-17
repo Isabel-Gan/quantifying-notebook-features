@@ -26,6 +26,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
+test_func(nb_analysis.get_language)
 
 ''' testing all functions - print out results '''
 
@@ -75,8 +76,6 @@ def check(field):
                 print("\n")
 
 # PUT TESTS HERE
-check('longer_beginning')
-check('longer_ending')
 
 ''' testing all functions - comparing results for correctness '''
 
