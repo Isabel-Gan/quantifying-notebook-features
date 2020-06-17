@@ -26,6 +26,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
+test_func(data.get_path)
 
 ''' testing all functions - print out results '''
 
@@ -86,5 +87,5 @@ def check_results():
         check(field)
         print("\n")
 
-check_results()
+# check_results()
 

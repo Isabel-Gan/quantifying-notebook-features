@@ -14,10 +14,22 @@ def strip_url(url):
 
 ''' file access '''
 
+# uses the csv file to find the corresponding field given a notebook id
+def get_csv_field(field, nb_id):
+    nb_row = df_nb.loc[df_nb['nb_id'] == nb_id]
+    return nb_row[field]
+
 # uses the csv file to find the corresponding repository id given a notebook id
 def get_repo_id(nb_id):
-    nb_row = df_nb.loc[df_nb['nb_id'] == nb_id]
-    return int(nb_row['repo_id'])
+    return int(get_csv_field('repo_id', nb_id))
+
+# uses the csv file to find the corresponding file name given a notebook id
+def get_nb_name(nb_id):
+    return str(get_csv_field('name', nb_id))
+
+# uses the csv file to find the corresponding path given a notebook id
+def get_path(nb_id):
+    return str(get_csv_field('path', nb_id))
 
 # given a notebook id, returns the metadata (as a python dictionary object) of its repository
 def get_repo_metadata(nb_id):

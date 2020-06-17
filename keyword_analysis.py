@@ -28,6 +28,12 @@ def keyword_search(keyword_set, nb_id):
             for keyword in keyword_set:
                 if keyword in line:
                     num_hits += 1
+
+    # check the file path (including the file name) for the keywords as well
+    path = data.get_path(nb_id)
+    for keyword in keyword_set:
+        if keyword in path:
+            num_hits += 1
     
     return num_hits
 
