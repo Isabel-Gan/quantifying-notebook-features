@@ -15,7 +15,7 @@ def markdown_prop(nb_id):
 ''' feature - longer markdown cells in the beginning/end of the notebook '''
 
 # minimum margin to be greater than the avg. markdown cell
-min_margin = 80
+min_margin = 70
 
 def get_char_length(md_cell):
 
