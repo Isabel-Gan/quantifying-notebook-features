@@ -26,7 +26,6 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(nb_analysis.is_education)
 
 ''' testing all functions - print out results '''
 
@@ -35,14 +34,14 @@ feature_tests = [md_analysis.longer_beginning, md_analysis.longer_ending, nb_ana
                 md_analysis.has_equations, repo_analysis.jupyter_prop, nb_analysis.output_cell_prop,
                 md_analysis.markdown_prop, repo_analysis.num_contributors, nb_analysis.image_prop,
                 kw_analysis.count_exploratory_keywords, kw_analysis.count_pipeline_keywords, 
-                kw_analysis.count_sharing_keywords]
+                kw_analysis.count_sharing_keywords, nb_analysis.is_education, nb_analysis.get_language]
 
 # tests all functions in list above on all notebooks in the test dataset
 def test_all():
     for feature in feature_tests:
         test_func(feature)
 
-# test_all()
+test_all()
 
 ''' testing a single function at a time - comparing results for correctness '''
 
