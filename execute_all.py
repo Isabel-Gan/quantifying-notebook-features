@@ -81,6 +81,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
     error_writer.writeheader()
 
     # iterates over the files in the dataset directory
+    counter = 0
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
 
@@ -88,20 +89,25 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         nb_id = int(re.findall("\d+", filename)[0])
         repo_id = data.get_repo_id(nb_id)
 
+        # try generating the row of data
+        row['nb_id'] = error_row['nb_id'] = nb_id
+        row['repo_id'] = error_row['repo_id'] = repo_id
+
         # skip if there aren't any code cells
         if len(data.get_code_cells(nb_id)) == 0:
+            error_row['err_in'] = 'no_code'
+            error_writer.writerow(error_row)
             continue
 
         # check the api response
         repo_link = data.get_repo_metadata(nb_id)['url']
         response = api.request(data.strip_url(repo_link))
         if 'id' not in response.keys():
+            error_row['err_in'] = 'api'
+            error_writer.writerow(error_row)
             continue
 
-        # try generating the row of data
-        row['nb_id'] = error_row['nb_id'] = nb_id
-        row['repo_id'] = error_row['repo_id'] = repo_id
-
+        # run the notebook through all functions
         for field in function_columns:
             function = function_columns[field]
             
@@ -115,11 +121,13 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
                 # write to the error csv
                 error_row['err_in'] = field
                 error_writer.writerow(error_row)
-                
 
         # write the row
         writer.writerow(row)
         print("wrote " + filename)
+        counter += 1
+    
+    print("finished! successfully ran " + str(counter) + " notebooks")
 
 
 
