@@ -1,4 +1,5 @@
 import data_access as data  
+import re
 
 ''' feature - author '''
 
@@ -174,3 +175,35 @@ def get_language(nb_id):
     
     return language
             
+
+''' feature - educational notebook '''
+
+# regex associated with education notebooks
+education_patterns = ["project", "hint", "rubric", "answer", "question", "pass",
+                        "lesson", "lecture", "homework", "slides", "final-project",
+                        "course", "assignment", "quiz", "submission","hw", "exercise", 
+                        "due", "bootcamp", "assessment", "final_project",
+                        "week([_\- ]|\B)([0-9]+)", "day([_\- ]|\B)([0-9]+)"]
+
+# searches markdown cells and notebook name/path for any patterns above
+def is_education(nb_id):
+    
+    # get the markdown cells
+    md_cells = data.get_md_cells(nb_id)
+
+    # go through the markdown cells and search for the keywords
+    for cell in md_cells:
+        for line in cell['source']:
+
+            # make sure to search for each keyword
+            for pattern in education_patterns:
+                if re.search(pattern, line):
+                    return True
+
+    # check the file path (including the file name) for the keywords as well
+    path = data.get_path(nb_id)
+    for pattern in education_patterns:
+        if re.search(pattern, path):
+            return True
+    
+    return False
