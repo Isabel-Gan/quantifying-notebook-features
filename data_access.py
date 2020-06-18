@@ -3,7 +3,16 @@ import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
 
 api = GitHubAPI()
-df_nb = pd.read_csv('test-dataset/notebooks_sample.csv')
+
+# the dataset directory should have two directories: notebooks and repository_metadata
+dataset_directory = 'test-dataset/'
+
+# the csv directory should have at least the notebooks_sample.csv file
+csv_directory = 'test-dataset/'
+
+# load the csv file
+nb_csv_path = csv_directory + 'notebooks_sample.csv'
+df_nb = pd.read_csv(nb_csv_path)
 
 ''' api access '''
 
@@ -41,7 +50,7 @@ def get_repo_metadata(nb_id):
 
     # get the file path
     repo_id = get_repo_id(nb_id)
-    repo_meta_file = 'test-dataset/repository_metadata/repo_' + str(repo_id) + '.json'
+    repo_meta_file = dataset_directory + 'repository_metadata/repo_' + str(repo_id) + '.json'
 
     # try to load the file
     with open(repo_meta_file) as meta_file:
@@ -54,7 +63,7 @@ def get_repo_metadata(nb_id):
 def get_nb(nb_id):
 
     # get the file path
-    nb_file = 'test-dataset/notebooks/nb_' + str(nb_id) + '.ipynb'
+    nb_file = dataset_directory + 'notebooks/nb_' + str(nb_id) + '.ipynb'
 
     # try to load the file
     with open(nb_file) as nb_file:
