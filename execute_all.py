@@ -56,10 +56,10 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/github2017-second-run.csv'
+output_path = 'output/github2017-third-run.csv'
 
 # path to error csv
-error_path = 'output/github2017-second-errors.csv'
+error_path = 'output/github2017-third-errors.csv'
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
