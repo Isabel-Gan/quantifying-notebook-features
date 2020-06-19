@@ -108,7 +108,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         except:
             print("nb file error in " + filename)
             error_row['err_in'] = 'nb_file'
-            error_writer.writerow(err_row)
+            error_writer.writerow(error_row)
             continue
 
         # check the api response
