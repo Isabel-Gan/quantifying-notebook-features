@@ -8,7 +8,7 @@ api = GitHubAPI()
 dataset_directory = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
 
 # the csv directory should have at least the notebooks_sample.csv file
-csv_directory =  '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/csv/'
+csv_directory =  '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/csv/'
 
 # load the csv file
 nb_csv_path = csv_directory + 'notebooks_sample.csv'
