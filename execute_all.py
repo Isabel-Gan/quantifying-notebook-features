@@ -71,7 +71,7 @@ directory = os.fsencode(dataset_path + 'notebooks')
 api = GitHubAPI()
 
 # number of notebooks to run for, if applicable
-limit = 20
+# limit = 20
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -144,9 +144,9 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         err = False
 
         # increment regular counter
-        counter += 1
-        if counter == limit:
-            break
+        # counter += 1
+        # if counter == limit:
+        #     break
     
     print("finished! successfully ran " + str(success_counter) + " notebooks")
 
