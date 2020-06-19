@@ -106,6 +106,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
                 error_writer.writerow(error_row)
                 continue
         except:
+            print("nb file error in " + filename)
             error_row['err_in'] = 'nb_file'
             error_writer.writerow(err_row)
             continue
@@ -114,6 +115,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         repo_link = data.get_repo_metadata(nb_id)['url']
         response = api.request(data.strip_url(repo_link))
         if 'id' not in response.keys():
+            print("api error in " + filename)
             error_row['err_in'] = 'api'
             error_writer.writerow(error_row)
             continue
