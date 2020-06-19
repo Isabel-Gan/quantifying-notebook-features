@@ -96,10 +96,16 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         row['nb_id'] = error_row['nb_id'] = nb_id
         row['repo_id'] = error_row['repo_id'] = repo_id
 
-        # skip if there aren't any code cells
-        if len(data.get_code_cells(nb_id)) == 0:
-            error_row['err_in'] = 'no_code'
-            error_writer.writerow(error_row)
+        # checking code cells may error if the notebook file is empty
+        try:
+            # skip if there aren't any code cells
+            if len(data.get_code_cells(nb_id)) == 0:
+                error_row['err_in'] = 'no_code'
+                error_writer.writerow(error_row)
+                continue
+        except:
+            error_row['err_in'] = 'nb_file'
+            error_writer.writerow(err_row)
             continue
 
         # check the api response
