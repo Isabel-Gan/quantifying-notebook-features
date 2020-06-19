@@ -71,7 +71,7 @@ directory = os.fsencode(dataset_path + 'notebooks')
 api = GitHubAPI()
 
 # number of notebooks to run for, if applicable
-# limit = 20
+limit = 20
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -85,6 +85,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
 
     # iterates over the files in the dataset directory
     counter = 0
+    err = False
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
 
@@ -126,6 +127,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
             except:
                 print("error in " + filename)
                 row[field] = None
+                err = True
 
                 # write to the error csv
                 error_row['err_in'] = field
@@ -134,10 +136,14 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         # write the row
         writer.writerow(row)
         print("wrote " + filename)
-        counter += 1
+        
+        # increment counter if no error, reset error indicator
+        if not err:
+            counter += 1
+        err = False
 
-        '''if counter == limit:
-            break'''
+        if counter == limit:
+            break
     
     print("finished! successfully ran " + str(counter) + " notebooks")
 
