@@ -56,10 +56,10 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/github2017-first-run.csv'
+output_path = 'output/github2017-second-run.csv'
 
 # path to error csv
-error_path = 'output/github2017-first-errors.csv'
+error_path = 'output/github2017-second-errors.csv'
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
@@ -71,7 +71,7 @@ directory = os.fsencode(dataset_path + 'notebooks')
 api = GitHubAPI()
 
 # number of notebooks to run for, if applicable
-limit = 20
+# limit = 20
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -130,8 +130,8 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         print("wrote " + filename)
         counter += 1
 
-        if counter == limit:
-            break
+        '''if counter == limit:
+            break'''
     
     print("finished! successfully ran " + str(counter) + " notebooks")
 
