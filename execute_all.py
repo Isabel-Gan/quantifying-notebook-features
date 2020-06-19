@@ -84,6 +84,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
     error_writer.writeheader()
 
     # iterates over the files in the dataset directory
+    success_counter = 0
     counter = 0
     err = False
     for file in os.listdir(directory):
@@ -137,15 +138,17 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         writer.writerow(row)
         print("wrote " + filename)
         
-        # increment counter if no error, reset error indicator
+        # increment success counter if no error, reset error indicator
         if not err:
-            counter += 1
+            success_counter += 1
         err = False
 
+        # increment regular counter
+        counter += 1
         if counter == limit:
             break
     
-    print("finished! successfully ran " + str(counter) + " notebooks")
+    print("finished! successfully ran " + str(success_counter) + " notebooks")
 
 
 
