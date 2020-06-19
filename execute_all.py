@@ -56,19 +56,22 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/test.csv'
+output_path = 'output/github2017-third-run.csv'
 
 # path to error csv
-error_path = 'output/test-errors.csv'
+error_path = 'output/github2017-third-errors.csv'
 
 # path to dataset
-dataset_path = 'test-dataset/'
+dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
 
 # directory of notebook files
 directory = os.fsencode(dataset_path + 'notebooks')
 
 # api crawler
 api = GitHubAPI()
+
+# number of notebooks to run for, if applicable
+# limit = 20
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -81,7 +84,9 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
     error_writer.writeheader()
 
     # iterates over the files in the dataset directory
+    success_counter = 0
     counter = 0
+    err = False
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
 
@@ -93,9 +98,16 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         row['nb_id'] = error_row['nb_id'] = nb_id
         row['repo_id'] = error_row['repo_id'] = repo_id
 
-        # skip if there aren't any code cells
-        if len(data.get_code_cells(nb_id)) == 0:
-            error_row['err_in'] = 'no_code'
+        # checking code cells may error if the notebook file is empty
+        try:
+            # skip if there aren't any code cells
+            if len(data.get_code_cells(nb_id)) == 0:
+                error_row['err_in'] = 'no_code'
+                error_writer.writerow(error_row)
+                continue
+        except:
+            print("nb file error in " + filename)
+            error_row['err_in'] = 'nb_file'
             error_writer.writerow(error_row)
             continue
 
@@ -103,6 +115,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         repo_link = data.get_repo_metadata(nb_id)['url']
         response = api.request(data.strip_url(repo_link))
         if 'id' not in response.keys():
+            print("api error in " + filename)
             error_row['err_in'] = 'api'
             error_writer.writerow(error_row)
             continue
@@ -117,6 +130,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
             except:
                 print("error in " + filename)
                 row[field] = None
+                err = True
 
                 # write to the error csv
                 error_row['err_in'] = field
@@ -125,9 +139,18 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         # write the row
         writer.writerow(row)
         print("wrote " + filename)
-        counter += 1
+        
+        # increment success counter if no error, reset error indicator
+        if not err:
+            success_counter += 1
+        err = False
+
+        # increment regular counter
+        # counter += 1
+        # if counter == limit:
+        #     break
     
-    print("finished! successfully ran " + str(counter) + " notebooks")
+    print("finished! successfully ran " + str(success_counter) + " notebooks")
 
 
 
