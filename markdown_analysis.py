@@ -19,6 +19,10 @@ min_margin = 70
 
 def get_char_length(md_cell):
 
+    # check if the markdown cell actually has a source
+    if 'source' not in md_cell.keys():
+        return 0
+
     # sum the lengths of all lines of source in the cell
     length = 0
     for line in md_cell['source']:
@@ -98,6 +102,11 @@ def has_equations(nb_id):
 
     # search the markdown cells for equations
     for cell in md_cells:
+
+        # check if markdown cell has source field
+        if 'source' not in cell.keys():
+            continue
+
         for line in cell['source']:
             if re.search(pattern, line):
                 return True
