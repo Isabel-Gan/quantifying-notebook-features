@@ -56,13 +56,13 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/test.csv'
+output_path = 'output/github2017-first-run.csv'
 
 # path to error csv
-error_path = 'output/test-errors.csv'
+error_path = 'output/github2017-first-errors.csv'
 
 # path to dataset
-dataset_path = 'test-dataset/'
+dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
 
 # directory of notebook files
 directory = os.fsencode(dataset_path + 'notebooks')
