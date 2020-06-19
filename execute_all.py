@@ -129,6 +129,9 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         writer.writerow(row)
         print("wrote " + filename)
         counter += 1
+
+        if counter == limit:
+            break
     
     print("finished! successfully ran " + str(counter) + " notebooks")
 
