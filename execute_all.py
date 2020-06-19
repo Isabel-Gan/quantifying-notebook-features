@@ -70,6 +70,9 @@ directory = os.fsencode(dataset_path + 'notebooks')
 # api crawler
 api = GitHubAPI()
 
+# number of notebooks to run for, if applicable
+limit = 20
+
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
 
