@@ -20,7 +20,14 @@ Created and used for Summer 2020 research on improving computational notebooks u
 
 `repo_analysis.py`: does a variety of analysis relating to the repository of the notebook
 
-
 `testing.py`: functionality to test all/single functions and compare results against manually detected features
 
 `execute_all.py`: script to run all functions on an entire dataset, outputs the data in csv files
+
+## directory information
+
+`output/`: includes the results of running `execute_all.py` on a dataset
+
+`output/test-runs/`: results of test runs of running `execute_all.py` (for testing errors in scripts)
+
+`output/complete-runs/`: results of complete runs of running `execute_all.py` (for actual data collection and analysis), also includes Jupyter notebooks that analyze the output for each complete run
