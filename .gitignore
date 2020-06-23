@@ -6,6 +6,7 @@ example_analysis.ipynb
 
 # python file for doing data exploration
 playground.py
+playground-output/
 
 # don't include the jupyter notebook checkpoints
 output/complete-runs/.ipynb_checkpoints/
