@@ -39,34 +39,39 @@ def get_contributors(nb_id):
 
     return names
 
-# searches all cells for instances of an author username or name
+# searches markdown cells and code comments for instances of an author username or name
 def has_author(nb_id):
 
-    # get all the cells and author names
-    cells = data.get_cells(nb_id)
+    # get all the markdown cells and author names
+    md_cells = data.get_md_cells(nb_id)
 
     author_name = get_author(nb_id)
     author_login = get_username(nb_id)
     all_names = get_contributors(nb_id) + [author_name, author_login]
 
     # check each cell for an author
-    for cell in cells:
+    for cell in md_cells:
 
-        # check for which field holds the content
-        keys = cell.keys()
-        if 'source' in keys:
+        if 'source' in cell.keys():
             lines = cell['source']
-        else:
-            lines = cell['input']
 
-        # scan all the lines in the cell
-        for line in lines:
+            # scan all the lines in the cell
+            for line in lines:
+                # check all possible authors
+                for name in all_names:
+                    if name != None and name in line:
+                        return True
 
-            # check all possible authors
-            for name in all_names:
-                if name != None and name in line:
-                    return True
+    # gather comments
+    comments = data.get_comments(nb_id)
+    
+    # search each comment for the author names
+    for comment in comments:
+        for name in all_names:
+            if name != None and name in comment:
+                return True
 
+    # no instances of authors found
     return False
 
 ''' feature - proportion of code cells with output '''
@@ -207,5 +212,4 @@ def is_education(nb_id):
             return True
     
     return False
-
-print(is_education(910697))
+ 

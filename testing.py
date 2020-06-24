@@ -26,7 +26,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(data.get_comments)
+test_func(nb_analysis.has_author)
 
 ''' testing all functions - print out results '''
 
