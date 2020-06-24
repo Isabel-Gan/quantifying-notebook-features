@@ -197,13 +197,15 @@ def is_education(nb_id):
 
             # make sure to search for each keyword
             for pattern in education_patterns:
-                if re.search(pattern, line):
+                if re.search(pattern, line.lower()):
                     return True
 
     # check the file path (including the file name) for the keywords as well
     path = data.get_path(nb_id)
     for pattern in education_patterns:
-        if re.search(pattern, path):
+        if re.search(pattern, path.lower()):
             return True
     
     return False
+
+print(is_education(910697))
