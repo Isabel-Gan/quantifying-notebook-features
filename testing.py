@@ -26,6 +26,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
+test_func(data.get_comments)
 
 ''' testing all functions - print out results '''
 
@@ -41,7 +42,7 @@ def test_all():
     for feature in feature_tests:
         test_func(feature)
 
-test_all()
+# test_all()
 
 ''' testing a single function at a time - comparing results for correctness '''
 

@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
+from comment_parser import comment_parser
 
 api = GitHubAPI()
 
@@ -152,6 +153,25 @@ def get_code_cells(nb_id):
     # filter down to only code cells
     code_cells = filter(lambda cell: cell['cell_type'] == "code", cells)
     return list(code_cells)
+
+# given a notebook id, returns all comments in code as a python list of strings
+def get_comments(nb_id):
+    
+    # get the code cells
+    code_cells = get_code_cells(nb_id)
+
+    # iterate through the code cells and gather the comments
+    comments = []
+    for cell in code_cells:
+        if 'source' in cell.keys():
+
+            # gather all of the code into a single string
+            code = str("".join(cell['source']))
+
+            # get the comments
+            comments += list(map(lambda x : x.text(), comment_parser.extract_comments_from_str(code, mime='text/x-python')))
+
+    return comments
 
 ''' misc '''
 
