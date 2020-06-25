@@ -161,7 +161,7 @@ def get_language(nb_id):
     nb = data.get_nb(nb_id)
 
     # look for the language
-    language = ""
+    language = None
     keys = nb.keys()
     
     # check if language is stored in the cells or notebook metadata
@@ -170,14 +170,28 @@ def get_language(nb_id):
         # then language data is in each cell, get code cells and get the language from one of them
         code_cells = data.get_code_cells(nb_id)
         for cell in code_cells:
-            if language != "":
+            if language != None:
                 break
             else:
                 language = cell['language']
+  
+    elif 'kernelspec' in nb['metadata'].keys():
+
+        # then language data is in the metadata
+        kernelspec = nb['metadata']['kernelspec']
+        keys = kernelspec.keys()
+
+        if 'language' in keys:
+            language = kernelspec['language']
+        elif 'name' in keys:
+            language = kernelspec['name']
+        else:
+            language = None
     
     else:
-        # then language data is in the metadata
-        language = nb['metadata']['kernelspec']['language']
+
+        # language data not recorded
+        language = None
     
     return language
             
