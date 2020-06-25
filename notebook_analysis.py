@@ -214,11 +214,12 @@ def is_education(nb_id):
 
     # go through the markdown cells and search for the keywords
     for cell in md_cells:
-        for line in cell['source']:
-            # make sure to search for each keyword
-            for pattern in regex.education:
-                if re.search(pattern, line.lower()):
-                    return True
+        if 'source' in cell.keys():
+            for line in cell['source']:
+                # make sure to search for each keyword
+                for pattern in regex.education:
+                    if re.search(pattern, line.lower()):
+                        return True
 
     # check the file path (including the file name) for the keywords as well
     path = data.get_path(nb_id)
