@@ -16,6 +16,8 @@ Created and used for Summer 2020 research on improving computational notebooks u
 
 `markdown_analysis.py`: does a variety of analysis on markdown cells in a notebook
 
+`code_analysis.py`: does a variety of analysis on the code in a notebook
+
 `notebook_analysis.py`: does a variety of analysis on a notebook file as a whole
 
 `repo_analysis.py`: does a variety of analysis relating to the repository of the notebook
