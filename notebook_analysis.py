@@ -1,5 +1,6 @@
 import data_access as data  
 import re
+import regex
 
 ''' feature - author '''
 
@@ -59,6 +60,10 @@ def has_author(nb_id):
             for line in lines:
 
                 # filter out links before searching for author
+                link = re.search(regex.link, line)
+                while link != None:
+                    line = line.replace(link.group(0), "")
+                    link = re.search(regex.link, line)
 
                 # check all possible authors
                 for name in all_names:
