@@ -26,7 +26,7 @@ function_columns = {
     # 'p_keywords' : kw_analysis.count_pipeline_keywords,
     # 's_keywords' : kw_analysis.count_sharing_keywords,
     'is_education' : nb_analysis.is_education,
-    # 'language' : nb_analysis.get_language,
+    'language' : nb_analysis.get_language,
     'has_links' : md_analysis.has_links,
     'has_comments' : code_analysis.has_comments
 }
@@ -48,7 +48,7 @@ row = {
     # 'p_keywords' : None,
     # 's_keywords' : None,
     'is_education' : None,
-    # 'language' : None,
+    'language' : None,
     'has_links' : None,
     'has_comments' : None
 }
@@ -61,10 +61,10 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/github2017-fourth-run.csv'
+output_path = 'output/github2017-fifth-run.csv'
 
 # path to error csv
-error_path = 'output/github2017-fourth-errors.csv'
+error_path = 'output/github2017-fifth-errors.csv'
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
