@@ -57,6 +57,9 @@ def has_author(nb_id):
 
             # scan all the lines in the cell
             for line in lines:
+
+                # filter out links before searching for author
+
                 # check all possible authors
                 for name in all_names:
                     if name != None and name in line:
@@ -198,13 +201,6 @@ def get_language(nb_id):
 
 ''' feature - educational notebook '''
 
-# regex associated with education notebooks
-education_patterns = ["project", "hint", "rubric", "answer", "question", "pass",
-                        "lesson", "lecture", "homework", "slides", "final-project",
-                        "course", "assignment", "quiz", "submission","hw", "exercise", 
-                        "due", "bootcamp", "assessment", "final_project",
-                        "week([_\- ]|\B)([0-9]+)", "day([_\- ]|\B)([0-9]+)"]
-
 # searches markdown cells and notebook name/path for any patterns above
 def is_education(nb_id):
     
@@ -214,15 +210,14 @@ def is_education(nb_id):
     # go through the markdown cells and search for the keywords
     for cell in md_cells:
         for line in cell['source']:
-
             # make sure to search for each keyword
-            for pattern in education_patterns:
+            for pattern in regex.education:
                 if re.search(pattern, line.lower()):
                     return True
 
     # check the file path (including the file name) for the keywords as well
     path = data.get_path(nb_id)
-    for pattern in education_patterns:
+    for pattern in regex.education:
         if re.search(pattern, path.lower()):
             return True
     

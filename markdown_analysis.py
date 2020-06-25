@@ -1,6 +1,7 @@
 import data_access as data
 import html2text 
 import re
+import regex
 
 ''' feature - amount of markdown cells in the notebook '''
 
@@ -28,12 +29,12 @@ def get_length(md_cell):
     for line in md_cell['source']:
 
         # filter out the equations, count them as one word
-        equation_pattern = "\$([\S\s]+?)\$"
-        equation = re.search(equation_pattern, line)
+        
+        equation = re.search(regex.equation, line)
         while equation != None:
             length += 1
             line = line.replace(equation.group(0), "")
-            equation = re.search(equation_pattern, line)
+            equation = re.search(regex.equation, line)
 
         # get the number of words in the remaining line
         text = html2text.html2text(line).strip()
@@ -99,8 +100,6 @@ def longer_ending(nb_id):
 
 ''' feature - equations '''
 
-equation_pattern = "\$([\S\s]+)\$"
-
 def has_equations(nb_id):
 
     # get all the markdown cells
@@ -118,15 +117,12 @@ def has_equations(nb_id):
             continue
 
         for line in cell['source']:
-            if re.search(equation_pattern, line):
+            if re.search(regex.equation, line):
                 return True
 
     return False
 
 ''' feature - links '''
-
-link_pattern = "(http|ftp|https)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?"
-img_src_pattern = "<img"
 
 def has_links(nb_id):
 
@@ -145,7 +141,7 @@ def has_links(nb_id):
             continue
 
         for line in cell['source']:
-            if re.search(link_pattern, line) and not re.search(img_src_pattern, line):
+            if re.search(regex.link, line) and not re.search(regex.img_src, line):
                 return True
 
     return False
