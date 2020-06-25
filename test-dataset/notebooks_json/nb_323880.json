@@ -1,0 +1,509 @@
+{
+ "metadata": {
+  "name": "",
+  "signature": "sha256:07404e82237f776f661d47d7173b0788096077f66aea6b2c0a53d73ee9cd2bfb"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "###This scripts caculate R<sup>2</sup> over the entire dataset, and Mean Percentage Error for each quartile of the dataset used for validation only. The data was split into Calibration and Validation groups using the script <font color='red'>Write-Out-Matching-Records</font>"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "%pylab inline"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "Populating the interactive namespace from numpy and matplotlib\n"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stderr",
+       "text": [
+        "WARNING: pylab import has clobbered these variables: ['norm', 'gradient']\n",
+        "`%matplotlib` prevents importing * from pylab and numpy\n"
+       ]
+      }
+     ],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "<font color='blue'>**First, import all necessary libraries.**</font>"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Import all needed libraries \n",
+      "import sys, os, datetime, time\n",
+      "import collections\n",
+      "import numpy as np\n",
+      "import pandas as pd\n",
+      "import numpy.ma as ma\n",
+      "import math\n",
+      "import matplotlib.dates as dates\n",
+      "import matplotlib.ticker as ticker\n",
+      "import matplotlib.pyplot as plt\n",
+      "from matplotlib.backends.backend_pdf import PdfPages\n",
+      "from scipy.stats import norm\n",
+      "from scipy import stats\n",
+      "\n",
+      "import os\n",
+      "os.getcwd() \n",
+      "os.chdir(\"D:\\\\Dropbox\\\\Python_Scripts\")\n",
+      "os.getcwd()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 9,
+       "text": [
+        "'D:\\\\Dropbox\\\\Python_Scripts'"
+       ]
+      }
+     ],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "<font color='blue'>**Edit the figure properties**</font> "
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import matplotlib as mpl\n",
+      "mpl.rcParams['lines.linewidth'] = 2\n",
+      "font = {'family' : 'sans-serif',\n",
+      "        'sans-serif' : 'Verdana',\n",
+      "        'weight' : 'medium',\n",
+      "        'size'   : '12'}\n",
+      "params1 = {\n",
+      "          'axes.labelsize': 12,\n",
+      "          'text.fontsize': 12,\n",
+      "          'xtick.labelsize': 12,\n",
+      "          'xtick.direction': 'out',\n",
+      "          'ytick.labelsize': 12,\n",
+      "          'legend.pad': 0.01,     # empty space around the legend box\n",
+      "          'legend.fontsize': 12,\n",
+      "          'legend.labelspacing':0.25,\n",
+      "          'font.size': 12,\n",
+      "          'font.style': 'normal',\n",
+      "          'axes.style': 'normal',\n",
+      "          'xtick.labelstyle': 'normal',\n",
+      "          }\n",
+      "mpl.RcParams.update(params1)\n",
+      "mpl.rc('font', **font)\n",
+      "plt.rc(\"xtick\", direction=\"out\")\n",
+      "plt.rc(\"ytick\", direction=\"out\")\n",
+      "plt.rc('legend',**{'fontsize':12})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 10
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "**<font color='blue'>Read the input water quality files<br></font>\n",
+      "<span style=\"background-color: #FFFF00\">NOTE THAT the input used here only consists of sim and obs records with matching timestamps. The script used to extract the matching records are in: C:\\Users\\Ning\\Documents\\IPython Notebooks\\Write-Out-Matching-Records.ipynb</span>**"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "basin_name = ['Mercer', 'Thornton', 'Issaquah']\n",
+      "basin_nameL = ['mercer', 'thornton', 'issaquah']\n",
+      "mainpath = {}\n",
+      "simsedfilepath = {}\n",
+      "simotherfilepath = {}\n",
+      "simTPfilepath = {}\n",
+      "\n",
+      "# assign the file path\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    mainpath[n] = 'D:\\\\Dropbox\\\\Python_Scripts\\\\'+str(basin_name[i])\n",
+      "    simsedfilepath[n] = str(mainpath[n])+ '\\\\sed_sim_obs_vald.txt'\n",
+      "    simotherfilepath[n] = str(mainpath[n])+'\\\\coliform_sim_obs_vald.txt'\n",
+      "    simTPfilepath[n] = str(mainpath[n])+'\\\\TP_sim_obs_vald.txt'\n",
+      "\n",
+      "# read data from input files\n",
+      "FsimdateJunk1 = collections.defaultdict(list)\n",
+      "FobsdateJunk1 = collections.defaultdict(list)\n",
+      "FsimdateJunk2 = collections.defaultdict(list)\n",
+      "FobsdateJunk2 = collections.defaultdict(list)\n",
+      "Fsimdate = collections.defaultdict(list)\n",
+      "Fobsdate = collections.defaultdict(list)\n",
+      "\n",
+      "FsimSed = collections.defaultdict(list)\n",
+      "FobsSed = collections.defaultdict(list)\n",
+      "FsimOther = collections.defaultdict(list)\n",
+      "\n",
+      "FobsOther = collections.defaultdict(list)\n",
+      "FsimTP = collections.defaultdict(list)\n",
+      "FobsTP = collections.defaultdict(list)\n",
+      "\n",
+      "for i, n in enumerate(basin_name): \n",
+      "    # date and time are stored in two separate columns, so here reading them together\n",
+      "    FsimdateJunk1[n] = np.genfromtxt(simsedfilepath[n], dtype=str, skiprows=0, usecols=[0,1])\n",
+      "    FobsdateJunk1[n] = np.genfromtxt(simsedfilepath[n], dtype=str, skiprows=0, usecols=[3,4])\n",
+      "    # print Fobsdate\n",
+      "    \n",
+      "    # read simulations\n",
+      "    FsimSed[n] = np.genfromtxt(simsedfilepath[n], dtype=float, skiprows=0, usecols=[2])\n",
+      "    FsimOther[n] = np.genfromtxt(simotherfilepath[n], dtype=float, skiprows=0, usecols=[2])\n",
+      "    FsimTP[n] = np.genfromtxt(simTPfilepath[n], dtype=float, skiprows=0, usecols=[2])\n",
+      "    \n",
+      "    # read observations\n",
+      "    FobsSed[n] = np.genfromtxt(simsedfilepath[n], dtype=float, skiprows=0, usecols=[5])\n",
+      "    FobsOther[n] = np.genfromtxt(simotherfilepath[n], dtype=float, skiprows=0, usecols=[5])\n",
+      "    FobsTP[n] = np.genfromtxt(simTPfilepath[n], dtype=float, skiprows=0, usecols=[5])\n",
+      "    \n",
+      "    # debug\n",
+      "    print \"coliform: \", str(n), len(FsimOther[n]), len(FobsOther[n])\n",
+      "    print \"sediment: \", str(n), len(FsimSed[n]), len(FobsSed[n])\n",
+      "    print \"TP: \", str(n), len(FsimTP[n]), len(FobsTP[n])\n",
+      "    print \n",
+      "\n",
+      "# stitch the date and time columns into one column\n",
+      "for i, n in enumerate(basin_name): \n",
+      "    for j in range(len(FsimdateJunk1[n])):\n",
+      "        FsimdateJunk2[n].append(str(FsimdateJunk1[n][j][0])+'-'+str(FsimdateJunk1[n][j][1])) \n",
+      "        FobsdateJunk2[n].append(str(FobsdateJunk1[n][j][0])+'-'+str(FobsdateJunk1[n][j][1]))\n",
+      "\n",
+      "# convert the date/time string to python date/time format\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    for j in range(len(FsimdateJunk2[n])):\n",
+      "        Fsimdate[n].append(datetime.datetime.strptime(FsimdateJunk2[n][j],'%Y-%m-%d-%H:%M:%S'))\n",
+      "        Fobsdate[n].append(datetime.datetime.strptime(FobsdateJunk2[n][j],'%Y-%m-%d-%H:%M:%S'))\n",
+      "        # debug\n",
+      "        # if (i == 0 and j <=5):\n",
+      "            #print Fsimdate[n][j], Fobsdate[n][j]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "coliform:  Mercer 109 109\n",
+        "sediment:  Mercer 109 109\n",
+        "TP:  Mercer 109 109\n",
+        "\n",
+        "coliform:  Thornton 108 108\n",
+        "sediment:  Thornton 108 108\n",
+        "TP:  Thornton 108 108\n",
+        "\n",
+        "coliform:  Issaquah 106 106\n",
+        "sediment:  Issaquah 106 106\n",
+        "TP:  Issaquah 106 106\n",
+        "\n"
+       ]
+      }
+     ],
+     "prompt_number": 11
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "<font color='blue'>Calculate the **R<sup>2</sup>** and **MPE**  for coliform conc.</font>"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "r2_Col = {}\n",
+      "print \"R2:\"\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    gradient, intercept, r_value, p_value, std_err = stats.linregress(FsimOther[n],FobsOther[n])\n",
+      "    r2_Col[n] = r_value**2\n",
+      "    print \"\\t\", str(n),\":\", r2_Col[n] \n",
+      "print\n",
+      "\n",
+      "# calculate mean percentage error (MPE)\n",
+      "ColObs = {}\n",
+      "MPE_Col = {}\n",
+      "print \"MPE:\"\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    MPE_Col[n] = sum((x-y)/x/float(len(FobsOther[n])) for y,x in zip(FsimOther[n],FobsOther[n]))\n",
+      "    print \"\\t\", str(n),\":\", MPE_Col[n] \n",
+      "\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "R2:\n",
+        "\tMercer : 0.536181215918\n",
+        "\tThornton : 0.472132223176\n",
+        "\tIssaquah : 0.245857401222\n",
+        "\n",
+        "MPE:\n",
+        "\tMercer : -0.1944215569\n",
+        "\tThornton : -0.0357095092395\n",
+        "\tIssaquah : -0.432856672295\n"
+       ]
+      }
+     ],
+     "prompt_number": 12
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "<font color='blue'>Calculate the **quartile of coliform observations**.</font>"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "ColObs = {}\n",
+      "Col0 = {}\n",
+      "Col25 = {}\n",
+      "Col50 = {}\n",
+      "Col75 = {}\n",
+      "Col100 = {}\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    ColObs[n] = pd.DataFrame(FobsOther[n])\n",
+      "    \n",
+      "    # print the quartile of coliform obs\n",
+      "    Col0[n] = ColObs[n].min()\n",
+      "    Col25[n] = ColObs[n].quantile(0.25)\n",
+      "    Col50[n] = ColObs[n].quantile(0.5)\n",
+      "    Col75[n] = ColObs[n].quantile(0.75)\n",
+      "    Col100[n] = ColObs[n].max()\n",
+      "    print str(n), \"quartile\", Col0[n].values, Col25[n].values, Col50[n].values, Col75[n].values, Col100[n].values, \"\\n\"\n",
+      "    \n",
+      "    # convert the panda dataframe to list\n",
+      "    # print ColObs[n].values.tolist()\n",
+      "    # find the index in a list by element value\n",
+      "    # print ColObs[n].values.tolist().index(Col25[n].values)\n",
+      "\n",
+      "# check the data type\n",
+      "print  \"\\n\", type(Col100['Mercer'])"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "Mercer quartile [ 0.027] [ 0.1] [ 0.24] [ 0.5] [ 6.] \n",
+        "\n",
+        "Thornton quartile [ 0.068] [ 0.325] [ 0.675] [ 2.025] [ 16.] \n",
+        "\n",
+        "Issaquah quartile [ 0.009] [ 0.0545] [ 0.16] [ 0.3975] [ 5.3] \n",
+        "\n",
+        "\n",
+        "<class 'pandas.core.series.Series'>\n"
+       ]
+      }
+     ],
+     "prompt_number": 13
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "<font color='blue'>Calculate the **MPE** by **quartile of coliform observations** for coliform conc. predictions.</font>"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print \"MPE by Quartile:\\n\"\n",
+      "\n",
+      "Fsimdate25 = collections.defaultdict(list)\n",
+      "Fobsdate25 = collections.defaultdict(list)\n",
+      "FsimCol25 = collections.defaultdict(list)\n",
+      "FobsCol25 = collections.defaultdict(list)\n",
+      "MPE_Col25 = collections.defaultdict(list)\n",
+      "\n",
+      "# divide the obs and sim datasets by quartile\n",
+      "print \"1st quartile:\"\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    for i in range(len(FobsOther[n])):\n",
+      "        if (FobsOther[n][i] <= Col25[n].values):\n",
+      "            idx = i\n",
+      "            Fsimdate25[n].append(Fsimdate[n][idx])\n",
+      "            Fobsdate25[n].append(Fobsdate[n][idx])\n",
+      "            FsimCol25[n].append(FsimOther[n][idx])\n",
+      "            FobsCol25[n].append(FobsOther[n][idx])\n",
+      "            MPE_Col25[n] = sum((x-y)/x/float(len(FobsCol25[n])) for y,x in zip(FsimCol25[n],FobsCol25[n]))\n",
+      "    print \"\\t\", str(n),\":\", MPE_Col25[n]\n",
+      "print \"\\n\"\n",
+      "\n",
+      "Fsimdate50 = collections.defaultdict(list)\n",
+      "Fobsdate50 = collections.defaultdict(list)\n",
+      "FsimCol50 = collections.defaultdict(list)\n",
+      "FobsCol50 = collections.defaultdict(list)\n",
+      "MPE_Col50 = collections.defaultdict(list)\n",
+      "print \"2nd quartile:\"\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    for i in range(len(FobsOther[n])):\n",
+      "        if (FobsOther[n][i] <= Col50[n].values and FobsOther[n][i] > Col25[n].values):\n",
+      "            idx = i\n",
+      "            Fsimdate50[n].append(Fsimdate[n][idx])\n",
+      "            Fobsdate50[n].append(Fobsdate[n][idx])\n",
+      "            FsimCol50[n].append(FsimOther[n][idx])\n",
+      "            FobsCol50[n].append(FobsOther[n][idx])\n",
+      "            MPE_Col50[n] = sum((x-y)/x/float(len(FobsCol50[n])) for y,x in zip(FsimCol50[n],FobsCol50[n]))\n",
+      "    print \"\\t\", str(n),\":\", MPE_Col50[n]\n",
+      "print \"\\n\"\n",
+      "\n",
+      "Fsimdate75 = collections.defaultdict(list)\n",
+      "Fobsdate75 = collections.defaultdict(list)\n",
+      "FsimCol75 = collections.defaultdict(list)\n",
+      "FobsCol75 = collections.defaultdict(list)\n",
+      "MPE_Col75 = collections.defaultdict(list)\n",
+      "print \"3rd quartile:\"\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    for i in range(len(FobsOther[n])):\n",
+      "        if (FobsOther[n][i] <= Col75[n].values and FobsOther[n][i] > Col50[n].values):\n",
+      "            idx = i\n",
+      "            Fsimdate75[n].append(Fsimdate[n][idx])\n",
+      "            Fobsdate75[n].append(Fobsdate[n][idx])\n",
+      "            FsimCol75[n].append(FsimOther[n][idx])\n",
+      "            FobsCol75[n].append(FobsOther[n][idx])\n",
+      "            MPE_Col75[n] = sum((x-y)/x/float(len(FobsCol75[n])) for y,x in zip(FsimCol75[n],FobsCol75[n]))\n",
+      "    print \"\\t\", str(n),\":\", MPE_Col75[n]\n",
+      "print \"\\n\"\n",
+      "\n",
+      "Fsimdate100 = collections.defaultdict(list)\n",
+      "Fobsdate100 = collections.defaultdict(list)\n",
+      "FsimCol100 = collections.defaultdict(list)\n",
+      "FobsCol100 = collections.defaultdict(list)\n",
+      "MPE_Col100 = collections.defaultdict(list)\n",
+      "print \"4th quartile:\"\n",
+      "for i, n in enumerate(basin_name):\n",
+      "    for i in range(len(FobsOther[n])):\n",
+      "        if (FobsOther[n][i] > Col75[n].values):\n",
+      "            idx = i\n",
+      "            Fsimdate100[n].append(Fsimdate[n][idx])\n",
+      "            Fobsdate100[n].append(Fobsdate[n][idx])\n",
+      "            FsimCol100[n].append(FsimOther[n][idx])\n",
+      "            FobsCol100[n].append(FobsOther[n][idx])\n",
+      "            MPE_Col100[n] = sum((x-y)/x/float(len(FobsCol100[n])) for y,x in zip(FsimCol100[n],FobsCol100[n]))\n",
+      "    print \"\\t\", str(n),\":\", MPE_Col100[n]\n",
+      "print \"\\n\"\n",
+      "            "
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "MPE by Quartile:\n",
+        "\n",
+        "1st quartile:\n",
+        "\tMercer : -0.771648228107\n",
+        "\tThornton : -0.482870199983\n",
+        "\tIssaquah : -1.10688087555\n",
+        "\n",
+        "\n",
+        "2nd quartile:\n",
+        "\tMercer : -0.820491252742\n",
+        "\tThornton : -0.157785926256\n",
+        "\tIssaquah : -0.370855995165\n",
+        "\n",
+        "\n",
+        "3rd quartile:\n",
+        "\tMercer : 0.670374091187\n",
+        "\tThornton : 0.300086447185\n",
+        "\tIssaquah : -0.0140559726303\n",
+        "\n",
+        "\n",
+        "4th quartile:\n",
+        "\tMercer : 0.165457927661\n",
+        "\tThornton : 0.197731642096\n",
+        "\tIssaquah : -0.195396756133\n",
+        "\n",
+        "\n"
+       ]
+      }
+     ],
+     "prompt_number": 14
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "<font color='blue'>**Restructure the output structure. Catchment name is horizontal and quartile is vertical**</font>"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "for i, n in enumerate(basin_name):\n",
+      "    print \"%0.2f\" % MPE_Col25[n],\n",
+      "print \n",
+      "for i, n in enumerate(basin_name):\n",
+      "    print \"%0.2f\" % MPE_Col50[n],\n",
+      "print \n",
+      "for i, n in enumerate(basin_name):\n",
+      "    print \"%0.2f\" % MPE_Col75[n],\n",
+      "print \n",
+      "for i, n in enumerate(basin_name):\n",
+      "    print \"%0.2f\" % MPE_Col100[n],\n",
+      "print "
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "-0.77 -0.48 -1.11\n",
+        "-0.82 -0.16 -0.37\n",
+        "0.67 0.30 -0.01\n",
+        "0.17 0.20 -0.20\n"
+       ]
+      }
+     ],
+     "prompt_number": 15
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
