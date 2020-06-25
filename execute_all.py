@@ -9,23 +9,26 @@ import markdown_analysis as md_analysis
 import notebook_analysis as nb_analysis   
 import keyword_analysis as kw_analysis   
 import repo_analysis
+import code_analysis
 
 # dictionary object relating functions to their specific field in the csv
 function_columns = {
     'longer_beginning' : md_analysis.longer_beginning,
     'longer_ending' : md_analysis.longer_ending,
     'has_author' : nb_analysis.has_author,
-    'has_equation' : md_analysis.has_equations,
-    'jupyter_prop' : repo_analysis.jupyter_prop,
-    'output_cell_prop' : nb_analysis.output_cell_prop,
-    'markdown_prop' : md_analysis.markdown_prop,
-    'num_contrib' : repo_analysis.num_contributors,
-    'image_prop' : nb_analysis.image_prop,
-    'e_keywords' : kw_analysis.count_exploratory_keywords,
-    'p_keywords' : kw_analysis.count_pipeline_keywords,
-    's_keywords' : kw_analysis.count_sharing_keywords,
+    # 'has_equation' : md_analysis.has_equations,
+    # 'jupyter_prop' : repo_analysis.jupyter_prop,
+    # 'output_cell_prop' : nb_analysis.output_cell_prop,
+    # 'markdown_prop' : md_analysis.markdown_prop,
+    # 'num_contrib' : repo_analysis.num_contributors,
+    # 'image_prop' : nb_analysis.image_prop,
+    # 'e_keywords' : kw_analysis.count_exploratory_keywords,
+    # 'p_keywords' : kw_analysis.count_pipeline_keywords,
+    # 's_keywords' : kw_analysis.count_sharing_keywords,
     'is_education' : nb_analysis.is_education,
-    'language' : nb_analysis.get_language
+    # 'language' : nb_analysis.get_language,
+    'has_links' : nb_analysis.has_links,
+    'has_comments' : code_analysis.has_comments
 }
 
 # dictionary object with fields to hold rows to write
@@ -35,17 +38,19 @@ row = {
     'longer_beginning' : None,
     'longer_ending' : None,
     'has_author' : None,
-    'has_equation' : None,
-    'jupyter_prop' : None,
-    'output_cell_prop' : None,
-    'markdown_prop' : None,
-    'num_contrib' : None,
-    'image_prop' : None,
-    'e_keywords' : None,
-    'p_keywords' : None,
-    's_keywords' : None,
+    # 'has_equation' : None,
+    # 'jupyter_prop' : None,
+    # 'output_cell_prop' : None,
+    # 'markdown_prop' : None,
+    # 'num_contrib' : None,
+    # 'image_prop' : None,
+    # 'e_keywords' : None,
+    # 'p_keywords' : None,
+    # 's_keywords' : None,
     'is_education' : None,
-    'language' : None
+    # 'language' : None,
+    'has_links' : None,
+    'has_comments' : None
 }
 
 # dictionary object with fields to hold error rows to write
@@ -56,10 +61,10 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/github2017-third-run.csv'
+output_path = 'output/github2017-fourth-run.csv'
 
 # path to error csv
-error_path = 'output/github2017-third-errors.csv'
+error_path = 'output/github2017-fourth-errors.csv'
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
@@ -71,7 +76,7 @@ directory = os.fsencode(dataset_path + 'notebooks')
 api = GitHubAPI()
 
 # number of notebooks to run for, if applicable
-# limit = 20
+limit = 20
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -145,10 +150,10 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
             success_counter += 1
         err = False
 
-        # increment regular counter
-        # counter += 1
-        # if counter == limit:
-        #     break
+        increment regular counter
+        counter += 1
+        if counter == limit:
+            break
     
     print("finished! successfully ran " + str(success_counter) + " notebooks")
 
