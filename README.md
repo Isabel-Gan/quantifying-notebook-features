@@ -26,6 +26,8 @@ Created and used for Summer 2020 research on improving computational notebooks u
 
 `execute_all.py`: script to run all functions on an entire dataset, outputs the data in csv files
 
+`regex.py`: various regular expressions used to detect links, equations, etc. in notebooks
+
 ## directory information
 
 `output/`: includes the results of running `execute_all.py` on a dataset
