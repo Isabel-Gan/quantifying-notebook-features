@@ -27,7 +27,7 @@ function_columns = {
     # 's_keywords' : kw_analysis.count_sharing_keywords,
     'is_education' : nb_analysis.is_education,
     # 'language' : nb_analysis.get_language,
-    'has_links' : nb_analysis.has_links,
+    'has_links' : md_analysis.has_links,
     'has_comments' : code_analysis.has_comments
 }
 
@@ -150,7 +150,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
             success_counter += 1
         err = False
 
-        increment regular counter
+        # increment regular counter
         counter += 1
         if counter == limit:
             break
