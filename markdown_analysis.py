@@ -99,10 +99,9 @@ def longer_ending(nb_id):
 
 ''' feature - equations '''
 
-def has_equations(nb_id):
+equation_pattern = "\$([\S\s]+)\$"
 
-    # pattern to look for equation (math mode)
-    pattern = "\$([\S\s]+)\$"
+def has_equations(nb_id):
 
     # get all the markdown cells
     md_cells = data.get_md_cells(nb_id)
@@ -119,9 +118,34 @@ def has_equations(nb_id):
             continue
 
         for line in cell['source']:
-            if re.search(pattern, line):
+            if re.search(equation_pattern, line):
                 return True
 
     return False
 
-# tests - delete later
+''' feature - links '''
+
+link_pattern = "(http|ftp|https)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?"
+img_src_pattern = "<img"
+
+def has_links(nb_id):
+
+    # get all the markdown cells
+    md_cells = data.get_md_cells(nb_id)
+
+    # if there are no markdown cells, return immediately
+    if len(md_cells) == 0:
+        return None
+
+    # search the markdown cells for links
+    for cell in md_cells:
+
+        # check if markdown cell has source field
+        if 'source' not in cell.keys():
+            continue
+
+        for line in cell['source']:
+            if re.search(link_pattern, line) and not re.search(img_src_pattern, line):
+                return True
+
+    return False

@@ -1,6 +1,7 @@
 import data_access as data   
 
 ''' feature - comments in code '''
+
 def has_comments(nb_id):
 
     # get comments

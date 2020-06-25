@@ -28,10 +28,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(nb_analysis.get_language)
-test_func(code_analysis.has_comments)
-
-print(data.get_comments(1019165))
+test_func(md_analysis.has_links)
 
 ''' testing all functions - print out results '''
 
