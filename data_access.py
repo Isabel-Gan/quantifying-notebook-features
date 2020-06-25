@@ -160,7 +160,8 @@ def get_code_cells(nb_id):
 def get_comments(nb_id):
     
     # check if notebook is in python
-    if (nb_analysis.get_language(nb_id) != "python"):
+    language = nb_analysis.get_language(nb_id)
+    if language == None or "python" not in nb_analysis.get_language(nb_id):
         return None
 
     # get the code cells
@@ -182,7 +183,11 @@ def get_comments(nb_id):
         code = str("".join(cell[field]))
 
         # get the comments
-        comments += list(map(lambda x : x.text(), comment_parser.extract_comments_from_str(code, mime='text/x-python')))
+        try:
+            comments += list(map(lambda x : x.text(), comment_parser.extract_comments_from_str(code, mime='text/x-python')))
+        except:
+            # the comment parser will not work on syntactically incorrect code
+            continue
 
     return comments
 
