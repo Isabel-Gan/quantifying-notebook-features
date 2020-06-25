@@ -26,6 +26,16 @@ def get_length(md_cell):
     # sum the lengths of all lines of source in the cell
     length = 0
     for line in md_cell['source']:
+
+        # filter out the equations, count them as one word
+        equation_pattern = "\$([\S\s]+?)\$"
+        equation = re.search(equation_pattern, line)
+        while equation != None:
+            length += 1
+            line = line.replace(equation.group(0), "")
+            equation = re.search(equation_pattern, line)
+
+        # get the number of words in the remaining line
         text = html2text.html2text(line).strip()
         length += len(text.split())
     
