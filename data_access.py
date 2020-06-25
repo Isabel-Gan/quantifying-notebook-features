@@ -169,13 +169,20 @@ def get_comments(nb_id):
     # iterate through the code cells and gather the comments
     comments = []
     for cell in code_cells:
-        if 'source' in cell.keys():
 
-            # gather all of the code into a single string
-            code = str("".join(cell['source']))
+        # look for the field that holds the code
+        field = ""
+        if 'input' in cell.keys():
+            field = 'input'
+        elif 'source' in cell.keys():
+            field = 'source'
+        
 
-            # get the comments
-            comments += list(map(lambda x : x.text(), comment_parser.extract_comments_from_str(code, mime='text/x-python')))
+        # gather all of the code into a single string
+        code = str("".join(cell[field]))
+
+        # get the comments
+        comments += list(map(lambda x : x.text(), comment_parser.extract_comments_from_str(code, mime='text/x-python')))
 
     return comments
 
