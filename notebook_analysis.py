@@ -65,11 +65,12 @@ def has_author(nb_id):
     # gather comments
     comments = data.get_comments(nb_id)
     
-    # search each comment for the author names
-    for comment in comments:
-        for name in all_names:
-            if name != None and name in comment:
-                return True
+    if comments != None:
+        # search each comment for the author names
+        for comment in comments:
+            for name in all_names:
+                if name != None and name in comment:
+                    return True
 
     # no instances of authors found
     return False

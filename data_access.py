@@ -3,6 +3,8 @@ import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
 from comment_parser import comment_parser
 
+import notebook_analysis as nb_analysis
+
 api = GitHubAPI()
 
 # the dataset directory should have two directories: notebooks and repository_metadata
@@ -157,6 +159,10 @@ def get_code_cells(nb_id):
 # given a notebook id, returns all comments in code as a python list of strings
 def get_comments(nb_id):
     
+    # check if notebook is in python
+    if (nb_analysis.get_language(nb_id) != "python"):
+        return None
+
     # get the code cells
     code_cells = get_code_cells(nb_id)
 
