@@ -146,6 +146,25 @@ def get_md_cells(nb_id):
     md_cells = filter(lambda cell: cell['cell_type'] == "markdown", cells)
     return list(md_cells)
 
+# given a notebook id, returns the markdown cell groups as a python list
+def get_md_groups(nb_id):
+
+    # get the cells
+    cells = get_cells(nb_id)
+
+    # iterate through and gather the groups
+    groups = []
+    group = []
+
+    for cell in cells:
+        if cell['cell_type'] == "markdown":
+            group.append(cell)
+        elif group != []:
+            groups.append(group)
+            group = []
+    
+    return groups
+        
 # given a notebook id, returns the code cells as a python list
 def get_code_cells(nb_id):
 

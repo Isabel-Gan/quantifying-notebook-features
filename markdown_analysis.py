@@ -20,52 +20,67 @@ def markdown_prop(nb_id):
 # minimum margin to be greater than the avg. markdown cell
 min_margin = 10
 
-def get_length(md_cell):
+# given a group of markdown cells, takes their length to be the number of words in each
+def get_length(md_group):
 
-    # check if the markdown cell actually has a source
-    if 'source' not in md_cell.keys():
-        return 0
-
-    # sum the lengths of all lines of source in the cell
+    # iterate through each cell in the group
     length = 0
-    for line in md_cell['source']:
+    for md_cell in md_group:
 
-        # filter out the equations, count them as one word
-        
-        equation = re.search(regex.equation, line)
-        while equation != None:
-            length += 1
-            line = line.replace(equation.group(0), "")
+        # check if the markdown cell actually has a source
+        if 'source' not in md_cell.keys():
+            return 0
+
+        # sum the lengths of all lines of source in the cell
+        for line in md_cell['source']:
+
+            # filter out the equations, count them as one word
             equation = re.search(regex.equation, line)
+            while equation != None:
+                length += 1
+                line = line.replace(equation.group(0), "")
+                equation = re.search(regex.equation, line)
 
-        # get the number of words in the remaining line
-        text = html2text.html2text(line).strip()
-        length += len(text.split())
+            # get the number of words in the remaining line
+            text = html2text.html2text(line).strip()
+            length += len(text.split())
     
     return length
 
-# calculates the average length of markdown cells in a notebook (by characer)
+# calculates the average length of markdown cell groups in a notebook (by words)
 def markdown_average(nb_id):
 
-    # get markdown cells
-    md_cells = data.get_md_cells(nb_id)
-    num_md = len(md_cells)
+    # get markdown cell groups
+    md_groups = data.get_md_groups(nb_id)
+    num_groups = len(md_groups)
 
     # calculate the length sum of markdown cells
     len_sum = 0
-    for md_cell in md_cells:
-        len_sum += get_length(md_cell)
+    for md_group in md_groups:
+        len_sum += get_length(md_group)
 
     # calculate and return the average length
-    if num_md == 0:
+    if num_groups == 0:
         return 0
     else:
-        return float(len_sum) / float(num_md)
+        return float(len_sum) / float(num_groups)
+
+# given groups of md cells and a md cell, returns the group that cell is part of
+def get_md_group(md_groups, md_cell):
+
+    # iterate through the groups and find the right one
+    for md_group in md_groups:
+        if md_cell in md_group:
+            return md_group 
+
+    # not found
+    return None
 
 # returns true if one of the first five cells is a longer markdown cell
 def longer_beginning(nb_id):
 
-    # get the average length of a markdown cell in the notebook
+    # get the average length of a markdown group in the notebook
+    md_groups = data.get_md_groups(nb_id)
     md_average = markdown_average(nb_id)
 
     # if there are < 10 cells, immediately return
@@ -80,7 +95,10 @@ def longer_beginning(nb_id):
     first_five_cells = data.get_cells(nb_id)[:4]
     for cell in first_five_cells:
         if cell['cell_type'] == "markdown":
-            if get_length(cell) >= (md_average + min_margin):
+
+            # get the md group the cell is part of
+            md_group = get_md_group(md_groups, cell)
+            if get_length(md_group) >= (md_average + min_margin):
                 return True
 
     return False
@@ -103,7 +121,10 @@ def longer_ending(nb_id):
     last_five_cells = data.get_cells(nb_id)[-5:]
     for cell in last_five_cells:
         if cell['cell_type'] == "markdown":
-            if get_length(cell) >= (md_average + min_margin):
+
+            # get the md group the cell is part of
+            md_group = get_md_group(md_groups, cell)
+            if get_length(md_group) >= (md_average + min_margin):
                 return True
     
     return False

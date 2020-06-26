@@ -1,0 +1,961 @@
+{
+ "metadata": {
+  "name": "lecture-3",
+  "signature": "sha256:14421066d517d6923b4cba71813d7ef50dd74e93a9583cbc5e8e59bb0fde7dfc"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "# Introduction to scikit-learn and matplotlib"
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "Sources include: [Research Computing](http://nbviewer.ipython.org/github/ResearchComputing/Meetup-Fall-2013/blob/master/python/lecture_17_matplotlib.ipynb), [Harvard CS109](http://nbviewer.ipython.org/github/cs109/content/blob/master/lec_03_statistical_graphs.ipynb),[Chris Fonnesbeck](http://nbviewer.ipython.org/urls/gist.github.com/fonnesbeck/5850463/raw/a29d9ffb863bfab09ff6c1fc853e1d5bf69fe3e4/3.+Plotting+and+Visualization.ipynb) and the [MatPlotLib documentation](http://nbviewer.ipython.org/github/ResearchComputing/Meetup-Fall-2013/blob/master/python/lecture_17_matplotlib.ipynb)"
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "## Agenda:\n",
+      "\n",
+      "* Introduction to scikit-learn\n",
+      "  * Estimators\n",
+      "  \n",
+      "* Introduction to matplotlib\n",
+      "  * Syntax - basic plots and subplots\n",
+      "  * Scatter Plots\n"
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "## Introduction to scikit-learn"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from sklearn.linear_model import LinearRegression"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "### Training data\n",
+      "For now, we will represent the instances with lists. Later, we will use data structures that can more efficiently represent data, particularly high-dimensional, sparse data."
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "X_train = [[6], [8], [10], [14],   [18]]\n",
+      "y_train = [[7], [9], [13], [17.5], [18]]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "### Testing data"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "X_test = [[8],  [9],   [11], [16], [12]]\n",
+      "y_test = [[11], [8.5], [15], [18], [11]]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "### Create and fit the model\n",
+      "LinearRegression is an `Estimator`. `Estimator`s implement the methods `fit`, `predict`, and `score`. This API allows you to quickly experiement with different models.\n",
+      "\n",
+      "Recall that simple linear regression is given by the model\n",
+      "\n",
+      "$ y = \\alpha + \\beta x $"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "regressor = LinearRegression()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "`fit` learns the model parameters."
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "regressor.fit(X_train, y_train)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "pyout",
+       "prompt_number": 5,
+       "text": [
+        "LinearRegression(copy_X=True, fit_intercept=True, normalize=False)"
+       ]
+      }
+     ],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "### Evaluate the model\n",
+      "\n",
+      "By default, LinearRegression return the coefficient of determination, r-squared\n",
+      "\n",
+      "$ R^2 = 1 - \\frac{SS_{res}}{SS_{tot}} $"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print regressor.score(X_test, y_test)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "0.662005292942\n"
+       ]
+      }
+     ],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "### Making predictions"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print regressor.predict([7])"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "[ 8.79956897]\n"
+       ]
+      }
+     ],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "# Introduction to pandas and matplotlib"
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "* Pandas plotting is built with Matplotlib\n",
+      "* Pandas dataframes already include row and column label and grouping, so allow for more concise plotting statements."
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "%pylab inline"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n",
+        "Welcome to pylab, a matplotlib-based Python environment [backend: module://IPython.zmq.pylab.backend_inline].\n",
+        "For more information, type 'help(pylab)'.\n"
+       ]
+      }
+     ],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from pandas import *"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Subplotting example\n",
+      "a = randn(50).cumsum()\n",
+      "b = randn(50).cumsum()\n",
+      "c = randn(50).cumsum()\n",
+      "?randn()\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 14
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "df=DataFrame({'a':a,'b':b,'c':c})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 11
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "df.plot(subplots=True)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "pyout",
+       "prompt_number": 12,
+       "text": [
+        "array([Axes(0.125,0.694118;0.775x0.205882),\n",
+        "       Axes(0.125,0.447059;0.775x0.205882), Axes(0.125,0.2;0.775x0.205882)], dtype=object)"
+       ]
+      },
+      {
+       "output_type": "display_data",
+       "png": "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\n"
+      }
+     ],
+     "prompt_number": 12
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "df.plot()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Adding options\n",
+      "#Generate a random graph \n",
+      "a = randn(50).cumsum()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "df = DataFrame(a) # convert it to a dataframe"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "df.plot(title='Random Plot',kind='line')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Pandas data frames have a built in plot function with defaults:\n",
+      "df = DataFrame(np.random.randn(10, 4).cumsum(0),\n",
+      "columns=['A', 'B', 'C', 'D'],\n",
+      "index=np.arange(0, 100, 10))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "df"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "df.plot(title='Plot automatically finds Indexes and Places Labels')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "###Bar plots"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "titanic = read_csv(\"data/titanic.csv\")"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "titanic"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "SurvivedByClass=titanic.groupby('pclass').survived.sum()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "SurvivedByClass"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "SurvivedByClass.plot(kind='bar',title='Titanic Survivors by Class')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Combine multiple groups and plot\n",
+      "titanic.groupby(['sex','pclass']).survived.sum().plot(kind='barh',title='Titanic Survivors by Class and Gender')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Plot CrossTabs\n",
+      "death_counts = crosstab([titanic.pclass, titanic.sex], titanic.survived.astype(bool))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "death_counts.plot(kind='bar', stacked=True, title='Passenger Outcomes by Gender and Class', color=['white','blue'], grid=False)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "###Histograms and Density Plots"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Histogram of a particular column\n",
+      "titanic.fare.hist(grid=False,bins=25,range=(0,100))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Density plot -- Estimate the 'true' distribution\n",
+      "titanic.fare.dropna().plot(kind='kde', xlim=(0,100))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "titanic.fare.hist(bins=25, normed=True, color='lightseagreen')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "titanic.fare.plot(kind='kde', xlim=(0,600), style='r--')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "titanic.boxplot(column='fare',by='pclass',grid=False)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Combine pandas plots by running them together -- if pandas thinks they can be overlapped, it will\n",
+      "titanic.fare.hist(bins=25, normed=True, color='lightseagreen')\n",
+      "titanic.fare.plot(kind='kde', xlim=(0,100), style='r--')\n",
+      "titanic.boxplot(column='fare',by='pclass',grid=False)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "## Matplotlib"
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "### Figures and Subplots"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import matplotlib.pyplot as plt"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "x = np.arange(50)\n",
+      "y = np.random.randn(50)\n",
+      "plt.scatter(x,y)\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "%pylab inline"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "#Single Plot\n",
+      "a = randn(50).cumsum()\n",
+      "\n",
+      "plt.plot(a, color='red')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "fig = figure()\n",
+      "\n",
+      "# Two rows, one column, first plot\n",
+      "ax1 = fig.add_subplot(2,1,1)\n",
+      "ax1.plot(a, color='red')\n",
+      "\n",
+      "#Two rows, one column, second plot\n",
+      "ax2 = fig.add_subplot(2,1,2)\n",
+      "ax2.scatter(np.arange(50), randn(50))\n",
+      "\n",
+      "# Exercise: Try 1 row, two columns\n",
+      "# Exercise: Try 1 row, one column"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "*fig* is the :class:`matplotlib.figure.Figure` object\n",
+      "    \n",
+      "*ax* can be either a single axis object or an array of axis\n",
+      "objects if more than one subplot was created.  The dimensions\n",
+      "of the resulting array can be controlled with the squeeze\n",
+      "keyword, see above.\n",
+      "    "
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "fig, ax = plt.subplots(2,3)\n",
+      "\n",
+      "ax[0,1].plot(randn(50), color='green', linestyle='-')\n",
+      "ax[1,2].scatter(np.arange(50), randn(50), color='red')\n",
+      "ax[1,0].hist(randn(1000))\n",
+      "plt.show() #Similar to print()\n",
+      "\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "\n",
+      "# Exercise: Swap the top row and bottom row plots\n",
+      "# Excecise: Change the line style to dotted and add circles as markers \n",
+      "# Exercise: change the bins to 100 for the histogram"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "###Ticks, Labels and Legends"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "fig = plt.figure(); ax = fig.add_subplot(1, 1, 1)\n",
+      "ax.plot(randn(1000).cumsum(), 'k', label='one') \n",
+      "ax.plot(randn(1000).cumsum(), 'k--', label='two')\n",
+      "ax.plot(randn(1000).cumsum(), 'k.', label='three')\n",
+      "ax.set_title('Three random lines')\n",
+      "ax.legend(loc='best')\n",
+      "plt.show()\n",
+      "\n",
+      "#Exercise: Change the color and line style of each line using the minimum amount of characters\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Save the file\n",
+      "plt.savefig('ThreeRandomLines.pdf')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "%pylab inline"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import pandas as pd"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "### ScatterPlots from Data Frames"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Combine pandas with matplotlib for scatterplots\n",
+      "baseball = pd.read_csv(\"data/baseball.csv\")\n",
+      "#Offensive Statistics from MLB -- 2008.  Glossary: http://www.baseballprospectus.com/glossary/index.php?context=all&category=true\n",
+      "\n",
+      "baseball.head()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "fig = plt.figure()\n",
+      "ax = fig.add_subplot(1,1,1) # one row, one column, first plot\n",
+      "ax.set_title(\"Hits vs. At Bats\")\n",
+      "ax.set_xlabel(\"At Bats\")\n",
+      "ax.set_ylabel(\"Hits\")\n",
+      "ax.scatter(baseball.ab, baseball.h) \n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "fig = plt.figure()\n",
+      "ax = fig.add_subplot(1,1,1) # one row, one column, first plot\n",
+      "ax.set_title(\"At Bats vs. Hits.  Size = Home Runs\")\n",
+      "ax.set_xlabel(\"At Bats\")\n",
+      "ax.set_ylabel(\"Hits\")\n",
+      "plt.scatter(baseball.ab, baseball.h, s=baseball.hr*10, alpha=0.5)\n",
+      "xlim(0, 700); ylim(0, 200)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "baseball"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "xkcd()\n",
+      "#plt.scatter(baseball.ab, baseball.h, c=baseball.hr, s=40, cmap='hot')\n",
+      "fig = plt.figure()\n",
+      "ax = fig.add_subplot(1,1,1) # one row, one column, first plot\n",
+      "ax.set_title(\"At Bats vs. Hits, Size and Color = Home Runs\")\n",
+      "ax.set_xlabel(\"At Bats\")\n",
+      "ax.set_ylabel(\"Hits\")\n",
+      "plt.scatter(baseball.ab, baseball.h, c=baseball.hr,cmap='hot')\n",
+      "xlim(0, 700); ylim(0, 200)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "## Other Packages"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "### Seaborn"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "#With Titanic Data\n",
+      "import seaborn as sns\n",
+      "sns.set(style=\"darkgrid\")\n",
+      "\n",
+      "df = sns.load_dataset(\"titanic\")\n",
+      "\n",
+      "pal = dict(male=\"#6495ED\", female=\"#F08080\")\n",
+      "g = sns.lmplot(\"age\", \"survived\", col=\"sex\", hue=\"sex\", data=df,\n",
+      "               palette=pal, y_jitter=.02, logistic=True)\n",
+      "g.set(xlim=(0, 80), ylim=(-.05, 1.05))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Seaborn with Anscombe Data\n",
+      "import seaborn as sns\n",
+      "sns.set(style=\"ticks\")\n",
+      "\n",
+      "df = sns.load_dataset(\"anscombe\")\n",
+      "sns.lmplot(\"x\", \"y\", col=\"dataset\", hue=\"dataset\", data=df,\n",
+      "           col_wrap=2, ci=None, palette=\"muted\", size=4,\n",
+      "           scatter_kws={\"s\": 50, \"alpha\": 1})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "#### Other packages\n",
+      "\n",
+      "vincent: wraps vega and is built on d3 -- javascript capabilities\n",
+      "bokeh: Interactive plots (javascript)\n",
+      "ggplot: (similar to R ggplot)\n",
+      "\n",
+      "\n",
+      "\n"
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "## Practice\n",
+      "\n",
+      "If one of your group has a datset for your independent assignment:\n",
+      "\n",
+      "Create a plot of some features of the dataset, include title, axes labels\n",
+      "* Include titles and axes labels\n",
+      "* Include multiple variables, either on different or one one chart.\n",
+      "* Include data subsets\n",
+      "\n",
+      "Or: Using Titanic, Baseball, or one of these [example datasets](http://vincentarelbundock.github.io/Rdatasets/datasets.html), ask a question that can be answered through visualization, and create the graph that provides the answer.\n",
+      "* Include titles and axes labels\n",
+      "* Include multiple variables, either on different or one one chart.\n",
+      "* Include data subsets\n",
+      "\n",
+      "At the end of the period, we will go over two of the works in progress, and discuss ways of creating or improving the plots\n",
+      "\n",
+      "\n",
+      "BONUS: Load Anscombe's Quartet and Create a Grid with a Scatter and Line Graph of Each\n",
+      "[Anscombe's Quartet Data](http://vincentarelbundock.github.io/Rdatasets/csv/datasets/anscombe.csv)\n",
+      "\n"
+     ]
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
