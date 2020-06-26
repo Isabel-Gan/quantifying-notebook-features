@@ -29,6 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
+test_func(code_analysis.non_executed_prop)
 
 ''' testing all functions - print out results '''
 

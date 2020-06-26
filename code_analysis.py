@@ -79,6 +79,7 @@ def image_prop(nb_id):
 
 ''' feature - comments in code '''
 
+# checks if comments exist in any code cells in a notebook
 def has_comments(nb_id):
 
     # get comments
@@ -87,5 +88,59 @@ def has_comments(nb_id):
     # check if any exist
     if comments != None:
         return len(comments) != 0
+    else:
+        return None
+
+''' feature - proportion of non-executed code cells '''
+
+# counts the number of non-executed, non-empty code cells in a notebook
+def count_non_exec(nb_id):
+    
+    # get code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # filter down to those that have a non-empty source 
+    def condition(cell):
+        keys = cell.keys()
+        field = ""
+        if 'input' in keys:
+            field = 'input'
+        elif 'source' in keys:
+            field = 'source'
+
+        return len(cell[field]) > 0
+
+    non_empty_code_cells = list(filter(condition, code_cells))
+
+    # filter down to those that have 0 execution count
+    def condition(cell):
+        keys = cell.keys()
+        field = ""
+        if 'execution_count' in keys:
+            field = 'execution_count'
+        elif 'prompt_number' in keys:
+            field = 'prompt_number'
+        else:
+            # if this information isn't recorded, assume the cell hasn't been executed
+            return True
+        
+        return cell[field] == 0
+
+    non_executed_code_cells = list(filter(condition, non_empty_code_cells))
+
+    # return the length of the filtered list
+    return len(non_executed_code_cells)
+
+# calculates the proportion of code cells in a notebook that are non-executed
+def non_executed_prop(nb_id):
+
+    # get number of code cells and non-executed code cells
+    num_code_cells = len(data.get_code_cells(nb_id))
+    num_non_executed = count_non_exec(nb_id)
+
+    # check if execution order is recorded
+    if num_non_executed != None:
+        # calculate proportion
+        return float(num_non_executed) / float(num_code_cells)
     else:
         return None

@@ -192,12 +192,12 @@ def get_comments(nb_id):
 
         # look for the field that holds the code
         field = ""
-        if 'input' in cell.keys():
+        keys = cell.keys()
+        if 'input' in keys:
             field = 'input'
-        elif 'source' in cell.keys():
+        elif 'source' in keys:
             field = 'source'
         
-
         # gather all of the code into a single string
         code = str("".join(cell[field]))
 
