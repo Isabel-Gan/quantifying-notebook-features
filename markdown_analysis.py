@@ -1,4 +1,6 @@
 import data_access as data
+import notebook_analysis as nb_analysis 
+
 import html2text 
 import re
 import regex
@@ -66,6 +68,10 @@ def longer_beginning(nb_id):
     # get the average length of a markdown cell in the notebook
     md_average = markdown_average(nb_id)
 
+    # if there are < 10 cells, immediately return
+    if nb_analysis.is_small_nb(nb_id):
+        return None
+
     # if there are no markdown cells, immediately return
     if md_average == 0:
         return None
@@ -84,6 +90,10 @@ def longer_ending(nb_id):
 
     # get the average length of a markdown cell in the notebook
     md_average = markdown_average(nb_id)
+
+    # if there are < 10 cells, immediately return
+    if nb_analysis.is_small_nb(nb_id):
+        return None
 
     # if there are no markdown cells, immediately return
     if md_average == 0:

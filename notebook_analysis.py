@@ -2,6 +2,17 @@ import data_access as data
 import re
 import regex
 
+''' helper function -  less than 10 cells '''
+
+# returns true if the notebook has < 10 cells
+def is_small_nb(nb_id):
+
+    # get cells
+    cells = data.get_cells(nb_id)
+
+    # check number of cells
+    return len(cells) < 10
+
 ''' feature - author '''
 
 # gets the full name of author of the repo of the notebook
