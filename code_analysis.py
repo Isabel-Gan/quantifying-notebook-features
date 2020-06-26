@@ -138,9 +138,5 @@ def non_executed_prop(nb_id):
     num_code_cells = len(data.get_code_cells(nb_id))
     num_non_executed = count_non_exec(nb_id)
 
-    # check if execution order is recorded
-    if num_non_executed != None:
-        # calculate proportion
-        return float(num_non_executed) / float(num_code_cells)
-    else:
-        return None
+    # calculate proportion
+    return float(num_non_executed) / float(num_code_cells)
