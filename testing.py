@@ -34,8 +34,8 @@ def test_func(func):
 
 # functions to give to test_all
 feature_tests = [md_analysis.longer_beginning, md_analysis.longer_ending, nb_analysis.has_author, 
-                md_analysis.has_equations, repo_analysis.jupyter_prop, nb_analysis.output_cell_prop,
-                md_analysis.markdown_prop, repo_analysis.num_contributors, nb_analysis.image_prop,
+                md_analysis.has_equations, repo_analysis.jupyter_prop, code_analysis.output_cell_prop,
+                md_analysis.markdown_prop, repo_analysis.num_contributors, code_analysis.image_prop,
                 kw_analysis.count_exploratory_keywords, kw_analysis.count_pipeline_keywords, 
                 kw_analysis.count_sharing_keywords, nb_analysis.is_education, nb_analysis.get_language,
                 code_analysis.has_comments]
