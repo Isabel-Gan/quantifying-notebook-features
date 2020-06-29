@@ -93,6 +93,26 @@ def has_comments(nb_id):
 
 ''' feature - proportion of non-executed code cells '''
 
+# gets the execution count of a code cell in a notebook
+def get_exec(cell):
+
+    # check which key is holding execution count info
+    keys = cell.keys()
+    field = ""
+    if 'execution_count' in keys:
+        field = 'execution_count'
+    elif 'prompt_number' in keys:
+        field = 'prompt_number'
+    else:
+        # if this information isn't recorded, assume the cell hasn't been executed
+        return 0
+    
+    # extract execution count info
+    try:
+        return int(cell[field])
+    except:
+        return 0
+
 # counts the number of non-executed, non-empty code cells in a notebook
 def count_non_exec(nb_id):
     
@@ -113,20 +133,7 @@ def count_non_exec(nb_id):
     non_empty_code_cells = list(filter(condition, code_cells))
 
     # filter down to those that have 0 execution count
-    def condition(cell):
-        keys = cell.keys()
-        field = ""
-        if 'execution_count' in keys:
-            field = 'execution_count'
-        elif 'prompt_number' in keys:
-            field = 'prompt_number'
-        else:
-            # if this information isn't recorded, assume the cell hasn't been executed
-            return True
-        
-        return cell[field] == 0
-
-    non_executed_code_cells = list(filter(condition, non_empty_code_cells))
+    non_executed_code_cells = list(filter(lambda cell : get_exec(cell) == 0, non_empty_code_cells))
 
     # return the length of the filtered list
     return len(non_executed_code_cells)
@@ -140,3 +147,25 @@ def non_executed_prop(nb_id):
 
     # calculate proportion
     return float(num_non_executed) / float(num_code_cells)
+
+''' feature - errors '''
+
+# returns true if there is an executed code cell with an error output
+def has_error(nb_id):
+
+    # get code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # filter down to those that have been executed
+    ex_code_cells = list(filter(lambda cell : get_exec(cell) > 0, code_cells))
+
+    # iterate through and check outputs
+    for cell in ex_code_cells:
+        
+        # check outputs
+        if 'outputs' in cell.keys():
+            for output in cell['outputs']:
+                if output['output_type'] == "error" or output['output_type'] == "pyerr":
+                    return True
+
+    return False
