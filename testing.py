@@ -29,7 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(code_analysis.ex_skip_average)
+test_func(repo_analysis.num_commits)
 
 ''' testing all functions - print out results '''
 

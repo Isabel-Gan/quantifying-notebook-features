@@ -37,3 +37,13 @@ def num_contributors(nb_id):
     return len(contrib_meta)
 
 # tests - delete later
+
+''' feature - use of version control '''
+
+# returns the number of commits to the repository applying to a notebook
+def num_commits(nb_id):
+
+    # get commits to the notebook
+    commits = data.get_nb_commits(nb_id)
+
+    return len(commits)

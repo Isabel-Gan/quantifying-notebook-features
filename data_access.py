@@ -40,15 +40,15 @@ def get_csv_field(field, nb_id):
 
 # uses the csv file to find the corresponding repository id given a notebook id
 def get_repo_id(nb_id):
-    return int(get_csv_field('repo_id', nb_id))
+    return int(get_csv_field('repo_id', nb_id).item())
 
 # uses the csv file to find the corresponding file name given a notebook id
 def get_nb_name(nb_id):
-    return str(get_csv_field('name', nb_id))
+    return str(get_csv_field('name', nb_id).item())
 
 # uses the csv file to find the corresponding path given a notebook id
 def get_path(nb_id):
-    return str(get_csv_field('path', nb_id))
+    return str(get_csv_field('path', nb_id).item())
 
 # given a notebook id, returns the metadata (as a python dictionary object) of its repository
 def get_repo_metadata(nb_id):
@@ -111,6 +111,53 @@ def get_owner_url(nb_id):
     response = api.request(strip_url(owner_url))
 
     return response
+
+# returns the commits to a notebook's repository as a list of python dictionary objects
+def get_commits(nb_id):
+
+    # get the repository metadata
+    repo = get_repo_metadata(nb_id)
+    
+    # query the api to get the commits
+    commits = api.repo_commits(repo['full_name'])
+
+    return list(commits)
+
+# returns the commits to a repo that affect the notebook file specifically
+def get_nb_commits(nb_id):
+
+    # get the commits
+    commits = get_commits(nb_id)
+
+    # get notebook path
+    nb_path = get_path(nb_id)
+
+    # get commits urls
+    repo_metadata = get_repo_metadata(nb_id)
+    url_template = repo_metadata['commits_url']
+
+    # filter down to the commits that affect the notebook file
+    def condition(commit):
+
+        # get the SHA of the commit
+        if 'sha' not in commit.keys():
+            return False
+
+        sha = commit['sha']
+
+        # get the metadata of the commit
+        commit_url = url_template.replace("{/sha}", "/" + str(sha))
+        commit_metadata = api.request(strip_url(commit_url))
+
+        # iterate through the files and check for the notebook file
+        for file in commit_metadata['files']:
+            if file['filename'] == nb_path:
+                return True
+        
+        # notebook file wasn't affected
+        return False
+
+    return list(filter(condition, commits))
 
 ''' notebook access'''
 
