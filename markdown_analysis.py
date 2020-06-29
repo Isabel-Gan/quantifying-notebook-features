@@ -176,3 +176,42 @@ def has_links(nb_id):
                 return True
 
     return False
+
+''' feature - frequency of markdown cells '''
+
+# counts the number of "switches" between code and markdown in a notebook
+def count_switches(nb_id):
+
+    # get the cells
+    cells = data.get_cells(nb_id)
+
+    # iterate through and count switches
+    switches = 0
+    for (i, cell) in enumerate(cells):
+
+        # check the next cell if we are not on the last cell
+        if i != len(cells) - 1:
+
+            # code -> markdown
+            if cell['cell_type'] == "code" and cells[i + 1]['cell_type'] == "markdown":
+                switches += 1
+
+            # markdown -> code
+            if cell['cell_type'] == "markdown" and cells[i + 1]['cell_type'] == "code":
+                switches += 1
+    
+    return switches
+
+# calculates the proportion of cell switches that are between code and markdown 
+def frequency(nb_id):
+
+    # check if markdown cells exist
+    if len(data.get_md_cells(nb_id)) == 0:
+        return None
+
+    # get the number of code <-> markdown switches and the number of total switches
+    cm_switches = count_switches(nb_id)
+    total_switches = len(data.get_cells(nb_id)) - 1
+
+    # calculate proportion
+    return float(cm_switches) / float(total_switches)
