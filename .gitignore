@@ -10,3 +10,6 @@ playground-output/
 
 # don't include the jupyter notebook checkpoints
 output/complete-runs/.ipynb_checkpoints/
+
+# vscode configuration
+.vscode
