@@ -1,4 +1,4 @@
-import data_access as data   
+import data_access as data  
 
 ''' feature - proportion of code cells with output '''
 
@@ -208,3 +208,27 @@ def backwards_prop(nb_id):
     steps = len(ex_code_cells) - 1
 
     return float(back_steps) / float(steps)
+
+''' feature - execution order - skips '''
+
+# calculates the average size of an execution order skip in a notebook
+def ex_skip_average(nb_id):
+
+    # get code cells that have been executed
+    code_cells = data.get_code_cells(nb_id)
+    ex_code_cells = list(filter(lambda cell : get_exec(cell) > 0, code_cells))
+
+    # if no code cells have been executed, return immediately
+    if len(ex_code_cells) == 0:
+        return None
+    
+    # get sum of skips in execution order
+    sum_skips = 0
+    for (i, cell) in enumerate(ex_code_cells):
+        
+        # if not on the last cell get the size of the skip
+        if i != len(ex_code_cells) - 1:
+            sum_skips += abs(get_exec(ex_code_cells[i + 1]) - get_exec(cell))
+    
+    # calculate the average size of a skip
+    return float(sum_skips) / float(len(ex_code_cells) - 1)

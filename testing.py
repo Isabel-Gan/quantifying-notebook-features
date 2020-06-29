@@ -29,7 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(code_analysis.backwards_prop)
+test_func(code_analysis.ex_skip_average)
 
 ''' testing all functions - print out results '''
 
