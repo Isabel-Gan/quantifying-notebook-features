@@ -47,3 +47,16 @@ def num_commits(nb_id):
     commits = data.get_nb_commits(nb_id)
 
     return len(commits)
+
+''' feature - notebook commit messages '''
+
+# returns the commit messages related to the notebook as a python list
+def get_commit_messages(nb_id):
+
+    # get commits to the notebook
+    commits = data.get_nb_commits(nb_id)
+
+    # map each commit to its message 
+    commit_msgs = list(map(lambda commit : commit['commit']['message'], commits))
+
+    return list(commit_msgs)

@@ -29,7 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(repo_analysis.num_commits)
+test_func(repo_analysis.get_commit_messages)
 
 ''' testing all functions - print out results '''
 
