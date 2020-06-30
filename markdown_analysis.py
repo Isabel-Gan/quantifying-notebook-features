@@ -4,6 +4,7 @@ import notebook_analysis as nb_analysis
 import html2text 
 import re
 import regex
+import mistune
 
 ''' feature - amount of markdown cells in the notebook '''
 
@@ -215,3 +216,62 @@ def frequency(nb_id):
 
     # calculate proportion
     return float(cm_switches) / float(total_switches)
+
+''' feature - markdown formatting '''
+
+# "extra" formatting features 
+extra_formatting = ["image", "list", "block_quote"]
+
+# checks a markdown parsed token for whether it (or its children) has extra formatting or not
+def is_extra_formatting(token):
+    
+    # check the type of the token itself
+    for e_format in extra_formatting:
+        if e_format == token['type']:
+            return True
+    
+    # check the children 
+    if 'children' in token.keys():
+        for child in token['children']:
+            if is_extra_formatting(child):
+                return True
+
+    return False
+
+# takes in a markdown cell, determines whether it has "extra" formatting or not
+def has_extra_formatting(cell):
+
+    if 'source' not in cell.keys():
+        return False
+
+    # gather the entire markdown cell source as one string
+    markdown_source = "".join(cell['source'])
+
+    # pass to the markdown parser to generate tokens
+    markdown = mistune.create_markdown(renderer=mistune.AstRenderer())
+    markdown_tokens = markdown(markdown_source)
+    
+    # iterate through tokens to check for extra formatting
+    for token in markdown_tokens:
+       if is_extra_formatting(token):
+           return True
+
+    return False
+    
+# determines whether the markdown cells in a notebook have extra formatting
+def md_formatting(nb_id):
+
+    # gather markdown cells
+    md_cells = data.get_md_cells(nb_id)
+
+    # if there are no markdown cells, return immediately
+    if len(md_cells) == 0:
+        return None
+
+    # iterate through and check whether they have special formatting
+    for cell in md_cells:
+        if has_extra_formatting(cell):
+            return True 
+
+    return False 
+        
