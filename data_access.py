@@ -229,6 +229,19 @@ def get_comments(nb_id):
 
 ''' misc '''
 
+# returns the top 100 common english words as a python list
+def get_common_words():
+
+    # iterate through the common words file 
+    with open("1-1000.txt", 'r') as file:
+
+        # get the first 100 words
+        words = []
+        for i in range(100):
+            words.append(file.readline().strip())
+
+    return words
+
 # prints a json file, but nice
 def print_json(json_file):
     print(json.dumps(json_file, indent=4))

@@ -11,12 +11,40 @@ import code_analysis
 ''' testing a single function at a time - print out results '''
 
 # ids of notebooks to test
-nb_ids = [602217, 1051197, 466289, 958849, 972721, 1019165,
-            972366, 219322, 464706, 333748, 1047986, 1124656,
-            492523, 1081631, 681455, 531968, 578489, 165313,
-            439119, 884271, 390160, 457759, 608191, 514544,
-            672138, 323880, 987671, 329885, 718440, 116896,
-            625482, 295335, 502567, 912876]
+nb_ids = [602217, 
+            1051197, 
+            466289, 
+            958849, 
+            972721, 
+            1019165,
+            972366, 
+            219322, 
+            464706, 
+            333748, 
+            1047986, 
+            1124656,
+            492523, 
+            1081631, 
+            681455, 
+            531968, 
+            578489, 
+            165313,
+            439119, 
+            884271, 
+            390160, 
+            457759, 
+            608191, 
+            514544,
+            672138, 
+            323880, 
+            987671] 
+            # 329885, 
+            # 718440, 
+            # 116896,
+            # 625482, 
+            # 295335, 
+            # 502567, 
+            # 912876]
 
 # prints out the results of running a function on all notebooks
 def test_func(func):
@@ -29,7 +57,6 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(repo_analysis.get_commit_messages)
 
 ''' testing all functions - print out results '''
 
@@ -55,7 +82,8 @@ function_columns = {
     'longer_beginning' : md_analysis.longer_beginning,
     'longer_ending' : md_analysis.longer_ending,
     'has_author' : nb_analysis.has_author,
-    'has_equation' : md_analysis.has_equations
+    'has_equation' : md_analysis.has_equations,
+    'has_commented_code' : code_analysis.has_commented_code
 }
 
 # load in the results csv file
@@ -80,6 +108,7 @@ def check(field):
                 print("\n")
 
 # PUT TESTS HERE
+check('has_commented_code')
 
 ''' testing all functions - comparing results for correctness '''
 
