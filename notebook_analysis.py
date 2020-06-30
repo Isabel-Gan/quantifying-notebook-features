@@ -137,7 +137,6 @@ def get_language(nb_id):
     
     return language
             
-
 ''' feature - educational notebook '''
 
 # searches markdown cells and notebook name/path for any patterns above
@@ -163,3 +162,29 @@ def is_education(nb_id):
     
     return False
  
+''' feature - notebook title '''
+
+# determines whether the notebook has a title (a heading markdown at the beginning)
+def has_title(nb_id):
+
+    # get the cells
+    cells = data.get_cells(nb_id)
+
+    # get the first cell (should be markdown)
+    for cell in cells:
+        
+        keys = cell.keys()
+
+        # if the first thing is a code cell, return immediately
+        if cell['cell_type'] == "code":
+            return False
+
+        # if in a markdown cell, check if non-empty, keep looking if empty
+        if cell['cell_type'] == "markdown":
+
+            # check for non-empty
+            if 'source' in keys and len(cell['source']) > 0:
+                # check for header
+                return bool(re.match(regex.md_header, cell['source'][0]))
+                
+    return False

@@ -14,4 +14,7 @@ education = ["project", "hint", "rubric", "answer", "question", "pass",
                         "lesson", "lecture", "homework", "slides", "final-project",
                         "course", "assignment", "quiz", "submission","hw", "exercise", 
                         "due", "bootcamp", "assessment", "final_project",
-                        "week([_\- ]|\B)([0-9]+)", "day([_\- ]|\B)([0-9]+)"]
+                        "week([_\- ]|\B)([0-9]+)", "day([_\- ]|\B)([0-9]+)"]\
+
+# used to detect markdown header
+md_header = "#([\S\s]+)"
