@@ -112,52 +112,22 @@ def get_owner_url(nb_id):
 
     return response
 
-# returns the commits to a notebook's repository as a list of python dictionary objects
-def get_commits(nb_id):
-
-    # get the repository metadata
-    repo = get_repo_metadata(nb_id)
-    
-    # query the api to get the commits
-    commits = api.repo_commits(repo['full_name'])
-
-    return list(commits)
-
 # returns the commits to a repo that affect the notebook file specifically
 def get_nb_commits(nb_id):
-
-    # get the commits
-    commits = get_commits(nb_id)
 
     # get notebook path
     nb_path = get_path(nb_id)
 
-    # get commits urls
+    # get commit url
     repo_metadata = get_repo_metadata(nb_id)
     url_template = repo_metadata['commits_url']
 
-    # filter down to the commits that affect the notebook file
-    def condition(commit):
-
-        # get the SHA of the commit
-        if 'sha' not in commit.keys():
-            return False
-
-        sha = commit['sha']
-
-        # get the metadata of the commit
-        commit_url = url_template.replace("{/sha}", "/" + str(sha))
-        commit_metadata = api.request(strip_url(commit_url))
-
-        # iterate through the files and check for the notebook file
-        for file in commit_metadata['files']:
-            if file['filename'] == nb_path:
-                return True
-        
-        # notebook file wasn't affected
-        return False
-
-    return list(filter(condition, commits))
+    # change the url to be specific to the notebook
+    nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path)
+    
+    # query the api to the url
+    response = api.request(strip_url(nb_commit_url))
+    return response
 
 ''' notebook access'''
 

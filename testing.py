@@ -29,7 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(nb_analysis.has_title)
+test_func(repo_analysis.num_commits)
 
 ''' testing all functions - print out results '''
 
