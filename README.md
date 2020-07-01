@@ -6,6 +6,8 @@ API Crawler from https://github.com/shuiblue/GitHubAPI-Crawler
 
 Markdown parser from https://mistune.readthedocs.io/en/latest/index.html 
 
+Language detector from https://pypi.org/project/langdetect/ and ISO 639 code translator from https://pypi.org/project/iso-639/
+
 Testing dataset is a small subset from https://library.ucsd.edu/dc/object/bb2733859v
 
 Created and used for Summer 2020 research on improving computational notebooks under Christian Kaestner and Shurui Zhou  at CMU ISR.
