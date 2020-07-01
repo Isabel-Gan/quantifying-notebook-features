@@ -199,8 +199,8 @@ def forwards_prop(nb_id):
     code_cells = data.get_code_cells(nb_id)
     ex_code_cells = list(filter(lambda cell : get_exec(cell) > 0, code_cells))
 
-    # if no code cells have been executed, return immediately
-    if len(ex_code_cells) == 0:
+    # if no (or only one) code cells have been executed, return immediately
+    if len(ex_code_cells) <= 1:
         return None
 
     # get number of backwards steps and number of steps
@@ -218,8 +218,8 @@ def ex_skip_average(nb_id):
     code_cells = data.get_code_cells(nb_id)
     ex_code_cells = list(filter(lambda cell : get_exec(cell) > 0, code_cells))
 
-    # if no code cells have been executed, return immediately
-    if len(ex_code_cells) == 0:
+    # if no (or only one) code cells have been executed, return immediately
+    if len(ex_code_cells) <= 1:
         return None
     
     # get sum of skips in execution order
