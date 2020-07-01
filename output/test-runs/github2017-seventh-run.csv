@@ -1,0 +1,21 @@
+nb_id,repo_id,longer_beginning,longer_ending,md_frequency,has_title,num_commits,md_format,non_exec_prop,exec_inorder,exec_skips,has_error,comm_messages,speaking_language
+900493,85972539,,,,False,1,,0.0,0.6666666666666666,12.666666666666666,False,['borough_month plot'],
+322852,45655960,,,1.0,False,2,False,0.0,1.0,1.5,False,"['Added better advice module', 'Reformatted folders + added necessary paths + started webapp/api + started inference pipeline']",English
+457759,27685708,True,False,0.4666666666666667,True,3,False,0.0,1.0,1.0,False,"['Add most objects to main module namespace', 'Add IPython notebooks for examples', 'Add examples to documentation']",English
+672138,92749043,False,False,0.125,True,2,False,0.043478260869565216,0.85,4.05,False,"['Update creditcard_classification.ipynb', 'final version']",English
+103154,30734070,False,False,0.40728476821192056,False,1,False,0.0,0.9954954954954955,1.063063063063063,True,['[ch4] Add'],Korean
+650422,73549259,,,,False,4,,0.04,1.0,4.3478260869565215,False,"['DAA Challenge Finished', 'DAA Challenge update', 'DAA Challenge update', 'DAA Hackathon update']",
+1180210,34783875,,,,False,5,,0.0,1.0,1.0,False,"['refactor', 'use warnings.warn, ImageCollection callable', 'update and add example', 'update notebook', 'add notebook example']",
+128841,52626322,True,False,0.84,True,1,False,0.0,0.9285714285714286,1.5714285714285714,True,['update'],English
+498462,61883811,False,True,0.7894736842105263,True,1,False,0.0,1.0,1.0454545454545454,False,['Additional Small Projects'],English
+946708,52626322,False,False,0.5555555555555556,True,1,False,0.0,1.0,1.8,False,['update'],English
+169741,69056869,,,,False,1,,0.045454545454545456,0.8421052631578947,29.894736842105264,False,['first commit'],
+625482,20816340,True,False,0.16666666666666666,False,5,True,0.0,1.0,1.0,False,"['mercredi 17 janvier 2018, 09:14:51 (UTC+0100)', 'lundi 10 juillet 2017, 11:26:25 (UTC+0200)', 'samedi 24 juin 2017, 13:23:51 (UTC+0200)', 'mardi 20 juin 2017, 14:34:21 (UTC+0200)', 'mardi 20 juin 2017, 14:31:19 (UTC+0200)']",French
+933622,39964941,,,,False,5,,0.0,,,False,"[""Merge branch 'master' of https://github.com/dmuralik/datascience"", 'committing the latest', 'removed credentials', 'updated', 'changed for wp data']",
+116896,66478811,False,True,0.42857142857142855,True,1,False,0.0,1.0,1.0,False,['add'],English
+259948,45655960,False,False,0.6666666666666666,False,3,False,0.0,1.0,1.75,True,"['Got inference up and running', 'We have a working pipeline! still need to abstract inference into a class', 'Full pipeline running -- inference is only live in ipython notebook as of now']",English
+1102235,60057963,False,False,0.8181818181818182,False,0,False,0.8333333333333334,,,False,[],English
+718440,94522055,,,,False,1,,0.0,1.0,7.0,True,['creating new repository'],
+329885,34647497,,,,False,1,,0.07692307692307693,0.782608695652174,71.17391304347827,False,['hello.'],
+464580,74897953,True,False,0.4166666666666667,True,1,True,0.0,1.0,1.9666666666666666,False,['30 January'],Russian
+1024456,94304084,,,,False,1,,0.9523809523809523,,,False,['Initial commit'],

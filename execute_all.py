@@ -153,7 +153,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
             try:
                 row[field] = function(nb_id)
             except:
-                print("error in " + filename)
+                print("error in " + filename + " in " + field)
                 row[field] = None
                 err = True
 
