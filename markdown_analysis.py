@@ -107,7 +107,8 @@ def longer_beginning(nb_id):
 # returns true if one of the last five cells is a longer markdown cell
 def longer_ending(nb_id):
 
-    # get the average length of a markdown cell in the notebook
+    # get the average length of a markdown group in the notebook
+    md_groups = data.get_md_groups(nb_id)
     md_average = markdown_average(nb_id)
 
     # if there are < 10 cells, immediately return

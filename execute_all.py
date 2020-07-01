@@ -32,7 +32,7 @@ function_columns = {
     'md_frequency' : md_analysis.frequency,
     'has_title' : nb_analysis.has_title,
     'num_commits' : repo_analysis.num_commits,
-    'md_format' : md_analysis.has_extra_formatting,
+    'md_format' : md_analysis.md_formatting,
     'non_exec_prop' : code_analysis.non_executed_prop,
     'exec_inorder' : code_analysis.forwards_prop,
     'exec_skips' : code_analysis.ex_skip_average,

@@ -204,7 +204,7 @@ def forwards_prop(nb_id):
         return None
 
     # get number of backwards steps and number of steps
-    back_steps = count_backwards(nb_id)
+    back_steps = count_forwards(nb_id)
     steps = len(ex_code_cells) - 1
 
     return float(back_steps) / float(steps)
