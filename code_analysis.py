@@ -172,8 +172,8 @@ def has_error(nb_id):
 
 ''' feature - execution order - top-down '''
 
-# counts the number of times execution order goes backwards
-def count_backwards(nb_id):
+# counts the number of times execution order goes forwards
+def count_forwards(nb_id):
 
     # get code cells that have been executed
     code_cells = data.get_code_cells(nb_id)
@@ -186,14 +186,14 @@ def count_backwards(nb_id):
         # if not on the last cell, check the next cell
         if i != len(ex_code_cells) - 1:
 
-            # count if execution order goes backwards
+            # count if execution order goes forwards
             if get_exec(cell) < get_exec(ex_code_cells[i + 1]):
                 backsteps += 1
     
     return backsteps
 
-# calculates the proportion of executed code cell borders that have a backwards execution order
-def backwards_prop(nb_id):
+# calculates the proportion of executed code cell borders that have a forwards execution order
+def forwards_prop(nb_id):
 
     # get code cells that have been executed
     code_cells = data.get_code_cells(nb_id)

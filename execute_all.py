@@ -15,7 +15,7 @@ import code_analysis
 function_columns = {
     'longer_beginning' : md_analysis.longer_beginning,
     'longer_ending' : md_analysis.longer_ending,
-    'has_author' : nb_analysis.has_author,
+    # 'has_author' : nb_analysis.has_author,
     # 'has_equation' : md_analysis.has_equations,
     # 'jupyter_prop' : repo_analysis.jupyter_prop,
     # 'output_cell_prop' : code_analysis.output_cell_prop,
@@ -25,10 +25,20 @@ function_columns = {
     # 'e_keywords' : kw_analysis.count_exploratory_keywords,
     # 'p_keywords' : kw_analysis.count_pipeline_keywords,
     # 's_keywords' : kw_analysis.count_sharing_keywords,
-    'is_education' : nb_analysis.is_education,
-    'language' : nb_analysis.get_language,
-    'has_links' : md_analysis.has_links,
-    'has_comments' : code_analysis.has_comments
+    # 'is_education' : nb_analysis.is_education,
+    # 'language' : nb_analysis.get_language,
+    # 'has_links' : md_analysis.has_links,
+    # 'has_comments' : code_analysis.has_comments,
+    'md_frequency' : md_analysis.frequency,
+    'has_title' : nb_analysis.has_title,
+    'num_commits' : repo_analysis.num_commits,
+    'md_format' : md_analysis.has_extra_formatting,
+    'non_exec_prop' : code_analysis.non_executed_prop,
+    'exec_inorder' : code_analysis.forwards_prop,
+    'exec_skips' : code_analysis.ex_skip_average,
+    'has_error' : code_analysis.has_error, 
+    'comm_messages' : repo_analysis.get_commit_messages,
+    'speaking_language' : nb_analysis.get_speaking_language
 }
 
 # dictionary object with fields to hold rows to write
@@ -37,7 +47,7 @@ row = {
     'repo_id' : None,
     'longer_beginning' : None,
     'longer_ending' : None,
-    'has_author' : None,
+    # 'has_author' : None,
     # 'has_equation' : None,
     # 'jupyter_prop' : None,
     # 'output_cell_prop' : None,
@@ -47,10 +57,20 @@ row = {
     # 'e_keywords' : None,
     # 'p_keywords' : None,
     # 's_keywords' : None,
-    'is_education' : None,
-    'language' : None,
-    'has_links' : None,
-    'has_comments' : None
+    # 'is_education' : None,
+    # 'language' : None,
+    # 'has_links' : None,
+    # 'has_comments' : None,
+    'md_frequency' : None,
+    'has_title' : None,
+    'num_commits' : None,
+    'md_format' : None,
+    'non_exec_prop' : None,
+    'exec_inorder' : None,
+    'exec_skips' : None,
+    'has_error' : None,
+    'comm_messages' : None,
+    'speaking_language' : None
 }
 
 # dictionary object with fields to hold error rows to write
@@ -61,10 +81,10 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/github2017-sixth-run.csv'
+output_path = 'output/github2017-seventh-run.csv'
 
 # path to error csv
-error_path = 'output/github2017-sixth-errors.csv'
+error_path = 'output/github2017-seventh-errors.csv'
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
@@ -76,7 +96,7 @@ directory = os.fsencode(dataset_path + 'notebooks')
 api = GitHubAPI()
 
 # number of notebooks to run for, if applicable
-# limit = 20
+limit = 20
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -151,9 +171,9 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         err = False
 
         # increment regular counter
-        # counter += 1
-        # if counter == limit:
-        #     break
+        counter += 1
+        if counter == limit:
+            break
     
     print("finished! successfully ran " + str(success_counter) + " notebooks")
 
