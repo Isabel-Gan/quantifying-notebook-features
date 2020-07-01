@@ -180,6 +180,10 @@ def get_md_groups(nb_id):
             groups.append(group)
             group = []
     
+    # add the last markdown group (if the last cell was a markdown cell)
+    if group != []:
+        groups.append(group)
+    
     return groups
         
 # given a notebook id, returns the code cells as a python list
