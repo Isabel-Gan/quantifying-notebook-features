@@ -1,4 +1,7 @@
 import data_access as data  
+from guesslang import Guess
+
+dbg_print = print
 
 ''' feature - proportion of code cells with output '''
 
@@ -241,26 +244,13 @@ word_prop = 0.1
 # determines whether a comment is code or descriptive text
 def is_code(comment):
 
-    # separate the comments into words
-    words = comment.split()
+    # pass the comment into the language guesser
+    guess = Guess()
+    lang_guess = guess.language_name(comment)
 
-    # get the list of common words
-    commons = data.get_common_words()
-
-    # go through the words and check if they coincide with the common words
-    common_instances = 0
-    for word in words:
-        # check if common word
-        for common in commons:
-            if common == word:
-                common_instances += 1
-                break
-
-    # calculate the proportion 
-    common_prop = float(common_instances) / float(len(words))
-
-    # check if proportion doesn't threshold
-    return common_prop < word_prop
+    # if not python then it's a descriptive comment
+    print(lang_guess)
+    return lang_guess == "Python"
 
 # guesses whether a notebook has code that has been commented out
 def has_commented_code(nb_id):
@@ -268,7 +258,7 @@ def has_commented_code(nb_id):
     # gather comments
     comments = data.get_comments(nb_id)
 
-    # if there are no comments, return immediately
+    # if there are no comments or not python, return immediately
     if comments == None or len(comments) == 0:
         return None
 
