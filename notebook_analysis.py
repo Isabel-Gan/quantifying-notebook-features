@@ -1,6 +1,8 @@
 import data_access as data  
 import re
 import regex
+from langdetect import detect
+from iso639 import languages
 
 ''' helper function -  less than 10 cells '''
 
@@ -188,3 +190,62 @@ def has_title(nb_id):
                 return bool(re.match(regex.md_header, cell['source'][0]))
                 
     return False
+
+''' feature - language (non-programming) '''
+
+# detects the language of some markdown cells
+def speaking_language(cells):
+
+    # gather the sources of the markdown cells together
+    all_source = ""
+    for cell in cells:
+        
+        if 'source' not in cell.keys():
+            continue 
+        
+        lines = cell['source']
+        lines_stripped = list(map(lambda line : line.strip(), lines))
+
+        # after stripping each line, filter out the equations (math mode) and links from each line
+        def filter_line(line):
+
+            # filter out equations
+            equation = re.search(regex.equation, line)
+            while equation != None:
+                line = line.replace(equation.group(0), "")
+                equation = re.search(regex.equation, line)
+
+            # filter out links
+            link = re.search(regex.link, line)
+            while link != None:
+                line = line.replace(link.group(0), "")
+                link = re.search(regex.link, line)
+
+            return line
+
+        lines_filtered = list(map(filter_line, lines_stripped))
+
+        # gather the lines together
+        source = " ".join(lines_filtered)
+
+        # add the source of this markdown cell to the entire source
+        all_source += " " + source
+    
+    # detect the language of the gathered source
+    try:
+        return languages.get(alpha2=detect(all_source)).name
+    except:
+        return None
+
+# detects the speaking language of a notebook based on its markdown cells 
+def get_speaking_language(nb_id):
+
+    # gather the markdown cells
+    md_cells = data.get_md_cells(nb_id)
+
+    # if there are no markdown cells, return immediately
+    if len(md_cells) == 0:
+        return None 
+
+    # get the language of the markdown cells
+    return speaking_language(md_cells)
