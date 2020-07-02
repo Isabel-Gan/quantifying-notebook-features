@@ -16,7 +16,7 @@ nb_ids = [602217, 1051197, 466289, 958849, 972721, 1019165,
             492523, 1081631, 681455, 531968, 578489, 165313,
             439119, 884271, 390160, 457759, 608191, 514544,
             672138, 323880, 987671, 329885, 718440, 116896,
-            625482, 295335, 502567, 912876]
+            625482, 295335, 502567, 912876, 672725, 654583]
 
 # prints out the results of running a function on all notebooks
 def test_func(func):
@@ -29,7 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(md_analysis.longer_ending)
+test_func(code_analysis.has_error)
 
 ''' testing all functions - print out results '''
 

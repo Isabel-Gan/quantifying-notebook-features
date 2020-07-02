@@ -234,7 +234,7 @@ def is_extra_formatting(token):
     # check the children 
     if 'children' in token.keys():
         for child in token['children']:
-            if is_extra_formatting(child):
+            if isinstance(child, dict) and is_extra_formatting(child):
                 return True
 
     return False
@@ -251,7 +251,7 @@ def has_extra_formatting(cell):
     # pass to the markdown parser to generate tokens
     markdown = mistune.create_markdown(renderer=mistune.AstRenderer())
     markdown_tokens = markdown(markdown_source)
-    
+   
     # iterate through tokens to check for extra formatting
     for token in markdown_tokens:
        if is_extra_formatting(token):

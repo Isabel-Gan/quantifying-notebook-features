@@ -165,7 +165,8 @@ def has_error(nb_id):
         # check outputs
         if 'outputs' in cell.keys():
             for output in cell['outputs']:
-                if output['output_type'] == "error" or output['output_type'] == "pyerr":
+                if 'output_type' in output.keys() and \
+                    (output['output_type'] == "error" or output['output_type'] == "pyerr"):
                     return True
 
     return False
