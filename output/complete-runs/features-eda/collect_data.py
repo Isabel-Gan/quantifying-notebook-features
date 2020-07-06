@@ -6,12 +6,12 @@ csv_directory = '../../test-dataset/notebooks_sample.csv'
 notebooks_df = pd.read_csv(csv_directory)
 
 # dataframes of the result data
-third_run = pd.read_csv('third-run/github2017-third-run.csv')
-sixth_run = pd.read_csv('sixth-run/github2017-sixth-run.csv')
-eigth_run = pd.read_csv('eigth-run/github2017-eigth-run.csv')
+third_run = pd.read_csv('../third-run/github2017-third-run.csv')
+sixth_run = pd.read_csv('../sixth-run/github2017-sixth-run.csv')
+eigth_run = pd.read_csv('../eigth-run/github2017-eigth-run.csv')
 
 # dataframe of most accurate error data
-errors = pd.read_csv('sixth-run/github2017-sixth-errors.csv')
+errors = pd.read_csv('../sixth-run/github2017-sixth-errors.csv')
 
 # fields associated with which sheet has the respective final data
 field_files = {
@@ -113,12 +113,3 @@ with open(output_path, 'w', newline='') as outcsv:
         # write the row to the csv and clear the row
         writer.writerow(row_write)  
         row_write = dict.fromkeys(row_write, None)
-
-'''
-
-data cleaning will be done later in a jupyter notebook:
-- get rid of all the rows with api, no_code, nb_file errors
-- filter down to english and python notebooks
-- have to determine some value to put for the empty cells for each field
-
-'''
