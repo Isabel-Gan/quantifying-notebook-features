@@ -300,3 +300,22 @@
 1264,0.5120034919249236,"({'has_error_F', 'has_comments_T', 'has_author_F', 'num_commits_lower', 'num_contrib_lower', 'exec_inorder_higher', 'non_exec_prop_low'})",7
 1265,0.5045831514622435,"({'has_error_F', 'has_comments_T', 'has_author_F', 'num_commits_lower', 'num_contrib_lower', 'exec_inorder_higher', 'exec_skips_lower'})",7
 1266,0.5050196420776953,"({'has_error_F', 'has_author_F', 'num_commits_lower', 'num_contrib_lower', 'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low'})",7
+0,0.5438673068529026,({'longer_beginning_T'}),1
+1,0.7411610650371017,({'longer_ending_F'}),1
+2,0.9532955041466609,({'has_author_F'}),1
+3,0.8061981667394151,({'has_equation_F'}),1
+4,0.7874290702749891,({'jupyter_prop_high'}),1
+5,0.8201658664338717,({'markdown_prop_med'}),1
+6,0.934089917066783,({'num_contrib_lower'}),1
+7,0.5416848537756438,({'image_prop_low'}),1
+8,0.5766041030117852,({'is_education_T'}),1
+9,0.6211261457878655,({'has_links_F'}),1
+10,0.8895678742907027,({'has_comments_T'}),1
+11,0.5569620253164557,({'md_frequency_med'}),1
+12,0.6451331296377127,({'has_title_T'}),1
+13,0.864687909209952,({'num_commits_lower'}),1
+14,0.539502400698385,({'md_format_F'}),1
+15,0.8742907027498908,({'non_exec_prop_low'}),1
+16,0.9515495416848537,({'exec_inorder_higher'}),1
+17,0.8402444347446529,({'exec_skips_lower'}),1
+18,0.8659973810563073,({'has_error_F'}),1
