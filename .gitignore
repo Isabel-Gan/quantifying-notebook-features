@@ -15,5 +15,6 @@ output/complete-runs/features-eda/.ipynb_checkpoints/
 # vscode configuration
 .vscode
 
-# file too large to track with git
+# files too large to track with git
 output/complete-runs/analysis/cluster-data/md-rule-learning
+output/complete-runs/analysis/cluster-data/no-md-rule-learning
