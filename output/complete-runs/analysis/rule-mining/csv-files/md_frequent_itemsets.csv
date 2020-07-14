@@ -1,0 +1,1268 @@
+,support,itemsets,length
+2,0.9532955041466609,frozenset({'has_author_F'}),1
+16,0.9515495416848537,frozenset({'exec_inorder_higher'}),1
+6,0.934089917066783,frozenset({'num_contrib_lower'}),1
+48,0.907900480139677,"frozenset({'exec_inorder_higher', 'has_author_F'})",2
+10,0.8895678742907027,frozenset({'has_comments_T'}),1
+38,0.8886948930597992,"frozenset({'has_author_F', 'num_contrib_lower'})",2
+89,0.8882584024443474,"frozenset({'exec_inorder_higher', 'num_contrib_lower'})",2
+15,0.8742907027498908,frozenset({'non_exec_prop_low'}),1
+18,0.8659973810563073,frozenset({'has_error_F'}),1
+13,0.864687909209952,frozenset({'num_commits_lower'}),1
+105,0.8481012658227848,"frozenset({'exec_inorder_higher', 'has_comments_T'})",2
+42,0.8463553033609778,"frozenset({'has_author_F', 'has_comments_T'})",2
+216,0.8454823221300742,"frozenset({'exec_inorder_higher', 'has_author_F', 'num_contrib_lower'})",3
+17,0.8402444347446529,frozenset({'exec_skips_lower'}),1
+83,0.8354430379746836,"frozenset({'num_contrib_lower', 'has_comments_T'})",2
+47,0.8336970755128764,"frozenset({'non_exec_prop_low', 'has_author_F'})",2
+45,0.8319511130510694,"frozenset({'num_commits_lower', 'has_author_F'})",2
+119,0.8297686599738106,"frozenset({'exec_inorder_higher', 'non_exec_prop_low'})",2
+123,0.8284591881274552,"frozenset({'exec_inorder_higher', 'has_error_F'})",2
+86,0.8280226975120035,"frozenset({'num_commits_lower', 'num_contrib_lower'})",2
+88,0.8267132256656482,"frozenset({'non_exec_prop_low', 'num_contrib_lower'})",2
+115,0.8249672632038412,"frozenset({'num_commits_lower', 'exec_inorder_higher'})",2
+50,0.8240942819729375,"frozenset({'has_author_F', 'has_error_F'})",2
+122,0.8201658664338717,"frozenset({'exec_inorder_higher', 'exec_skips_lower'})",2
+5,0.8201658664338717,frozenset({'markdown_prop_med'}),1
+229,0.8079441292012222,"frozenset({'exec_inorder_higher', 'has_author_F', 'has_comments_T'})",3
+49,0.8066346573548668,"frozenset({'exec_skips_lower', 'has_author_F'})",2
+91,0.8066346573548668,"frozenset({'has_error_F', 'num_contrib_lower'})",2
+3,0.8061981667394151,frozenset({'has_equation_F'}),1
+214,0.7957223919685726,"frozenset({'num_commits_lower', 'has_author_F', 'num_contrib_lower'})",3
+344,0.7952859013531209,"frozenset({'exec_inorder_higher', 'num_contrib_lower', 'has_comments_T'})",3
+238,0.7948494107376691,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_author_F'})",3
+212,0.7931034482758621,"frozenset({'has_author_F', 'num_contrib_lower', 'has_comments_T'})",3
+242,0.7917939764295068,"frozenset({'non_exec_prop_low', 'exec_inorder_higher', 'has_author_F'})",3
+353,0.7904845045831514,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'num_contrib_lower'})",3
+246,0.7891750327367961,"frozenset({'exec_inorder_higher', 'has_author_F', 'has_error_F'})",3
+215,0.7874290702749891,"frozenset({'non_exec_prop_low', 'has_author_F', 'num_contrib_lower'})",3
+4,0.7874290702749891,frozenset({'jupyter_prop_high'}),1
+245,0.7869925796595373,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_author_F'})",3
+37,0.7852466171977303,"frozenset({'has_author_F', 'markdown_prop_med'})",2
+356,0.7843736359668267,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'num_contrib_lower'})",3
+78,0.7808817110432126,"frozenset({'exec_inorder_higher', 'markdown_prop_med'})",2
+90,0.7786992579659537,"frozenset({'exec_skips_lower', 'num_contrib_lower'})",2
+104,0.7747708424268879,"frozenset({'non_exec_prop_low', 'has_comments_T'})",2
+35,0.7734613705805325,"frozenset({'has_equation_F', 'has_author_F'})",2
+360,0.7712789175032737,"frozenset({'exec_inorder_higher', 'has_error_F', 'num_contrib_lower'})",3
+218,0.7660410301178525,"frozenset({'has_error_F', 'has_author_F', 'num_contrib_lower'})",3
+59,0.7660410301178525,"frozenset({'has_equation_F', 'exec_inorder_higher'})",2
+72,0.7651680488869489,"frozenset({'num_contrib_lower', 'markdown_prop_med'})",2
+103,0.7616761239633348,"frozenset({'num_commits_lower', 'has_comments_T'})",2
+591,0.7603666521169795,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_author_F', 'num_contrib_lower'})",4
+114,0.7603666521169795,"frozenset({'num_commits_lower', 'non_exec_prop_low'})",2
+359,0.7603666521169795,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'num_contrib_lower'})",3
+107,0.7599301615015277,"frozenset({'has_error_F', 'has_comments_T'})",2
+121,0.7586206896551724,"frozenset({'non_exec_prop_low', 'has_error_F'})",2
+36,0.7564382365779135,"frozenset({'has_author_F', 'jupyter_prop_high'})",2
+584,0.75556525534701,"frozenset({'exec_inorder_higher', 'has_author_F', 'num_contrib_lower', 'has_comments_T'})",4
+53,0.7542557835006547,"frozenset({'has_equation_F', 'num_contrib_lower'})",2
+63,0.7529463116542995,"frozenset({'jupyter_prop_high', 'num_contrib_lower'})",2
+117,0.7507638585770406,"frozenset({'num_commits_lower', 'has_error_F'})",2
+69,0.7507638585770406,"frozenset({'exec_inorder_higher', 'jupyter_prop_high'})",2
+207,0.7472719336534265,"frozenset({'exec_inorder_higher', 'has_author_F', 'markdown_prop_med'})",3
+594,0.7472719336534265,"frozenset({'non_exec_prop_low', 'exec_inorder_higher', 'has_author_F', 'num_contrib_lower'})",4
+217,0.7459624618070712,"frozenset({'exec_skips_lower', 'has_author_F', 'num_contrib_lower'})",3
+1,0.7411610650371017,frozenset({'longer_ending_F'}),1
+124,0.7394151025752946,"frozenset({'exec_skips_lower', 'has_error_F'})",2
+228,0.7376691401134876,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_comments_T'})",3
+106,0.7376691401134876,"frozenset({'exec_skips_lower', 'has_comments_T'})",2
+374,0.7372326494980358,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'has_comments_T'})",3
+343,0.7372326494980358,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T'})",3
+74,0.736796158882584,"frozenset({'markdown_prop_med', 'has_comments_T'})",2
+189,0.7363596682671323,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_author_F'})",3
+342,0.735050196420777,"frozenset({'num_commits_lower', 'num_contrib_lower', 'has_comments_T'})",3
+116,0.7333042339589699,"frozenset({'num_commits_lower', 'exec_skips_lower'})",2
+598,0.7328677433435181,"frozenset({'exec_inorder_higher', 'has_error_F', 'has_author_F', 'num_contrib_lower'})",4
+227,0.7315582714971628,"frozenset({'num_commits_lower', 'has_author_F', 'has_comments_T'})",3
+237,0.7315582714971628,"frozenset({'num_commits_lower', 'has_author_F', 'non_exec_prop_low'})",3
+352,0.7315582714971628,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'num_contrib_lower'})",3
+201,0.7306852902662593,"frozenset({'has_author_F', 'num_contrib_lower', 'markdown_prop_med'})",3
+371,0.7289393278044523,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_comments_T'})",3
+378,0.7285028371890004,"frozenset({'exec_inorder_higher', 'has_error_F', 'has_comments_T'})",3
+597,0.7280663465735486,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_author_F', 'num_contrib_lower'})",4
+316,0.7280663465735486,"frozenset({'exec_inorder_higher', 'num_contrib_lower', 'markdown_prop_med'})",3
+377,0.7245744216499346,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_comments_T'})",3
+384,0.723701440419031,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'non_exec_prop_low'})",3
+391,0.7232649498035792,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'has_error_F'})",3
+184,0.7223919685726757,"frozenset({'has_equation_F', 'has_author_F', 'num_contrib_lower'})",3
+193,0.7219554779572239,"frozenset({'has_author_F', 'jupyter_prop_high', 'num_contrib_lower'})",3
+393,0.7219554779572239,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_error_F'})",3
+231,0.7215189873417721,"frozenset({'has_author_F', 'has_error_F', 'has_comments_T'})",3
+120,0.7210824967263204,"frozenset({'exec_skips_lower', 'non_exec_prop_low'})",2
+198,0.7210824967263204,"frozenset({'exec_inorder_higher', 'has_author_F', 'jupyter_prop_high'})",3
+240,0.7206460061108686,"frozenset({'num_commits_lower', 'has_author_F', 'has_error_F'})",3
+244,0.7206460061108686,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_error_F'})",3
+77,0.7202095154954169,"frozenset({'non_exec_prop_low', 'markdown_prop_med'})",2
+388,0.7189000436490616,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_error_F'})",3
+355,0.7184635530336098,"frozenset({'num_commits_lower', 'has_error_F', 'num_contrib_lower'})",3
+295,0.7180270624181581,"frozenset({'exec_inorder_higher', 'jupyter_prop_high', 'num_contrib_lower'})",3
+358,0.7167175905718027,"frozenset({'has_error_F', 'non_exec_prop_low', 'num_contrib_lower'})",3
+266,0.7167175905718027,"frozenset({'has_equation_F', 'exec_inorder_higher', 'num_contrib_lower'})",3
+387,0.7149716281099956,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'exec_skips_lower'})",3
+55,0.7132256656481886,"frozenset({'has_equation_F', 'has_comments_T'})",2
+23,0.7132256656481886,"frozenset({'longer_ending_F', 'has_author_F'})",2
+346,0.712352684417285,"frozenset({'has_error_F', 'num_contrib_lower', 'has_comments_T'})",3
+239,0.7106067219554779,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_author_F'})",3
+80,0.7097337407245744,"frozenset({'has_error_F', 'markdown_prop_med'})",2
+247,0.7088607594936709,"frozenset({'exec_skips_lower', 'has_author_F', 'has_error_F'})",3
+76,0.7079877782627674,"frozenset({'num_commits_lower', 'markdown_prop_med'})",2
+58,0.7079877782627674,"frozenset({'has_equation_F', 'non_exec_prop_low'})",2
+230,0.7071147970318639,"frozenset({'exec_skips_lower', 'has_author_F', 'has_comments_T'})",3
+57,0.7071147970318639,"frozenset({'has_equation_F', 'num_commits_lower'})",2
+582,0.7053688345700567,"frozenset({'num_commits_lower', 'has_author_F', 'num_contrib_lower', 'has_comments_T'})",4
+203,0.7040593627237014,"frozenset({'has_author_F', 'markdown_prop_med', 'has_comments_T'})",3
+322,0.7036228721082497,"frozenset({'exec_inorder_higher', 'markdown_prop_med', 'has_comments_T'})",3
+794,0.7031863814927979,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'num_contrib_lower', 'has_comments_T'})",4
+590,0.7031863814927979,"frozenset({'num_commits_lower', 'has_author_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+32,0.7031863814927979,"frozenset({'exec_inorder_higher', 'longer_ending_F'})",2
+609,0.7027498908773462,"frozenset({'non_exec_prop_low', 'exec_inorder_higher', 'has_author_F', 'has_comments_T'})",4
+390,0.7027498908773462,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low'})",3
+606,0.7014404190309909,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_author_F', 'has_comments_T'})",4
+583,0.701003928415539,"frozenset({'non_exec_prop_low', 'has_author_F', 'num_contrib_lower', 'has_comments_T'})",4
+797,0.7005674378000873,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T'})",4
+65,0.7001309471846355,"frozenset({'jupyter_prop_high', 'has_comments_T'})",2
+354,0.6988214753382802,"frozenset({'num_commits_lower', 'exec_skips_lower', 'num_contrib_lower'})",3
+67,0.6975120034919249,"frozenset({'num_commits_lower', 'jupyter_prop_high'})",2
+619,0.6970755128764732,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_author_F', 'non_exec_prop_low'})",4
+806,0.6970755128764732,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'non_exec_prop_low', 'num_contrib_lower'})",4
+79,0.695329550414666,"frozenset({'exec_skips_lower', 'markdown_prop_med'})",2
+560,0.6948930597992143,"frozenset({'exec_inorder_higher', 'has_author_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+27,0.6948930597992143,"frozenset({'longer_ending_F', 'num_contrib_lower'})",2
+612,0.6944565691837625,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_author_F', 'has_comments_T'})",4
+243,0.6931470973374072,"frozenset({'has_author_F', 'exec_skips_lower', 'non_exec_prop_low'})",3
+622,0.6927106067219555,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'exec_skips_lower', 'has_author_F'})",4
+613,0.6927106067219555,"frozenset({'exec_inorder_higher', 'has_author_F', 'has_error_F', 'has_comments_T'})",4
+61,0.6922741161065037,"frozenset({'has_equation_F', 'has_error_F'})",2
+628,0.691837625491052,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_author_F', 'has_error_F'})",4
+313,0.6914011348756002,"frozenset({'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",3
+623,0.6909646442601484,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_author_F', 'has_error_F'})",4
+593,0.6887821911828895,"frozenset({'num_commits_lower', 'has_error_F', 'has_author_F', 'num_contrib_lower'})",4
+206,0.6887821911828895,"frozenset({'non_exec_prop_low', 'has_author_F', 'markdown_prop_med'})",3
+810,0.6887821911828895,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_error_F', 'num_contrib_lower'})",4
+539,0.6883457005674378,"frozenset({'exec_inorder_higher', 'has_author_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+626,0.687909209951986,"frozenset({'non_exec_prop_low', 'exec_inorder_higher', 'has_author_F', 'has_error_F'})",4
+511,0.6874727193365343,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_author_F', 'num_contrib_lower'})",4
+345,0.6870362287210825,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_comments_T'})",3
+68,0.686163247490179,"frozenset({'non_exec_prop_low', 'jupyter_prop_high'})",2
+361,0.6844172850283718,"frozenset({'has_error_F', 'exec_skips_lower', 'num_contrib_lower'})",3
+187,0.6839807944129201,"frozenset({'num_commits_lower', 'has_equation_F', 'has_author_F'})",3
+813,0.6835443037974683,"frozenset({'exec_inorder_higher', 'has_error_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+330,0.6835443037974683,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'markdown_prop_med'})",3
+186,0.6826713225665648,"frozenset({'has_equation_F', 'has_author_F', 'has_comments_T'})",3
+205,0.682234831951113,"frozenset({'num_commits_lower', 'has_author_F', 'markdown_prop_med'})",3
+809,0.6817983413356613,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'exec_skips_lower', 'num_contrib_lower'})",4
+60,0.6817983413356613,"frozenset({'has_equation_F', 'exec_skips_lower'})",2
+801,0.6817983413356613,"frozenset({'exec_inorder_higher', 'has_error_F', 'num_contrib_lower', 'has_comments_T'})",4
+596,0.6800523788738542,"frozenset({'non_exec_prop_low', 'has_error_F', 'has_author_F', 'num_contrib_lower'})",4
+315,0.6796158882584025,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med'})",3
+272,0.6791793976429507,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_comments_T'})",3
+71,0.678742907027499,"frozenset({'jupyter_prop_high', 'has_error_F'})",2
+293,0.678742907027499,"frozenset({'num_commits_lower', 'jupyter_prop_high', 'num_contrib_lower'})",3
+188,0.678742907027499,"frozenset({'has_equation_F', 'has_author_F', 'non_exec_prop_low'})",3
+209,0.6783064164120471,"frozenset({'has_error_F', 'has_author_F', 'markdown_prop_med'})",3
+314,0.6778699257965953,"frozenset({'num_commits_lower', 'num_contrib_lower', 'markdown_prop_med'})",3
+333,0.6778699257965953,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'markdown_prop_med'})",3
+133,0.6778699257965953,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_author_F'})",3
+334,0.6778699257965953,"frozenset({'exec_inorder_higher', 'has_error_F', 'markdown_prop_med'})",3
+357,0.6774334351811436,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'num_contrib_lower'})",3
+196,0.6765604539502401,"frozenset({'num_commits_lower', 'has_author_F', 'jupyter_prop_high'})",3
+327,0.6761239633347883,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'markdown_prop_med'})",3
+264,0.6761239633347883,"frozenset({'has_equation_F', 'num_commits_lower', 'num_contrib_lower'})",3
+592,0.6761239633347883,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_author_F', 'num_contrib_lower'})",4
+1020,0.6756874727193365,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+625,0.6752509821038848,"frozenset({'has_author_F', 'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low'})",4
+586,0.674814491488433,"frozenset({'has_error_F', 'has_author_F', 'num_contrib_lower', 'has_comments_T'})",4
+800,0.6743780008729813,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'num_contrib_lower', 'has_comments_T'})",4
+292,0.6735050196420777,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",3
+276,0.673068529026626,"frozenset({'has_equation_F', 'exec_inorder_higher', 'num_commits_lower'})",3
+565,0.6721955477957224,"frozenset({'exec_inorder_higher', 'has_author_F', 'markdown_prop_med', 'has_comments_T'})",4
+195,0.6717590571802706,"frozenset({'has_author_F', 'jupyter_prop_high', 'has_comments_T'})",3
+263,0.6717590571802706,"frozenset({'has_equation_F', 'num_contrib_lower', 'has_comments_T'})",3
+208,0.6713225665648188,"frozenset({'exec_skips_lower', 'has_author_F', 'markdown_prop_med'})",3
+279,0.6713225665648188,"frozenset({'has_equation_F', 'exec_inorder_higher', 'non_exec_prop_low'})",3
+265,0.6708860759493671,"frozenset({'has_equation_F', 'non_exec_prop_low', 'num_contrib_lower'})",3
+70,0.6708860759493671,"frozenset({'exec_skips_lower', 'jupyter_prop_high'})",2
+1029,0.6704495853339153,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+300,0.6687036228721083,"frozenset({'exec_inorder_higher', 'jupyter_prop_high', 'has_comments_T'})",3
+815,0.6682671322566565,"frozenset({'exec_inorder_higher', 'has_error_F', 'exec_skips_lower', 'num_contrib_lower'})",4
+128,0.6678306416412048,"frozenset({'longer_ending_F', 'has_author_F', 'num_contrib_lower'})",3
+370,0.6678306416412048,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'has_comments_T'})",3
+1023,0.6665211697948494,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+304,0.6660846791793976,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'jupyter_prop_high'})",3
+52,0.6647752073330423,"frozenset({'has_equation_F', 'markdown_prop_med'})",2
+62,0.6643387167175906,"frozenset({'jupyter_prop_high', 'markdown_prop_med'})",2
+376,0.6634657354866871,"frozenset({'non_exec_prop_low', 'has_error_F', 'has_comments_T'})",3
+191,0.6634657354866871,"frozenset({'has_equation_F', 'has_author_F', 'has_error_F'})",3
+294,0.6634657354866871,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower'})",3
+282,0.6630292448712353,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower'})",3
+283,0.6621562636403318,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_error_F'})",3
+386,0.6617197730248799,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'has_error_F'})",3
+190,0.6612832824094282,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_author_F'})",3
+1033,0.6608467917939764,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+812,0.6604103011785246,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low', 'num_contrib_lower'})",4
+29,0.6604103011785246,"frozenset({'longer_ending_F', 'has_comments_T'})",2
+197,0.6599738105630729,"frozenset({'has_author_F', 'non_exec_prop_low', 'jupyter_prop_high'})",3
+1032,0.6595373199476211,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+318,0.6591008293321694,"frozenset({'has_error_F', 'num_contrib_lower', 'markdown_prop_med'})",3
+163,0.6591008293321694,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'num_contrib_lower'})",3
+757,0.6591008293321694,"frozenset({'exec_inorder_higher', 'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",4
+557,0.6591008293321694,"frozenset({'has_author_F', 'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",4
+31,0.6577913574858141,"frozenset({'longer_ending_F', 'non_exec_prop_low'})",2
+537,0.6577913574858141,"frozenset({'num_commits_lower', 'has_author_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+585,0.6569183762549106,"frozenset({'exec_skips_lower', 'has_author_F', 'num_contrib_lower', 'has_comments_T'})",4
+310,0.6547359231776517,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'jupyter_prop_high'})",3
+599,0.6547359231776517,"frozenset({'has_error_F', 'exec_skips_lower', 'has_author_F', 'num_contrib_lower'})",4
+575,0.6542994325621999,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_author_F', 'markdown_prop_med'})",4
+509,0.6534264513312964,"frozenset({'num_commits_lower', 'has_equation_F', 'has_author_F', 'num_contrib_lower'})",4
+572,0.6534264513312964,"frozenset({'non_exec_prop_low', 'exec_inorder_higher', 'has_author_F', 'markdown_prop_med'})",4
+520,0.6525534701003929,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_equation_F', 'has_author_F'})",4
+558,0.6521169794849411,"frozenset({'num_commits_lower', 'has_author_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+307,0.6521169794849411,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'jupyter_prop_high'})",3
+373,0.6521169794849411,"frozenset({'num_commits_lower', 'has_error_F', 'has_comments_T'})",3
+516,0.6516804888694893,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_author_F', 'has_comments_T'})",4
+311,0.6516804888694893,"frozenset({'exec_inorder_higher', 'jupyter_prop_high', 'has_error_F'})",3
+569,0.6512439982540376,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_author_F', 'markdown_prop_med'})",4
+200,0.6512439982540376,"frozenset({'has_author_F', 'jupyter_prop_high', 'has_error_F'})",3
+595,0.650371017023134,"frozenset({'has_author_F', 'exec_skips_lower', 'non_exec_prop_low', 'num_contrib_lower'})",4
+1036,0.6490615451767787,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+726,0.6490615451767787,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'jupyter_prop_high', 'num_contrib_lower'})",4
+30,0.6486250545613269,"frozenset({'num_commits_lower', 'longer_ending_F'})",2
+559,0.6486250545613269,"frozenset({'non_exec_prop_low', 'has_author_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+761,0.6477520733304234,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'num_contrib_lower', 'markdown_prop_med'})",4
+793,0.6477520733304234,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T'})",4
+576,0.6477520733304234,"frozenset({'exec_inorder_higher', 'has_error_F', 'has_author_F', 'markdown_prop_med'})",4
+297,0.6468790920995199,"frozenset({'has_error_F', 'jupyter_prop_high', 'num_contrib_lower'})",3
+199,0.6468790920995199,"frozenset({'exec_skips_lower', 'has_author_F', 'jupyter_prop_high'})",3
+1027,0.6464426014840681,"frozenset({'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+548,0.6464426014840681,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_author_F', 'jupyter_prop_high'})",4
+51,0.6460061108686164,"frozenset({'has_equation_F', 'jupyter_prop_high'})",2
+268,0.6455696202531646,"frozenset({'has_equation_F', 'has_error_F', 'num_contrib_lower'})",3
+389,0.6455696202531646,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_error_F'})",3
+12,0.6451331296377127,frozenset({'has_title_T'}),1
+536,0.6451331296377127,"frozenset({'has_author_F', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",4
+1026,0.644696639022261,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+764,0.644696639022261,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med'})",4
+523,0.644696639022261,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_author_F', 'non_exec_prop_low'})",4
+321,0.644696639022261,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'has_comments_T'})",3
+671,0.6442601484068092,"frozenset({'has_equation_F', 'exec_inorder_higher', 'num_commits_lower', 'num_contrib_lower'})",4
+317,0.6438236577913575,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med'})",3
+526,0.6429506765604539,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower', 'has_author_F'})",4
+510,0.6425141859450022,"frozenset({'has_equation_F', 'has_author_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+722,0.6425141859450022,"frozenset({'exec_inorder_higher', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",4
+508,0.6420776953295504,"frozenset({'has_equation_F', 'has_author_F', 'num_contrib_lower', 'has_comments_T'})",4
+605,0.6416412047140987,"frozenset({'num_commits_lower', 'has_author_F', 'non_exec_prop_low', 'has_comments_T'})",4
+544,0.6416412047140987,"frozenset({'exec_inorder_higher', 'has_author_F', 'jupyter_prop_high', 'has_comments_T'})",4
+379,0.6407682234831951,"frozenset({'exec_skips_lower', 'has_error_F', 'has_comments_T'})",3
+192,0.6403317328677434,"frozenset({'has_author_F', 'jupyter_prop_high', 'markdown_prop_med'})",3
+183,0.6394587516368399,"frozenset({'has_equation_F', 'has_author_F', 'markdown_prop_med'})",3
+296,0.639022261021388,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower'})",3
+1038,0.639022261021388,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+667,0.639022261021388,"frozenset({'has_equation_F', 'exec_inorder_higher', 'num_contrib_lower', 'has_comments_T'})",4
+816,0.6381492797904845,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'non_exec_prop_low', 'has_comments_T'})",4
+372,0.6381492797904845,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_comments_T'})",3
+392,0.637276298559581,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'has_error_F'})",3
+538,0.637276298559581,"frozenset({'has_author_F', 'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower'})",4
+808,0.6368398079441292,"frozenset({'num_commits_lower', 'has_error_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+674,0.6364033173286774,"frozenset({'has_equation_F', 'exec_inorder_higher', 'non_exec_prop_low', 'num_contrib_lower'})",4
+527,0.6359668267132257,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_author_F', 'has_error_F'})",4
+130,0.6350938454823222,"frozenset({'longer_ending_F', 'has_author_F', 'has_comments_T'})",3
+621,0.6346573548668704,"frozenset({'num_commits_lower', 'has_author_F', 'non_exec_prop_low', 'has_error_F'})",4
+132,0.6346573548668704,"frozenset({'non_exec_prop_low', 'longer_ending_F', 'has_author_F'})",3
+289,0.6342208642514185,"frozenset({'exec_inorder_higher', 'jupyter_prop_high', 'markdown_prop_med'})",3
+823,0.6342208642514185,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'has_error_F', 'has_comments_T'})",4
+285,0.6342208642514185,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med'})",3
+420,0.6342208642514185,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_author_F', 'num_contrib_lower'})",4
+267,0.6337843736359668,"frozenset({'has_equation_F', 'exec_skips_lower', 'num_contrib_lower'})",3
+1035,0.6337843736359668,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'exec_inorder_higher'})",5
+385,0.633347883020515,"frozenset({'num_commits_lower', 'exec_skips_lower', 'non_exec_prop_low'})",3
+260,0.6324749017896115,"frozenset({'has_equation_F', 'exec_inorder_higher', 'markdown_prop_med'})",3
+827,0.631601920558708,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'non_exec_prop_low', 'has_error_F'})",4
+34,0.631601920558708,"frozenset({'longer_ending_F', 'has_error_F'})",2
+799,0.631601920558708,"frozenset({'has_error_F', 'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T'})",4
+320,0.631601920558708,"frozenset({'num_commits_lower', 'markdown_prop_med', 'has_comments_T'})",3
+554,0.6311654299432562,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_author_F', 'jupyter_prop_high'})",4
+729,0.6311654299432562,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower'})",4
+796,0.6298559580969009,"frozenset({'num_commits_lower', 'has_error_F', 'num_contrib_lower', 'has_comments_T'})",4
+825,0.6294194674814492,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_error_F', 'has_comments_T'})",4
+829,0.6294194674814492,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'exec_skips_lower', 'has_error_F'})",4
+131,0.6294194674814492,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F'})",3
+959,0.6294194674814492,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+768,0.6289829768659974,"frozenset({'exec_inorder_higher', 'has_error_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+611,0.6289829768659974,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_error_F', 'has_comments_T'})",4
+324,0.6289829768659974,"frozenset({'has_error_F', 'markdown_prop_med', 'has_comments_T'})",3
+375,0.6289829768659974,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'has_comments_T'})",3
+169,0.6281099956350938,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_comments_T'})",3
+986,0.6281099956350938,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+767,0.6281099956350938,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med'})",4
+562,0.6281099956350938,"frozenset({'has_error_F', 'has_author_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+275,0.6272370144041903,"frozenset({'has_equation_F', 'num_commits_lower', 'non_exec_prop_low'})",3
+551,0.6268005237887385,"frozenset({'has_author_F', 'exec_inorder_higher', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+819,0.6268005237887385,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'exec_skips_lower', 'has_comments_T'})",4
+820,0.6263640331732868,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_error_F', 'has_comments_T'})",4
+182,0.625927542557835,"frozenset({'has_equation_F', 'has_author_F', 'jupyter_prop_high'})",3
+326,0.6254910519423832,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'markdown_prop_med'})",3
+555,0.6250545613269315,"frozenset({'exec_inorder_higher', 'has_author_F', 'jupyter_prop_high', 'has_error_F'})",4
+608,0.6246180707114797,"frozenset({'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",4
+732,0.624181580096028,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower'})",4
+624,0.624181580096028,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_author_F', 'has_error_F'})",4
+332,0.624181580096028,"frozenset({'has_error_F', 'non_exec_prop_low', 'markdown_prop_med'})",3
+912,0.6237450894805762,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+160,0.6233085988651244,"frozenset({'longer_ending_F', 'num_contrib_lower', 'has_comments_T'})",3
+271,0.6233085988651244,"frozenset({'has_equation_F', 'non_exec_prop_low', 'has_comments_T'})",3
+990,0.6228721082496727,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+176,0.6224356176342208,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low'})",3
+33,0.6224356176342208,"frozenset({'longer_ending_F', 'exec_skips_lower'})",2
+1019,0.6219991270187691,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+256,0.6219991270187691,"frozenset({'has_equation_F', 'num_contrib_lower', 'markdown_prop_med'})",3
+733,0.6215626364033173,"frozenset({'exec_inorder_higher', 'has_error_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+111,0.6211261457878655,"frozenset({'exec_inorder_higher', 'has_title_T'})",2
+162,0.6211261457878655,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'num_contrib_lower'})",3
+9,0.6211261457878655,frozenset({'has_links_F'}),1
+270,0.6206896551724138,"frozenset({'has_equation_F', 'num_commits_lower', 'has_comments_T'})",3
+24,0.6206896551724138,"frozenset({'has_equation_F', 'longer_ending_F'})",2
+561,0.620253164556962,"frozenset({'exec_skips_lower', 'has_author_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+830,0.620253164556962,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low', 'has_error_F'})",4
+323,0.6193801833260585,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'has_comments_T'})",3
+161,0.6193801833260585,"frozenset({'num_commits_lower', 'longer_ending_F', 'num_contrib_lower'})",3
+541,0.6193801833260585,"frozenset({'has_error_F', 'has_author_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+1152,0.6189436927106067,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+173,0.6180707114797032,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F'})",3
+678,0.6176342208642515,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_error_F', 'num_contrib_lower'})",4
+822,0.6176342208642515,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low', 'has_comments_T'})",4
+607,0.6176342208642515,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_author_F', 'has_comments_T'})",4
+513,0.6176342208642515,"frozenset({'has_equation_F', 'has_error_F', 'has_author_F', 'num_contrib_lower'})",4
+677,0.6167612396333478,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower', 'num_contrib_lower'})",4
+826,0.6163247490178961,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low'})",4
+298,0.6158882584024443,"frozenset({'num_commits_lower', 'jupyter_prop_high', 'has_comments_T'})",3
+811,0.6154517677869926,"frozenset({'num_commits_lower', 'has_error_F', 'exec_skips_lower', 'num_contrib_lower'})",4
+564,0.6154517677869926,"frozenset({'non_exec_prop_low', 'has_author_F', 'markdown_prop_med', 'has_comments_T'})",4
+955,0.6154517677869926,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+329,0.6150152771715408,"frozenset({'num_commits_lower', 'has_error_F', 'markdown_prop_med'})",3
+993,0.6150152771715408,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",5
+540,0.6150152771715408,"frozenset({'exec_skips_lower', 'has_author_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+26,0.6150152771715408,"frozenset({'longer_ending_F', 'markdown_prop_med'})",2
+249,0.6150152771715408,"frozenset({'has_equation_F', 'jupyter_prop_high', 'num_contrib_lower'})",3
+253,0.614578786556089,"frozenset({'has_equation_F', 'exec_inorder_higher', 'jupyter_prop_high'})",3
+25,0.614578786556089,"frozenset({'longer_ending_F', 'jupyter_prop_high'})",2
+620,0.6141422959406373,"frozenset({'num_commits_lower', 'exec_skips_lower', 'non_exec_prop_low', 'has_author_F'})",4
+1039,0.6141422959406373,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+774,0.6141422959406373,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'markdown_prop_med', 'has_comments_T'})",4
+512,0.6137058053251855,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_author_F', 'num_contrib_lower'})",4
+756,0.6132693147097338,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",4
+614,0.6132693147097338,"frozenset({'exec_skips_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",4
+795,0.612832824094282,"frozenset({'num_commits_lower', 'exec_skips_lower', 'num_contrib_lower', 'has_comments_T'})",4
+908,0.6119598428633785,"frozenset({'num_contrib_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+533,0.6110868616324749,"frozenset({'exec_inorder_higher', 'has_author_F', 'jupyter_prop_high', 'markdown_prop_med'})",4
+627,0.6106503710170231,"frozenset({'has_author_F', 'exec_skips_lower', 'non_exec_prop_low', 'has_error_F'})",4
+335,0.6106503710170231,"frozenset({'has_error_F', 'exec_skips_lower', 'markdown_prop_med'})",3
+529,0.6102138804015713,"frozenset({'has_author_F', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med'})",4
+915,0.6102138804015713,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1031,0.6102138804015713,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+755,0.6097773897861196,"frozenset({'num_commits_lower', 'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",4
+303,0.6097773897861196,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'jupyter_prop_high'})",3
+299,0.6097773897861196,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'has_comments_T'})",3
+278,0.6093408991706678,"frozenset({'has_equation_F', 'num_commits_lower', 'has_error_F'})",3
+281,0.6089044085552161,"frozenset({'has_equation_F', 'non_exec_prop_low', 'has_error_F'})",3
+1163,0.6089044085552161,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+44,0.6089044085552161,"frozenset({'has_author_F', 'has_title_T'})",2
+328,0.6084679179397643,"frozenset({'num_commits_lower', 'exec_skips_lower', 'markdown_prop_med'})",3
+1052,0.6084679179397643,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+505,0.6084679179397643,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_author_F', 'markdown_prop_med'})",4
+777,0.6080314273243125,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'markdown_prop_med', 'has_comments_T'})",4
+563,0.6075949367088608,"frozenset({'num_commits_lower', 'has_author_F', 'markdown_prop_med', 'has_comments_T'})",4
+807,0.6067219554779573,"frozenset({'num_commits_lower', 'exec_skips_lower', 'non_exec_prop_low', 'num_contrib_lower'})",4
+1050,0.6067219554779573,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+1042,0.6067219554779573,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+135,0.6058489742470536,"frozenset({'longer_ending_F', 'has_author_F', 'has_error_F'})",3
+962,0.6058489742470536,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'exec_inorder_higher'})",5
+703,0.6058489742470536,"frozenset({'exec_inorder_higher', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med'})",4
+771,0.6058489742470536,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'markdown_prop_med', 'has_comments_T'})",4
+519,0.6058489742470536,"frozenset({'num_commits_lower', 'has_equation_F', 'has_author_F', 'non_exec_prop_low'})",4
+425,0.6054124836316019,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_author_F', 'has_comments_T'})",4
+277,0.6054124836316019,"frozenset({'has_equation_F', 'num_commits_lower', 'exec_skips_lower'})",3
+179,0.6049759930161501,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'exec_skips_lower'})",3
+996,0.6049759930161501,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",5
+1156,0.6049759930161501,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+85,0.6049759930161501,"frozenset({'num_contrib_lower', 'has_title_T'})",2
+306,0.6045395024006984,"frozenset({'num_commits_lower', 'jupyter_prop_high', 'has_error_F'})",3
+41,0.6045395024006984,"frozenset({'has_links_F', 'has_author_F'})",2
+610,0.6041030117852466,"frozenset({'has_author_F', 'exec_skips_lower', 'non_exec_prop_low', 'has_comments_T'})",4
+720,0.6036665211697948,"frozenset({'num_commits_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",4
+274,0.6032300305543431,"frozenset({'has_equation_F', 'has_error_F', 'has_comments_T'})",3
+180,0.6032300305543431,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_error_F'})",3
+1159,0.6032300305543431,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1022,0.6027935399388913,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+778,0.6027935399388913,"frozenset({'exec_inorder_higher', 'has_error_F', 'markdown_prop_med', 'has_comments_T'})",4
+1046,0.6023570493234396,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1048,0.6023570493234396,"frozenset({'exec_skips_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+670,0.6023570493234396,"frozenset({'has_equation_F', 'num_commits_lower', 'non_exec_prop_low', 'num_contrib_lower'})",4
+568,0.6019205587079878,"frozenset({'num_commits_lower', 'has_author_F', 'non_exec_prop_low', 'markdown_prop_med'})",4
+125,0.6019205587079878,"frozenset({'has_equation_F', 'longer_ending_F', 'has_author_F'})",3
+1155,0.601484068092536,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+432,0.601484068092536,"frozenset({'non_exec_prop_low', 'exec_inorder_higher', 'longer_ending_F', 'has_author_F'})",4
+1043,0.6010475774770843,"frozenset({'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+760,0.6010475774770843,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med'})",4
+134,0.6010475774770843,"frozenset({'longer_ending_F', 'has_author_F', 'exec_skips_lower'})",3
+429,0.6010475774770843,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F', 'has_author_F'})",4
+965,0.6006110868616324,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'exec_inorder_higher'})",5
+331,0.6006110868616324,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'markdown_prop_med'})",3
+1165,0.6006110868616324,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+418,0.6006110868616324,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F', 'num_contrib_lower'})",4
+305,0.5997381056307289,"frozenset({'num_commits_lower', 'exec_skips_lower', 'jupyter_prop_high'})",3
+567,0.5997381056307289,"frozenset({'has_error_F', 'has_author_F', 'markdown_prop_med', 'has_comments_T'})",4
+514,0.5993016150152771,"frozenset({'num_commits_lower', 'has_equation_F', 'has_author_F', 'has_comments_T'})",4
+814,0.5993016150152771,"frozenset({'has_error_F', 'exec_skips_lower', 'non_exec_prop_low', 'num_contrib_lower'})",4
+997,0.5993016150152771,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+417,0.5988651243998254,"frozenset({'longer_ending_F', 'has_author_F', 'num_contrib_lower', 'has_comments_T'})",4
+419,0.5988651243998254,"frozenset({'non_exec_prop_low', 'longer_ending_F', 'has_author_F', 'num_contrib_lower'})",4
+665,0.5988651243998254,"frozenset({'has_equation_F', 'num_commits_lower', 'num_contrib_lower', 'has_comments_T'})",4
+1025,0.5979921431689219,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+1049,0.5975556525534701,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+542,0.5971191619380183,"frozenset({'num_commits_lower', 'has_author_F', 'jupyter_prop_high', 'has_comments_T'})",4
+566,0.5971191619380183,"frozenset({'exec_skips_lower', 'has_author_F', 'markdown_prop_med', 'has_comments_T'})",4
+501,0.5971191619380183,"frozenset({'has_equation_F', 'has_author_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+918,0.5971191619380183,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+802,0.5966826713225666,"frozenset({'has_error_F', 'exec_skips_lower', 'num_contrib_lower', 'has_comments_T'})",4
+286,0.5966826713225666,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'has_comments_T'})",3
+515,0.5962461807071148,"frozenset({'has_equation_F', 'has_author_F', 'non_exec_prop_low', 'has_comments_T'})",4
+690,0.5958096900916631,"frozenset({'has_equation_F', 'exec_inorder_higher', 'non_exec_prop_low', 'num_commits_lower'})",4
+498,0.5958096900916631,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_author_F', 'jupyter_prop_high'})",4
+284,0.5958096900916631,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_error_F'})",3
+725,0.5958096900916631,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower'})",4
+257,0.5958096900916631,"frozenset({'has_equation_F', 'markdown_prop_med', 'has_comments_T'})",3
+780,0.5953731994762113,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'non_exec_prop_low', 'markdown_prop_med'})",4
+302,0.5953731994762113,"frozenset({'jupyter_prop_high', 'has_error_F', 'has_comments_T'})",3
+1233,0.5949367088607594,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+273,0.5949367088607594,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_comments_T'})",3
+494,0.5949367088607594,"frozenset({'has_equation_F', 'has_author_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+574,0.5949367088607594,"frozenset({'non_exec_prop_low', 'has_error_F', 'has_author_F', 'markdown_prop_med'})",4
+966,0.5949367088607594,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+666,0.5949367088607594,"frozenset({'has_equation_F', 'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T'})",4
+127,0.5949367088607594,"frozenset({'longer_ending_F', 'has_author_F', 'markdown_prop_med'})",3
+789,0.5949367088607594,"frozenset({'exec_inorder_higher', 'has_error_F', 'exec_skips_lower', 'markdown_prop_med'})",4
+798,0.5945002182453077,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T'})",4
+1053,0.5940637276298559,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+787,0.5940637276298559,"frozenset({'exec_inorder_higher', 'has_error_F', 'non_exec_prop_low', 'markdown_prop_med'})",4
+1034,0.5940637276298559,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+309,0.5936272370144042,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'has_error_F'})",3
+99,0.5936272370144042,"frozenset({'exec_inorder_higher', 'has_links_F'})",2
+1045,0.5931907463989524,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+721,0.5931907463989524,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",4
+681,0.5927542557835006,"frozenset({'has_equation_F', 'exec_inorder_higher', 'num_commits_lower', 'has_comments_T'})",4
+684,0.5927542557835006,"frozenset({'has_equation_F', 'exec_inorder_higher', 'non_exec_prop_low', 'has_comments_T'})",4
+783,0.5927542557835006,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'exec_skips_lower', 'markdown_prop_med'})",4
+1021,0.5923177651680489,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+521,0.5918812745525971,"frozenset({'num_commits_lower', 'has_equation_F', 'has_author_F', 'exec_skips_lower'})",4
+469,0.5918812745525971,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'num_contrib_lower', 'has_comments_T'})",4
+919,0.5918812745525971,"frozenset({'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+649,0.5918812745525971,"frozenset({'has_equation_F', 'exec_inorder_higher', 'num_contrib_lower', 'markdown_prop_med'})",4
+547,0.5914447839371454,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'jupyter_prop_high', 'has_author_F'})",4
+126,0.5914447839371454,"frozenset({'longer_ending_F', 'has_author_F', 'jupyter_prop_high'})",3
+473,0.5910082933216936,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F', 'num_contrib_lower'})",4
+1162,0.5910082933216936,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'exec_inorder_higher'})",5
+571,0.5910082933216936,"frozenset({'num_commits_lower', 'has_error_F', 'has_author_F', 'markdown_prop_med'})",4
+570,0.5905718027062418,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_author_F', 'markdown_prop_med'})",4
+165,0.5901353120907901,"frozenset({'has_error_F', 'longer_ending_F', 'num_contrib_lower'})",3
+146,0.5896988214753383,"frozenset({'longer_ending_F', 'jupyter_prop_high', 'num_contrib_lower'})",3
+736,0.5896988214753383,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'jupyter_prop_high', 'has_comments_T'})",4
+280,0.5892623308598866,"frozenset({'has_equation_F', 'exec_skips_lower', 'non_exec_prop_low'})",3
+301,0.5892623308598866,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'has_comments_T'})",3
+142,0.5892623308598866,"frozenset({'has_equation_F', 'exec_inorder_higher', 'longer_ending_F'})",3
+577,0.5892623308598866,"frozenset({'has_error_F', 'exec_skips_lower', 'has_author_F', 'markdown_prop_med'})",4
+522,0.5888258402444347,"frozenset({'num_commits_lower', 'has_equation_F', 'has_author_F', 'has_error_F'})",4
+312,0.5888258402444347,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'has_error_F'})",3
+287,0.5883893496289829,"frozenset({'num_commits_lower', 'jupyter_prop_high', 'markdown_prop_med'})",3
+693,0.5883893496289829,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower', 'num_commits_lower'})",4
+759,0.5879528590135312,"frozenset({'has_error_F', 'has_comments_T', 'num_contrib_lower', 'markdown_prop_med'})",4
+476,0.5879528590135312,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+784,0.5879528590135312,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_error_F', 'markdown_prop_med'})",4
+766,0.5875163683980794,"frozenset({'has_error_F', 'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med'})",4
+1030,0.5875163683980794,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F'})",5
+763,0.5870798777826277,"frozenset({'num_commits_lower', 'has_error_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+728,0.5870798777826277,"frozenset({'num_commits_lower', 'has_error_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+234,0.5866433871671759,"frozenset({'exec_inorder_higher', 'has_author_F', 'has_title_T'})",3
+1006,0.5862068965517241,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1003,0.5862068965517241,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+543,0.5862068965517241,"frozenset({'has_author_F', 'non_exec_prop_low', 'jupyter_prop_high', 'has_comments_T'})",4
+984,0.5857704059362724,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+634,0.5853339153208206,"frozenset({'has_equation_F', 'exec_inorder_higher', 'jupyter_prop_high', 'num_contrib_lower'})",4
+150,0.5853339153208206,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'jupyter_prop_high'})",3
+550,0.5853339153208206,"frozenset({'num_commits_lower', 'has_author_F', 'jupyter_prop_high', 'has_error_F'})",4
+1161,0.5853339153208206,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+953,0.5848974247053689,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+748,0.5844609340899171,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'exec_skips_lower', 'jupyter_prop_high'})",4
+985,0.5844609340899171,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T'})",5
+1125,0.5844609340899171,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+786,0.5844609340899171,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low', 'markdown_prop_med'})",4
+259,0.5844609340899171,"frozenset({'has_equation_F', 'non_exec_prop_low', 'markdown_prop_med'})",3
+549,0.5840244434744652,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_author_F', 'jupyter_prop_high'})",4
+1243,0.5840244434744652,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+138,0.5840244434744652,"frozenset({'has_equation_F', 'longer_ending_F', 'num_contrib_lower'})",3
+435,0.5840244434744652,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_author_F', 'exec_skips_lower'})",4
+1166,0.5835879528590135,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_error_F', 'exec_inorder_higher'})",5
+1128,0.5831514622435617,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_comments_T', 'exec_inorder_higher'})",5
+1158,0.5831514622435617,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+157,0.58271497162811,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'markdown_prop_med'})",3
+694,0.58271497162811,"frozenset({'has_equation_F', 'exec_inorder_higher', 'num_commits_lower', 'has_error_F'})",4
+349,0.58271497162811,"frozenset({'exec_inorder_higher', 'has_title_T', 'num_contrib_lower'})",3
+1000,0.58271497162811,"frozenset({'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+942,0.58271497162811,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",5
+168,0.5822784810126582,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'has_comments_T'})",3
+727,0.5822784810126582,"frozenset({'num_commits_lower', 'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower'})",4
+687,0.5822784810126582,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower', 'has_comments_T'})",4
+673,0.5818419903972064,"frozenset({'has_equation_F', 'has_error_F', 'num_commits_lower', 'num_contrib_lower'})",4
+911,0.5814054997817547,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F'})",5
+525,0.5814054997817547,"frozenset({'has_equation_F', 'has_author_F', 'non_exec_prop_low', 'has_error_F'})",4
+1236,0.5814054997817547,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+745,0.5809690091663029,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+739,0.5809690091663029,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'jupyter_prop_high', 'has_comments_T'})",4
+82,0.5809690091663029,"frozenset({'has_links_F', 'num_contrib_lower'})",2
+288,0.5809690091663029,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'markdown_prop_med'})",3
+697,0.5805325185508512,"frozenset({'has_equation_F', 'exec_inorder_higher', 'non_exec_prop_low', 'has_error_F'})",4
+573,0.5800960279353994,"frozenset({'has_author_F', 'exec_skips_lower', 'non_exec_prop_low', 'markdown_prop_med'})",4
+258,0.5800960279353994,"frozenset({'has_equation_F', 'num_commits_lower', 'markdown_prop_med'})",3
+749,0.5800960279353994,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'jupyter_prop_high', 'has_error_F'})",4
+762,0.5796595373199476,"frozenset({'num_commits_lower', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med'})",4
+251,0.5796595373199476,"frozenset({'has_equation_F', 'num_commits_lower', 'jupyter_prop_high'})",3
+436,0.5796595373199476,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_author_F', 'has_error_F'})",4
+1237,0.5796595373199476,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+1245,0.5796595373199476,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+164,0.5796595373199476,"frozenset({'longer_ending_F', 'exec_skips_lower', 'num_contrib_lower'})",3
+699,0.5796595373199476,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower', 'has_error_F'})",4
+223,0.5787865560890441,"frozenset({'exec_inorder_higher', 'has_links_F', 'has_author_F'})",3
+172,0.5787865560890441,"frozenset({'num_commits_lower', 'longer_ending_F', 'non_exec_prop_low'})",3
+742,0.5783500654735924,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'jupyter_prop_high', 'has_comments_T'})",4
+688,0.5783500654735924,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_error_F', 'has_comments_T'})",4
+528,0.5779135748581405,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_author_F', 'has_error_F'})",4
+906,0.5779135748581405,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F'})",5
+1101,0.5779135748581405,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+989,0.5774770842426887,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F'})",5
+958,0.5774770842426887,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F'})",5
+8,0.5766041030117852,frozenset({'is_education_T'}),1
+929,0.5766041030117852,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+758,0.5766041030117852,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",4
+672,0.5766041030117852,"frozenset({'has_equation_F', 'num_commits_lower', 'exec_skips_lower', 'num_contrib_lower'})",4
+518,0.5766041030117852,"frozenset({'has_equation_F', 'has_author_F', 'has_error_F', 'has_comments_T'})",4
+517,0.5761676123963335,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_author_F', 'has_comments_T'})",4
+676,0.5761676123963335,"frozenset({'has_equation_F', 'has_error_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+1012,0.5752946311654299,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+932,0.5752946311654299,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+754,0.5748581405499782,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'jupyter_prop_high', 'has_error_F'})",4
+1007,0.5748581405499782,"frozenset({'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+530,0.5748581405499782,"frozenset({'has_author_F', 'jupyter_prop_high', 'markdown_prop_med', 'has_comments_T'})",4
+153,0.5744216499345264,"frozenset({'longer_ending_F', 'num_contrib_lower', 'markdown_prop_med'})",3
+308,0.5744216499345264,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'jupyter_prop_high'})",3
+102,0.5744216499345264,"frozenset({'has_title_T', 'has_comments_T'})",2
+291,0.5744216499345264,"frozenset({'has_error_F', 'jupyter_prop_high', 'markdown_prop_med'})",3
+922,0.5739851593190747,"frozenset({'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+852,0.5739851593190747,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+167,0.5739851593190747,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_comments_T'})",3
+1018,0.5739851593190747,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+818,0.5735486687036229,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'has_error_F', 'has_comments_T'})",4
+1037,0.5735486687036229,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_error_F'})",5
+700,0.573112178088171,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",4
+731,0.573112178088171,"frozenset({'has_error_F', 'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower'})",4
+1073,0.573112178088171,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_equation_F', 'exec_inorder_higher'})",5
+400,0.573112178088171,"frozenset({'has_equation_F', 'exec_inorder_higher', 'longer_ending_F', 'has_author_F'})",4
+701,0.573112178088171,"frozenset({'num_commits_lower', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med'})",4
+1133,0.5726756874727194,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'exec_inorder_higher'})",5
+1009,0.5726756874727194,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+743,0.5726756874727194,"frozenset({'exec_inorder_higher', 'jupyter_prop_high', 'has_error_F', 'has_comments_T'})",4
+1242,0.5722391968572675,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",6
+696,0.5722391968572675,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low'})",4
+969,0.5722391968572675,"frozenset({'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+502,0.5722391968572675,"frozenset({'has_equation_F', 'has_author_F', 'markdown_prop_med', 'has_comments_T'})",4
+1240,0.5718027062418158,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+1066,0.5718027062418158,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+524,0.5718027062418158,"frozenset({'has_equation_F', 'exec_skips_lower', 'non_exec_prop_low', 'has_author_F'})",4
+262,0.571366215626364,"frozenset({'has_equation_F', 'has_error_F', 'markdown_prop_med'})",3
+724,0.571366215626364,"frozenset({'has_error_F', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",4
+708,0.5709297250109122,"frozenset({'exec_inorder_higher', 'jupyter_prop_high', 'markdown_prop_med', 'has_comments_T'})",4
+546,0.5704932343954605,"frozenset({'has_author_F', 'jupyter_prop_high', 'has_error_F', 'has_comments_T'})",4
+250,0.5704932343954605,"frozenset({'has_equation_F', 'jupyter_prop_high', 'has_comments_T'})",3
+261,0.5700567437800087,"frozenset({'has_equation_F', 'exec_skips_lower', 'markdown_prop_med'})",3
+1024,0.5700567437800087,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_comments_T'})",5
+531,0.5700567437800087,"frozenset({'num_commits_lower', 'has_author_F', 'jupyter_prop_high', 'markdown_prop_med'})",4
+850,0.569620253164557,"frozenset({'num_contrib_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+213,0.569620253164557,"frozenset({'has_author_F', 'num_contrib_lower', 'has_title_T'})",3
+1028,0.569620253164557,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+954,0.569620253164557,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_comments_T'})",5
+252,0.5691837625491052,"frozenset({'has_equation_F', 'non_exec_prop_low', 'jupyter_prop_high'})",3
+978,0.5691837625491052,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+654,0.5687472719336534,"frozenset({'has_equation_F', 'exec_inorder_higher', 'markdown_prop_med', 'has_comments_T'})",4
+553,0.5687472719336534,"frozenset({'has_author_F', 'non_exec_prop_low', 'jupyter_prop_high', 'has_error_F'})",4
+1108,0.5687472719336534,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'exec_inorder_higher'})",5
+907,0.5687472719336534,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'has_equation_F'})",5
+925,0.5683107813182017,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+897,0.5683107813182017,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+290,0.5683107813182017,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'markdown_prop_med'})",3
+1111,0.5683107813182017,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'exec_inorder_higher'})",5
+752,0.5678742907027499,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'jupyter_prop_high', 'has_error_F'})",4
+961,0.5678742907027499,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+855,0.5674378000872982,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+545,0.5674378000872982,"frozenset({'exec_skips_lower', 'has_author_F', 'jupyter_prop_high', 'has_comments_T'})",4
+556,0.5670013094718463,"frozenset({'exec_skips_lower', 'has_author_F', 'jupyter_prop_high', 'has_error_F'})",4
+669,0.5670013094718463,"frozenset({'has_equation_F', 'has_error_F', 'num_contrib_lower', 'has_comments_T'})",4
+885,0.5665648188563945,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+403,0.5665648188563945,"frozenset({'longer_ending_F', 'has_author_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+110,0.5665648188563945,"frozenset({'non_exec_prop_low', 'has_title_T'})",2
+960,0.5665648188563945,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F'})",5
+1016,0.5661283282409428,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+496,0.5661283282409428,"frozenset({'num_commits_lower', 'has_equation_F', 'has_author_F', 'jupyter_prop_high'})",4
+396,0.5661283282409428,"frozenset({'has_equation_F', 'longer_ending_F', 'has_author_F', 'num_contrib_lower'})",4
+1131,0.565691837625491,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_comments_T', 'exec_inorder_higher'})",5
+422,0.5652553470100393,"frozenset({'has_error_F', 'longer_ending_F', 'has_author_F', 'num_contrib_lower'})",4
+1136,0.5652553470100393,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'exec_inorder_higher'})",5
+211,0.5652553470100393,"frozenset({'has_links_F', 'has_author_F', 'num_contrib_lower'})",3
+1069,0.5652553470100393,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+1104,0.5648188563945875,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+1013,0.5648188563945875,"frozenset({'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+933,0.5643823657791357,"frozenset({'num_commits_lower', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1112,0.5643823657791357,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+723,0.5643823657791357,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",4
+1015,0.5643823657791357,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",5
+414,0.563945875163684,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_author_F', 'markdown_prop_med'})",4
+927,0.563945875163684,"frozenset({'exec_skips_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+480,0.563945875163684,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_error_F', 'num_contrib_lower'})",4
+479,0.5635093845482322,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'exec_skips_lower', 'num_contrib_lower'})",4
+407,0.5635093845482322,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_author_F', 'jupyter_prop_high'})",4
+113,0.5635093845482322,"frozenset({'has_error_F', 'has_title_T'})",2
+769,0.5635093845482322,"frozenset({'has_error_F', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med'})",4
+109,0.5635093845482322,"frozenset({'num_commits_lower', 'has_title_T'})",2
+975,0.5635093845482322,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+712,0.5630728939327805,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'jupyter_prop_high', 'markdown_prop_med'})",4
+992,0.5630728939327805,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+913,0.5630728939327805,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F'})",5
+765,0.5630728939327805,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med'})",4
+98,0.5626364033173287,"frozenset({'has_links_F', 'non_exec_prop_low'})",2
+178,0.5626364033173287,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'has_error_F'})",3
+428,0.5626364033173287,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F', 'non_exec_prop_low'})",4
+503,0.5621999127018769,"frozenset({'num_commits_lower', 'has_equation_F', 'has_author_F', 'markdown_prop_med'})",4
+1132,0.5621999127018769,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+451,0.5621999127018769,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+632,0.5621999127018769,"frozenset({'has_equation_F', 'num_commits_lower', 'jupyter_prop_high', 'num_contrib_lower'})",4
+938,0.5621999127018769,"frozenset({'exec_skips_lower', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+979,0.5617634220864252,"frozenset({'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+914,0.5617634220864252,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_equation_F'})",5
+646,0.5617634220864252,"frozenset({'has_equation_F', 'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",4
+991,0.5617634220864252,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F'})",5
+1137,0.5617634220864252,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+424,0.5617634220864252,"frozenset({'non_exec_prop_low', 'longer_ending_F', 'has_author_F', 'has_comments_T'})",4
+1216,0.5613269314709733,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+504,0.5608904408555216,"frozenset({'has_equation_F', 'has_author_F', 'non_exec_prop_low', 'markdown_prop_med'})",4
+1076,0.5608904408555216,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_equation_F', 'exec_inorder_higher'})",5
+702,0.5608904408555216,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med'})",4
+1204,0.5604539502400698,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+828,0.560017459624618,"frozenset({'num_commits_lower', 'exec_skips_lower', 'non_exec_prop_low', 'has_error_F'})",4
+532,0.560017459624618,"frozenset({'has_author_F', 'non_exec_prop_low', 'jupyter_prop_high', 'markdown_prop_med'})",4
+734,0.5595809690091663,"frozenset({'has_error_F', 'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower'})",4
+751,0.5595809690091663,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+1239,0.5591444783937145,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+988,0.5591444783937145,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+1140,0.5591444783937145,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_error_F', 'exec_inorder_higher'})",5
+995,0.5587079877782628,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F'})",5
+1241,0.5587079877782628,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+421,0.5587079877782628,"frozenset({'longer_ending_F', 'has_author_F', 'exec_skips_lower', 'num_contrib_lower'})",4
+972,0.558271497162811,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1246,0.558271497162811,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+1154,0.5573985159319075,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_comments_T'})",5
+1077,0.5573985159319075,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+11,0.5569620253164557,frozenset({'md_frequency_med'}),1
+973,0.5569620253164557,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+423,0.5569620253164557,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F', 'has_comments_T'})",4
+668,0.556525534701004,"frozenset({'has_equation_F', 'exec_skips_lower', 'num_contrib_lower', 'has_comments_T'})",4
+770,0.556525534701004,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'markdown_prop_med', 'has_comments_T'})",4
+936,0.5556525534701003,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1218,0.5556525534701003,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+675,0.5556525534701003,"frozenset({'has_equation_F', 'exec_skips_lower', 'non_exec_prop_low', 'num_contrib_lower'})",4
+340,0.5556525534701003,"frozenset({'exec_inorder_higher', 'has_links_F', 'num_contrib_lower'})",3
+647,0.5556525534701003,"frozenset({'has_equation_F', 'num_commits_lower', 'num_contrib_lower', 'markdown_prop_med'})",4
+935,0.5552160628546486,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+940,0.5547795722391968,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F'})",5
+987,0.5547795722391968,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T'})",5
+552,0.5547795722391968,"frozenset({'has_author_F', 'exec_skips_lower', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+717,0.5547795722391968,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'jupyter_prop_high', 'markdown_prop_med'})",4
+506,0.5547795722391968,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_author_F', 'markdown_prop_med'})",4
+410,0.5547795722391968,"frozenset({'longer_ending_F', 'has_author_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+254,0.5547795722391968,"frozenset({'has_equation_F', 'exec_skips_lower', 'jupyter_prop_high'})",3
+442,0.5547795722391968,"frozenset({'has_equation_F', 'exec_inorder_higher', 'longer_ending_F', 'num_contrib_lower'})",4
+175,0.5543430816237451,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_error_F'})",3
+821,0.5543430816237451,"frozenset({'num_commits_lower', 'exec_skips_lower', 'has_error_F', 'has_comments_T'})",4
+661,0.5543430816237451,"frozenset({'has_equation_F', 'exec_inorder_higher', 'non_exec_prop_low', 'markdown_prop_med'})",4
+928,0.5543430816237451,"frozenset({'has_author_F', 'has_error_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+730,0.5543430816237451,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower'})",4
+1187,0.5539065910082933,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+369,0.5539065910082933,"frozenset({'exec_inorder_higher', 'has_title_T', 'has_comments_T'})",3
+171,0.5539065910082933,"frozenset({'longer_ending_F', 'has_error_F', 'has_comments_T'})",3
+468,0.5539065910082933,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T'})",4
+663,0.5539065910082933,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower', 'markdown_prop_med'})",4
+154,0.5539065910082933,"frozenset({'longer_ending_F', 'markdown_prop_med', 'has_comments_T'})",3
+472,0.5534701003928415,"frozenset({'num_commits_lower', 'longer_ending_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+983,0.5534701003928415,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+1106,0.5534701003928415,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+467,0.5530336097773898,"frozenset({'num_commits_lower', 'longer_ending_F', 'num_contrib_lower', 'has_comments_T'})",4
+1209,0.5530336097773898,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",6
+658,0.5530336097773898,"frozenset({'has_equation_F', 'exec_inorder_higher', 'num_commits_lower', 'markdown_prop_med'})",4
+648,0.5530336097773898,"frozenset({'has_equation_F', 'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med'})",4
+535,0.5530336097773898,"frozenset({'has_error_F', 'has_author_F', 'jupyter_prop_high', 'markdown_prop_med'})",4
+1183,0.5530336097773898,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+679,0.5530336097773898,"frozenset({'has_equation_F', 'has_error_F', 'exec_skips_lower', 'num_contrib_lower'})",4
+255,0.5530336097773898,"frozenset({'has_equation_F', 'jupyter_prop_high', 'has_error_F'})",3
+484,0.552597119161938,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low', 'has_comments_T'})",4
+715,0.552597119161938,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'jupyter_prop_high', 'markdown_prop_med'})",4
+497,0.5521606285464863,"frozenset({'has_equation_F', 'non_exec_prop_low', 'jupyter_prop_high', 'has_author_F'})",4
+141,0.5521606285464863,"frozenset({'has_equation_F', 'longer_ending_F', 'non_exec_prop_low'})",3
+495,0.5521606285464863,"frozenset({'has_equation_F', 'has_author_F', 'jupyter_prop_high', 'has_comments_T'})",4
+140,0.5517241379310345,"frozenset({'has_equation_F', 'num_commits_lower', 'longer_ending_F'})",3
+641,0.5517241379310345,"frozenset({'has_equation_F', 'exec_inorder_higher', 'jupyter_prop_high', 'num_commits_lower'})",4
+939,0.5512876473155827,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T'})",5
+776,0.5512876473155827,"frozenset({'has_error_F', 'non_exec_prop_low', 'markdown_prop_med', 'has_comments_T'})",4
+1208,0.5512876473155827,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",6
+174,0.550851156700131,"frozenset({'num_commits_lower', 'longer_ending_F', 'exec_skips_lower'})",3
+534,0.550851156700131,"frozenset({'exec_skips_lower', 'has_author_F', 'jupyter_prop_high', 'markdown_prop_med'})",4
+139,0.550851156700131,"frozenset({'has_equation_F', 'longer_ending_F', 'has_comments_T'})",3
+487,0.5504146660846791,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low'})",4
+148,0.5504146660846791,"frozenset({'num_commits_lower', 'longer_ending_F', 'jupyter_prop_high'})",3
+718,0.5504146660846791,"frozenset({'exec_inorder_higher', 'has_error_F', 'jupyter_prop_high', 'markdown_prop_med'})",4
+1221,0.5499781754692274,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",6
+1080,0.5499781754692274,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+947,0.5499781754692274,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1168,0.5495416848537756,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1095,0.5495416848537756,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'exec_inorder_higher'})",5
+917,0.5495416848537756,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_equation_F'})",5
+589,0.5491051942383238,"frozenset({'exec_inorder_higher', 'has_author_F', 'has_title_T', 'num_contrib_lower'})",4
+1141,0.5491051942383238,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_error_F', 'exec_inorder_higher'})",5
+1107,0.5491051942383238,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+483,0.5491051942383238,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F', 'has_comments_T'})",4
+824,0.5491051942383238,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'has_error_F', 'has_comments_T'})",4
+1115,0.5491051942383238,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_error_F', 'exec_inorder_higher'})",5
+1041,0.5491051942383238,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+507,0.5486687036228721,"frozenset({'has_equation_F', 'has_error_F', 'has_author_F', 'markdown_prop_med'})",4
+883,0.5486687036228721,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F'})",5
+974,0.5486687036228721,"frozenset({'jupyter_prop_high', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+97,0.5486687036228721,"frozenset({'num_commits_lower', 'has_links_F'})",2
+94,0.5486687036228721,"frozenset({'exec_inorder_higher', 'is_education_T'})",2
+680,0.5486687036228721,"frozenset({'has_equation_F', 'num_commits_lower', 'non_exec_prop_low', 'has_comments_T'})",4
+248,0.5482322130074203,"frozenset({'has_equation_F', 'jupyter_prop_high', 'markdown_prop_med'})",3
+817,0.5482322130074203,"frozenset({'num_commits_lower', 'exec_skips_lower', 'non_exec_prop_low', 'has_comments_T'})",4
+222,0.5482322130074203,"frozenset({'non_exec_prop_low', 'has_links_F', 'has_author_F'})",3
+1139,0.5482322130074203,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'exec_inorder_higher'})",5
+964,0.5482322130074203,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_error_F'})",5
+1093,0.5477957223919686,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_comments_T', 'exec_inorder_higher'})",5
+1189,0.5477957223919686,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+1222,0.5477957223919686,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",6
+170,0.5477957223919686,"frozenset({'longer_ending_F', 'exec_skips_lower', 'has_comments_T'})",3
+156,0.5473592317765168,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'markdown_prop_med'})",3
+633,0.5473592317765168,"frozenset({'has_equation_F', 'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower'})",4
+631,0.5473592317765168,"frozenset({'has_equation_F', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",4
+112,0.5473592317765168,"frozenset({'exec_skips_lower', 'has_title_T'})",2
+1116,0.546922741161065,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_error_F', 'exec_inorder_higher'})",5
+147,0.546922741161065,"frozenset({'longer_ending_F', 'jupyter_prop_high', 'has_comments_T'})",3
+901,0.5464862505456133,"frozenset({'markdown_prop_med', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+957,0.5464862505456133,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+664,0.5460497599301615,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_error_F', 'markdown_prop_med'})",4
+1210,0.5460497599301615,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+949,0.5456132693147098,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",5
+705,0.5456132693147098,"frozenset({'jupyter_prop_high', 'has_error_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+381,0.5456132693147098,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'has_title_T'})",3
+639,0.5443037974683544,"frozenset({'has_equation_F', 'exec_inorder_higher', 'jupyter_prop_high', 'has_comments_T'})",4
+1169,0.5443037974683544,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+782,0.5443037974683544,"frozenset({'num_commits_lower', 'has_error_F', 'non_exec_prop_low', 'markdown_prop_med'})",4
+40,0.5443037974683544,"frozenset({'has_author_F', 'is_education_T'})",2
+1219,0.5443037974683544,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+1071,0.5443037974683544,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+1171,0.5443037974683544,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+982,0.5438673068529026,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+0,0.5438673068529026,frozenset({'longer_beginning_T'}),1
+461,0.5438673068529026,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+96,0.5438673068529026,"frozenset({'has_links_F', 'has_comments_T'})",2
+149,0.5434308162374509,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'jupyter_prop_high'})",3
+1072,0.5429943256219991,"frozenset({'num_contrib_lower', 'has_error_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+383,0.5429943256219991,"frozenset({'exec_inorder_higher', 'has_error_F', 'has_title_T'})",3
+177,0.5429943256219991,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'exec_skips_lower'})",3
+994,0.5429943256219991,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F'})",5
+857,0.5429943256219991,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+998,0.5425578350065473,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F'})",5
+956,0.5425578350065473,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_comments_T'})",5
+1205,0.5421213443910956,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+226,0.5416848537756438,"frozenset({'has_author_F', 'has_title_T', 'has_comments_T'})",3
+181,0.5416848537756438,"frozenset({'longer_ending_F', 'exec_skips_lower', 'has_error_F'})",3
+380,0.5416848537756438,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_title_T'})",3
+7,0.5416848537756438,frozenset({'image_prop_low'}),1
+1051,0.5416848537756438,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+1184,0.5412483631601921,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+773,0.5412483631601921,"frozenset({'num_commits_lower', 'has_error_F', 'markdown_prop_med', 'has_comments_T'})",4
+347,0.5412483631601921,"frozenset({'num_commits_lower', 'num_contrib_lower', 'has_title_T'})",3
+692,0.5412483631601921,"frozenset({'has_equation_F', 'num_commits_lower', 'non_exec_prop_low', 'has_error_F'})",4
+580,0.5412483631601921,"frozenset({'exec_inorder_higher', 'has_links_F', 'has_author_F', 'num_contrib_lower'})",4
+341,0.5412483631601921,"frozenset({'num_contrib_lower', 'has_title_T', 'has_comments_T'})",3
+910,0.5412483631601921,"frozenset({'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'has_equation_F'})",5
+704,0.5408118725447403,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med'})",4
+1114,0.5408118725447403,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'exec_inorder_higher'})",5
+858,0.5408118725447403,"frozenset({'num_contrib_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+499,0.5408118725447403,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_author_F', 'jupyter_prop_high'})",4
+1124,0.5403753819292885,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T'})",5
+841,0.5403753819292885,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+981,0.5403753819292885,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'jupyter_prop_high', 'has_author_F', 'exec_inorder_higher'})",5
+1079,0.5399388913138368,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_equation_F', 'exec_inorder_higher'})",5
+643,0.5399388913138368,"frozenset({'has_equation_F', 'exec_inorder_higher', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+941,0.5399388913138368,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F'})",5
+434,0.539502400698385,"frozenset({'non_exec_prop_low', 'longer_ending_F', 'has_author_F', 'has_error_F'})",4
+14,0.539502400698385,frozenset({'md_format_F'}),1
+890,0.539502400698385,"frozenset({'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+772,0.539502400698385,"frozenset({'num_commits_lower', 'exec_skips_lower', 'markdown_prop_med', 'has_comments_T'})",4
+398,0.5390659100829333,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F', 'has_equation_F'})",4
+644,0.5390659100829333,"frozenset({'has_equation_F', 'exec_inorder_higher', 'exec_skips_lower', 'jupyter_prop_high'})",4
+904,0.5390659100829333,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1190,0.5390659100829333,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",6
+834,0.5390659100829333,"frozenset({'num_contrib_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+916,0.5386294194674814,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_equation_F'})",5
+894,0.5386294194674814,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'has_equation_F'})",5
+735,0.5386294194674814,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'jupyter_prop_high', 'has_comments_T'})",4
+1223,0.5386294194674814,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+1167,0.5381929288520296,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+1081,0.5381929288520296,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+909,0.5381929288520296,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'has_equation_F'})",5
+1170,0.5381929288520296,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+155,0.5381929288520296,"frozenset({'num_commits_lower', 'longer_ending_F', 'markdown_prop_med'})",3
+895,0.5377564382365779,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_equation_F'})",5
+348,0.5377564382365779,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_title_T'})",3
+967,0.5377564382365779,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_error_F'})",5
+951,0.5377564382365779,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",5
+851,0.5377564382365779,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'longer_ending_F'})",5
+1164,0.5373199476211261,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_error_F'})",5
+779,0.5368834570056744,"frozenset({'has_error_F', 'exec_skips_lower', 'markdown_prop_med', 'has_comments_T'})",4
+232,0.5368834570056744,"frozenset({'num_commits_lower', 'has_author_F', 'has_title_T'})",3
+221,0.5368834570056744,"frozenset({'num_commits_lower', 'has_links_F', 'has_author_F'})",3
+81,0.5368834570056744,"frozenset({'num_contrib_lower', 'is_education_T'})",2
+430,0.5368834570056744,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F', 'exec_skips_lower'})",4
+848,0.5364469663902226,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'longer_ending_F'})",5
+365,0.5364469663902226,"frozenset({'exec_inorder_higher', 'has_links_F', 'non_exec_prop_low'})",3
+399,0.5364469663902226,"frozenset({'has_equation_F', 'longer_ending_F', 'has_author_F', 'non_exec_prop_low'})",4
+485,0.5360104757747708,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'exec_skips_lower', 'has_comments_T'})",4
+863,0.5360104757747708,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+500,0.5360104757747708,"frozenset({'has_equation_F', 'has_author_F', 'jupyter_prop_high', 'has_error_F'})",4
+1055,0.5360104757747708,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_equation_F', 'exec_inorder_higher'})",5
+902,0.5360104757747708,"frozenset({'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+411,0.5360104757747708,"frozenset({'longer_ending_F', 'has_author_F', 'markdown_prop_med', 'has_comments_T'})",4
+431,0.5360104757747708,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F', 'has_error_F'})",4
+449,0.5355739851593191,"frozenset({'num_commits_lower', 'longer_ending_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+1060,0.5355739851593191,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+382,0.5355739851593191,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_title_T'})",3
+920,0.5355739851593191,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_equation_F'})",5
+491,0.5355739851593191,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low', 'has_error_F'})",4
+1044,0.5351374945438673,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+785,0.5347010039284156,"frozenset({'num_commits_lower', 'has_error_F', 'exec_skips_lower', 'markdown_prop_med'})",4
+999,0.5347010039284156,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+488,0.5347010039284156,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F', 'exec_skips_lower'})",4
+963,0.5347010039284156,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F'})",5
+1220,0.5347010039284156,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+849,0.5342645133129638,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'longer_ending_F'})",5
+859,0.5342645133129638,"frozenset({'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+860,0.5342645133129638,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+1096,0.5342645133129638,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'exec_inorder_higher'})",5
+405,0.5342645133129638,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F', 'jupyter_prop_high'})",4
+1259,0.5342645133129638,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+397,0.533828022697512,"frozenset({'has_equation_F', 'longer_ending_F', 'has_author_F', 'has_comments_T'})",4
+1235,0.5333915320820602,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",6
+1157,0.5333915320820602,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_comments_T'})",5
+233,0.5333915320820602,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_title_T'})",3
+101,0.5333915320820602,"frozenset({'has_links_F', 'has_error_F'})",2
+950,0.5325185508511567,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",5
+493,0.5325185508511567,"frozenset({'has_equation_F', 'has_author_F', 'jupyter_prop_high', 'markdown_prop_med'})",4
+1142,0.5325185508511567,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+903,0.5320820602357049,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1206,0.5320820602357049,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+1199,0.5320820602357049,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher'})",6
+339,0.5320820602357049,"frozenset({'has_links_F', 'non_exec_prop_low', 'num_contrib_lower'})",3
+775,0.5320820602357049,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'markdown_prop_med', 'has_comments_T'})",4
+651,0.5316455696202531,"frozenset({'has_equation_F', 'has_error_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+1065,0.5316455696202531,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'has_equation_F'})",5
+1225,0.5316455696202531,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+1040,0.5312090790048014,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+427,0.5307725883893496,"frozenset({'longer_ending_F', 'has_author_F', 'has_error_F', 'has_comments_T'})",4
+489,0.5307725883893496,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F', 'has_error_F'})",4
+486,0.5307725883893496,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_error_F', 'has_comments_T'})",4
+478,0.5307725883893496,"frozenset({'has_error_F', 'longer_ending_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+75,0.5303360977738979,"frozenset({'has_title_T', 'markdown_prop_med'})",2
+645,0.5303360977738979,"frozenset({'has_equation_F', 'exec_inorder_higher', 'jupyter_prop_high', 'has_error_F'})",4
+650,0.5303360977738979,"frozenset({'has_equation_F', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med'})",4
+747,0.5303360977738979,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'jupyter_prop_high', 'has_error_F'})",4
+695,0.5303360977738979,"frozenset({'has_equation_F', 'num_commits_lower', 'exec_skips_lower', 'has_error_F'})",4
+1061,0.5303360977738979,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_equation_F', 'exec_inorder_higher'})",5
+884,0.5303360977738979,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_equation_F'})",5
+1100,0.5298996071584461,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T'})",5
+1143,0.5298996071584461,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+413,0.5298996071584461,"frozenset({'non_exec_prop_low', 'longer_ending_F', 'has_author_F', 'markdown_prop_med'})",4
+236,0.5298996071584461,"frozenset({'has_error_F', 'has_author_F', 'has_title_T'})",3
+896,0.5298996071584461,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_equation_F'})",5
+952,0.5298996071584461,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",5
+1153,0.5294631165429943,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T'})",5
+781,0.5294631165429943,"frozenset({'num_commits_lower', 'exec_skips_lower', 'non_exec_prop_low', 'markdown_prop_med'})",4
+788,0.5294631165429943,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'has_error_F', 'markdown_prop_med'})",4
+873,0.5290266259275426,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+691,0.5290266259275426,"frozenset({'has_equation_F', 'num_commits_lower', 'exec_skips_lower', 'non_exec_prop_low'})",4
+882,0.5290266259275426,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'has_equation_F'})",5
+921,0.5290266259275426,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F'})",5
+1097,0.5285901353120908,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'exec_inorder_higher'})",5
+448,0.5285901353120908,"frozenset({'longer_ending_F', 'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T'})",4
+475,0.5285901353120908,"frozenset({'num_commits_lower', 'has_error_F', 'longer_ending_F', 'num_contrib_lower'})",4
+1226,0.5285901353120908,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+1224,0.5285901353120908,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",6
+426,0.5285901353120908,"frozenset({'longer_ending_F', 'has_author_F', 'exec_skips_lower', 'has_comments_T'})",4
+686,0.5281536446966391,"frozenset({'has_equation_F', 'non_exec_prop_low', 'has_error_F', 'has_comments_T'})",4
+220,0.5281536446966391,"frozenset({'has_links_F', 'has_author_F', 'has_comments_T'})",3
+108,0.5281536446966391,"frozenset({'exec_inorder_higher', 'md_frequency_med'})",2
+54,0.5277171540811872,"frozenset({'has_equation_F', 'has_links_F'})",2
+888,0.5272806634657354,"frozenset({'jupyter_prop_high', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+876,0.5272806634657354,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F'})",5
+159,0.5272806634657354,"frozenset({'has_error_F', 'longer_ending_F', 'markdown_prop_med'})",3
+1248,0.5272806634657354,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+1198,0.5268441728502837,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+490,0.5268441728502837,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low', 'exec_skips_lower'})",4
+462,0.5268441728502837,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'markdown_prop_med', 'has_comments_T'})",4
+28,0.5268441728502837,"frozenset({'longer_ending_F', 'has_links_F'})",2
+738,0.5268441728502837,"frozenset({'num_commits_lower', 'jupyter_prop_high', 'has_error_F', 'has_comments_T'})",4
+750,0.5268441728502837,"frozenset({'num_commits_lower', 'exec_skips_lower', 'jupyter_prop_high', 'has_error_F'})",4
+1146,0.5268441728502837,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+683,0.5268441728502837,"frozenset({'has_equation_F', 'num_commits_lower', 'has_error_F', 'has_comments_T'})",4
+364,0.5268441728502837,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_links_F'})",3
+1147,0.5268441728502837,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1251,0.5264076822348319,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+440,0.5264076822348319,"frozenset({'has_equation_F', 'num_commits_lower', 'longer_ending_F', 'num_contrib_lower'})",4
+144,0.5264076822348319,"frozenset({'has_equation_F', 'longer_ending_F', 'has_error_F'})",3
+635,0.5264076822348319,"frozenset({'has_equation_F', 'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower'})",4
+450,0.5264076822348319,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower'})",4
+73,0.5264076822348319,"frozenset({'has_links_F', 'markdown_prop_med'})",2
+43,0.5264076822348319,"frozenset({'has_author_F', 'md_frequency_med'})",2
+404,0.5264076822348319,"frozenset({'longer_ending_F', 'has_author_F', 'jupyter_prop_high', 'has_comments_T'})",4
+706,0.5264076822348319,"frozenset({'num_commits_lower', 'jupyter_prop_high', 'markdown_prop_med', 'has_comments_T'})",4
+1185,0.5264076822348319,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+492,0.5259711916193802,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'exec_skips_lower', 'has_error_F'})",4
+454,0.5259711916193802,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F', 'jupyter_prop_high'})",4
+100,0.5259711916193802,"frozenset({'has_links_F', 'exec_skips_lower'})",2
+351,0.5259711916193802,"frozenset({'has_error_F', 'num_contrib_lower', 'has_title_T'})",3
+433,0.5259711916193802,"frozenset({'has_author_F', 'longer_ending_F', 'non_exec_prop_low', 'exec_skips_lower'})",4
+1192,0.5255347010039284,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",6
+1249,0.5255347010039284,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+845,0.5255347010039284,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+892,0.5255347010039284,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1047,0.5255347010039284,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+1213,0.5255347010039284,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+1212,0.5250982103884766,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+444,0.5250982103884766,"frozenset({'has_equation_F', 'exec_inorder_higher', 'longer_ending_F', 'num_commits_lower'})",4
+874,0.5250982103884766,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+1207,0.5250982103884766,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+152,0.5250982103884766,"frozenset({'longer_ending_F', 'jupyter_prop_high', 'has_error_F'})",3
+46,0.5250982103884766,"frozenset({'has_author_F', 'md_format_F'})",2
+682,0.5250982103884766,"frozenset({'has_equation_F', 'num_commits_lower', 'exec_skips_lower', 'has_comments_T'})",4
+905,0.5246617197730249,"frozenset({'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1062,0.5246617197730249,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_equation_F', 'exec_inorder_higher'})",5
+636,0.5246617197730249,"frozenset({'has_equation_F', 'has_error_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+143,0.5246617197730249,"frozenset({'has_equation_F', 'longer_ending_F', 'exec_skips_lower'})",3
+406,0.5246617197730249,"frozenset({'has_author_F', 'longer_ending_F', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+443,0.5242252291575731,"frozenset({'has_equation_F', 'exec_inorder_higher', 'longer_ending_F', 'has_comments_T'})",4
+944,0.5242252291575731,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F'})",5
+1005,0.5242252291575731,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+136,0.5242252291575731,"frozenset({'has_equation_F', 'longer_ending_F', 'jupyter_prop_high'})",3
+474,0.5237887385421214,"frozenset({'num_commits_lower', 'longer_ending_F', 'exec_skips_lower', 'num_contrib_lower'})",4
+737,0.5237887385421214,"frozenset({'num_commits_lower', 'exec_skips_lower', 'jupyter_prop_high', 'has_comments_T'})",4
+1176,0.5237887385421214,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+891,0.5237887385421214,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1130,0.5237887385421214,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_error_F', 'has_comments_T'})",5
+1082,0.5233522479266696,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+441,0.5233522479266696,"frozenset({'has_equation_F', 'longer_ending_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+1191,0.5233522479266696,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+1098,0.5233522479266696,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_error_F', 'exec_inorder_higher'})",5
+338,0.5233522479266696,"frozenset({'num_commits_lower', 'has_links_F', 'num_contrib_lower'})",3
+602,0.5233522479266696,"frozenset({'non_exec_prop_low', 'exec_inorder_higher', 'has_links_F', 'has_author_F'})",4
+1260,0.5233522479266696,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+943,0.5233522479266696,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F'})",5
+439,0.5229157573112178,"frozenset({'has_equation_F', 'longer_ending_F', 'num_contrib_lower', 'has_comments_T'})",4
+445,0.5229157573112178,"frozenset({'has_equation_F', 'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low'})",4
+1001,0.5229157573112178,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+412,0.5229157573112178,"frozenset({'num_commits_lower', 'longer_ending_F', 'has_author_F', 'markdown_prop_med'})",4
+604,0.5229157573112178,"frozenset({'exec_inorder_higher', 'has_author_F', 'has_title_T', 'has_comments_T'})",4
+1262,0.5229157573112178,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",6
+968,0.522479266695766,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+453,0.5220427760803142,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'jupyter_prop_high', 'has_comments_T'})",4
+1135,0.5220427760803142,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_error_F'})",5
+235,0.5220427760803142,"frozenset({'exec_skips_lower', 'has_author_F', 'has_title_T'})",3
+1145,0.5220427760803142,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'markdown_prop_med', 'has_comments_T', 'exec_inorder_higher'})",5
+630,0.5220427760803142,"frozenset({'has_equation_F', 'exec_inorder_higher', 'jupyter_prop_high', 'markdown_prop_med'})",4
+437,0.5220427760803142,"frozenset({'longer_ending_F', 'has_author_F', 'exec_skips_lower', 'has_error_F'})",4
+1011,0.5220427760803142,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+931,0.5216062854648625,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_equation_F'})",5
+1247,0.5216062854648625,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+1127,0.5216062854648625,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_error_F', 'has_comments_T'})",5
+653,0.5216062854648625,"frozenset({'has_equation_F', 'non_exec_prop_low', 'markdown_prop_med', 'has_comments_T'})",4
+458,0.5216062854648625,"frozenset({'longer_ending_F', 'markdown_prop_med', 'num_contrib_lower', 'has_comments_T'})",4
+629,0.5216062854648625,"frozenset({'has_equation_F', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med'})",4
+792,0.5216062854648625,"frozenset({'exec_inorder_higher', 'has_title_T', 'num_contrib_lower', 'has_comments_T'})",4
+1211,0.5216062854648625,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'exec_inorder_higher'})",6
+471,0.5216062854648625,"frozenset({'has_error_F', 'longer_ending_F', 'num_contrib_lower', 'has_comments_T'})",4
+1054,0.5216062854648625,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+151,0.5211697948494107,"frozenset({'longer_ending_F', 'exec_skips_lower', 'jupyter_prop_high'})",3
+864,0.5211697948494107,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+1193,0.5211697948494107,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",6
+158,0.5211697948494107,"frozenset({'longer_ending_F', 'exec_skips_lower', 'markdown_prop_med'})",3
+741,0.5211697948494107,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'has_error_F', 'has_comments_T'})",4
+707,0.5211697948494107,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'markdown_prop_med', 'has_comments_T'})",4
+803,0.5207333042339589,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_title_T', 'num_contrib_lower'})",4
+362,0.5207333042339589,"frozenset({'exec_inorder_higher', 'has_links_F', 'has_comments_T'})",3
+1150,0.5202968136185072,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+92,0.5202968136185072,"frozenset({'exec_inorder_higher', 'image_prop_low'})",2
+1160,0.5202968136185072,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_error_F', 'has_comments_T'})",5
+1144,0.5198603230030554,"frozenset({'markdown_prop_med', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1056,0.5198603230030554,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_equation_F', 'exec_inorder_higher'})",5
+839,0.5194238323876037,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'longer_ending_F'})",5
+1186,0.5194238323876037,"frozenset({'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+1258,0.5194238323876037,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",6
+1075,0.5194238323876037,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_equation_F'})",5
+1244,0.5189873417721519,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F'})",6
+1002,0.5189873417721519,"frozenset({'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+64,0.5185508511567001,"frozenset({'has_links_F', 'jupyter_prop_high'})",2
+1149,0.5185508511567001,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+579,0.5185508511567001,"frozenset({'non_exec_prop_low', 'has_links_F', 'has_author_F', 'num_contrib_lower'})",4
+1215,0.5185508511567001,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",6
+934,0.5181143605412484,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_equation_F'})",5
+1014,0.5181143605412484,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+804,0.5181143605412484,"frozenset({'exec_inorder_higher', 'non_exec_prop_low', 'has_title_T', 'num_contrib_lower'})",4
+1126,0.5181143605412484,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T'})",5
+225,0.5181143605412484,"frozenset({'has_links_F', 'has_author_F', 'has_error_F'})",3
+652,0.5176778699257966,"frozenset({'has_equation_F', 'num_commits_lower', 'markdown_prop_med', 'has_comments_T'})",4
+1110,0.5172413793103449,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_error_F'})",5
+1008,0.5172413793103449,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+219,0.5172413793103449,"frozenset({'exec_inorder_higher', 'has_author_F', 'is_education_T'})",3
+861,0.5172413793103449,"frozenset({'exec_skips_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+1255,0.516804888694893,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",6
+601,0.516804888694893,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_links_F', 'has_author_F'})",4
+615,0.516804888694893,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_author_F', 'has_title_T'})",4
+39,0.516804888694893,"frozenset({'image_prop_low', 'has_author_F'})",2
+698,0.516804888694893,"frozenset({'has_equation_F', 'exec_skips_lower', 'non_exec_prop_low', 'has_error_F'})",4
+464,0.516804888694893,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low', 'markdown_prop_med'})",4
+930,0.516804888694893,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F'})",5
+711,0.516804888694893,"frozenset({'num_commits_lower', 'non_exec_prop_low', 'jupyter_prop_high', 'markdown_prop_med'})",4
+93,0.516804888694893,"frozenset({'is_education_T', 'has_comments_T'})",2
+22,0.5163683980794412,"frozenset({'exec_inorder_higher', 'longer_beginning_T'})",2
+455,0.5163683980794412,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+1091,0.5163683980794412,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T'})",5
+19,0.5159319074639895,"frozenset({'longer_beginning_T', 'has_author_F'})",2
+84,0.5159319074639895,"frozenset({'md_frequency_med', 'num_contrib_lower'})",2
+746,0.5159319074639895,"frozenset({'num_commits_lower', 'exec_skips_lower', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+1103,0.5159319074639895,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_comments_T'})",5
+1088,0.5159319074639895,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1063,0.5159319074639895,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_equation_F', 'exec_inorder_higher'})",5
+460,0.5154954168485377,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med'})",4
+898,0.5154954168485377,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_equation_F'})",5
+1089,0.5154954168485377,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+657,0.515058926233086,"frozenset({'has_equation_F', 'num_commits_lower', 'non_exec_prop_low', 'markdown_prop_med'})",4
+1117,0.515058926233086,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+224,0.515058926233086,"frozenset({'has_links_F', 'has_author_F', 'exec_skips_lower'})",3
+137,0.515058926233086,"frozenset({'has_equation_F', 'longer_ending_F', 'markdown_prop_med'})",3
+1250,0.515058926233086,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+56,0.515058926233086,"frozenset({'has_equation_F', 'has_title_T'})",2
+1148,0.5146224356176342,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'exec_inorder_higher'})",5
+836,0.5146224356176342,"frozenset({'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+867,0.5146224356176342,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_error_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+587,0.5146224356176342,"frozenset({'num_commits_lower', 'has_author_F', 'num_contrib_lower', 'has_title_T'})",4
+865,0.5141859450021824,"frozenset({'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+1083,0.5141859450021824,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+1172,0.5141859450021824,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",6
+202,0.5141859450021824,"frozenset({'has_links_F', 'has_author_F', 'markdown_prop_med'})",3
+1200,0.5141859450021824,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",6
+1238,0.5141859450021824,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",6
+118,0.5141859450021824,"frozenset({'exec_inorder_higher', 'md_format_F'})",2
+616,0.5141859450021824,"frozenset({'non_exec_prop_low', 'exec_inorder_higher', 'has_author_F', 'has_title_T'})",4
+1151,0.5141859450021824,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'markdown_prop_med', 'has_error_F', 'exec_inorder_higher'})",5
+893,0.5141859450021824,"frozenset({'jupyter_prop_high', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+832,0.5141859450021824,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'longer_ending_F'})",5
+1178,0.5137494543867307,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+640,0.5137494543867307,"frozenset({'has_equation_F', 'num_commits_lower', 'non_exec_prop_low', 'jupyter_prop_high'})",4
+1123,0.5137494543867307,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+1228,0.5137494543867307,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+1118,0.5137494543867307,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+1010,0.5137494543867307,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F'})",5
+1203,0.5137494543867307,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",6
+366,0.5137494543867307,"frozenset({'exec_inorder_higher', 'has_links_F', 'exec_skips_lower'})",3
+145,0.5137494543867307,"frozenset({'longer_ending_F', 'jupyter_prop_high', 'markdown_prop_med'})",3
+470,0.5133129637712789,"frozenset({'longer_ending_F', 'exec_skips_lower', 'num_contrib_lower', 'has_comments_T'})",4
+185,0.5133129637712789,"frozenset({'has_equation_F', 'has_links_F', 'has_author_F'})",3
+1179,0.5133129637712789,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+1004,0.5133129637712789,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T'})",5
+129,0.5133129637712789,"frozenset({'longer_ending_F', 'has_links_F', 'has_author_F'})",3
+1087,0.5133129637712789,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_equation_F', 'exec_inorder_higher'})",5
+367,0.5133129637712789,"frozenset({'exec_inorder_higher', 'has_links_F', 'has_error_F'})",3
+871,0.5128764731558272,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F'})",5
+1174,0.5128764731558272,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",6
+459,0.5128764731558272,"frozenset({'num_commits_lower', 'longer_ending_F', 'num_contrib_lower', 'markdown_prop_med'})",4
+977,0.5128764731558272,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+923,0.5128764731558272,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F'})",5
+1234,0.5124399825403754,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",6
+1182,0.5124399825403754,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F'})",6
+689,0.5124399825403754,"frozenset({'has_equation_F', 'exec_skips_lower', 'has_error_F', 'has_comments_T'})",4
+886,0.5124399825403754,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_equation_F'})",5
+463,0.5124399825403754,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F', 'markdown_prop_med'})",4
+337,0.5124399825403754,"frozenset({'has_links_F', 'num_contrib_lower', 'has_comments_T'})",3
+1102,0.5120034919249236,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T'})",5
+980,0.5120034919249236,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_error_F'})",5
+401,0.5120034919249236,"frozenset({'has_equation_F', 'longer_ending_F', 'has_author_F', 'exec_skips_lower'})",4
+578,0.5120034919249236,"frozenset({'num_commits_lower', 'has_links_F', 'has_author_F', 'num_contrib_lower'})",4
+1264,0.5120034919249236,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",7
+1057,0.5120034919249236,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'has_equation_F', 'exec_inorder_higher'})",5
+1201,0.5115670013094719,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher'})",6
+1227,0.5115670013094719,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+714,0.5115670013094719,"frozenset({'num_commits_lower', 'has_error_F', 'jupyter_prop_high', 'markdown_prop_med'})",4
+87,0.51113051069402,"frozenset({'md_format_F', 'num_contrib_lower'})",2
+843,0.51113051069402,"frozenset({'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+618,0.51113051069402,"frozenset({'exec_inorder_higher', 'has_error_F', 'has_author_F', 'has_title_T'})",4
+854,0.5106940200785683,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'longer_ending_F'})",5
+617,0.5106940200785683,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'has_author_F', 'has_title_T'})",4
+744,0.5106940200785683,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'has_error_F', 'has_comments_T'})",4
+1113,0.5106940200785683,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_error_F'})",5
+325,0.5102575294631165,"frozenset({'exec_inorder_higher', 'has_title_T', 'markdown_prop_med'})",3
+1017,0.5102575294631165,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F'})",5
+866,0.5102575294631165,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+846,0.5102575294631165,"frozenset({'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+685,0.5102575294631165,"frozenset({'has_equation_F', 'exec_skips_lower', 'non_exec_prop_low', 'has_comments_T'})",4
+402,0.5098210388476647,"frozenset({'has_equation_F', 'longer_ending_F', 'has_author_F', 'has_error_F'})",4
+835,0.5098210388476647,"frozenset({'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+336,0.5098210388476647,"frozenset({'exec_inorder_higher', 'num_contrib_lower', 'is_education_T'})",3
+862,0.5098210388476647,"frozenset({'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+477,0.5098210388476647,"frozenset({'longer_ending_F', 'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower'})",4
+945,0.5098210388476647,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+971,0.5098210388476647,"frozenset({'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T'})",5
+853,0.5098210388476647,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'longer_ending_F'})",5
+970,0.5098210388476647,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",5
+394,0.5098210388476647,"frozenset({'has_equation_F', 'longer_ending_F', 'has_author_F', 'jupyter_prop_high'})",4
+1261,0.509384548232213,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+637,0.509384548232213,"frozenset({'has_equation_F', 'num_commits_lower', 'jupyter_prop_high', 'has_comments_T'})",4
+899,0.509384548232213,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_equation_F'})",5
+713,0.509384548232213,"frozenset({'num_commits_lower', 'exec_skips_lower', 'jupyter_prop_high', 'markdown_prop_med'})",4
+837,0.509384548232213,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_equation_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+710,0.5089480576167612,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'has_error_F', 'has_comments_T'})",4
+877,0.5089480576167612,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'exec_inorder_higher', 'longer_ending_F'})",5
+581,0.5089480576167612,"frozenset({'has_author_F', 'num_contrib_lower', 'has_title_T', 'has_comments_T'})",4
+482,0.5089480576167612,"frozenset({'num_commits_lower', 'longer_ending_F', 'non_exec_prop_low', 'has_comments_T'})",4
+350,0.5089480576167612,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_title_T'})",3
+446,0.5085115670013095,"frozenset({'has_equation_F', 'exec_inorder_higher', 'longer_ending_F', 'exec_skips_lower'})",4
+1256,0.5085115670013095,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",6
+856,0.5085115670013095,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'longer_ending_F'})",5
+416,0.5085115670013095,"frozenset({'has_error_F', 'longer_ending_F', 'has_author_F', 'markdown_prop_med'})",4
+1068,0.5085115670013095,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'has_equation_F'})",5
+833,0.5085115670013095,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_equation_F', 'longer_ending_F'})",5
+838,0.5080750763858577,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'longer_ending_F'})",5
+791,0.5080750763858577,"frozenset({'exec_inorder_higher', 'has_links_F', 'non_exec_prop_low', 'num_contrib_lower'})",4
+1064,0.5080750763858577,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+924,0.5080750763858577,"frozenset({'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'has_equation_F'})",5
+1138,0.5080750763858577,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_error_F'})",5
+1231,0.5076385857704059,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+887,0.5076385857704059,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_error_F', 'has_equation_F'})",5
+840,0.5076385857704059,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'longer_ending_F'})",5
+753,0.5072020951549542,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'jupyter_prop_high', 'has_error_F'})",4
+1252,0.5072020951549542,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+1173,0.5072020951549542,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",6
+878,0.5072020951549542,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+1122,0.5072020951549542,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_commits_lower', 'has_error_F', 'exec_inorder_higher'})",5
+881,0.5072020951549542,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1092,0.5072020951549542,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_comments_T'})",5
+1253,0.5067656045395024,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",6
+600,0.5067656045395024,"frozenset({'exec_inorder_higher', 'has_links_F', 'has_author_F', 'has_comments_T'})",4
+868,0.5067656045395024,"frozenset({'exec_skips_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+805,0.5067656045395024,"frozenset({'exec_inorder_higher', 'has_error_F', 'has_title_T', 'num_contrib_lower'})",4
+1105,0.5067656045395024,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_error_F', 'has_comments_T'})",5
+456,0.5067656045395024,"frozenset({'exec_inorder_higher', 'exec_skips_lower', 'jupyter_prop_high', 'longer_ending_F'})",4
+831,0.5067656045395024,"frozenset({'num_contrib_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'longer_ending_F'})",5
+1119,0.5067656045395024,"frozenset({'jupyter_prop_high', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+655,0.5067656045395024,"frozenset({'has_equation_F', 'exec_skips_lower', 'markdown_prop_med', 'has_comments_T'})",4
+1134,0.5063291139240507,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower'})",5
+415,0.5063291139240507,"frozenset({'longer_ending_F', 'has_author_F', 'exec_skips_lower', 'markdown_prop_med'})",4
+1074,0.5063291139240507,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_equation_F'})",5
+880,0.5058926233085989,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_equation_F'})",5
+879,0.5058926233085989,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_error_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+1194,0.5058926233085989,"frozenset({'non_exec_prop_low', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+709,0.5058926233085989,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'markdown_prop_med', 'has_comments_T'})",4
+1099,0.505456132693147,"frozenset({'jupyter_prop_high', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",5
+465,0.505456132693147,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'exec_skips_lower', 'markdown_prop_med'})",4
+659,0.505456132693147,"frozenset({'has_equation_F', 'num_commits_lower', 'exec_skips_lower', 'markdown_prop_med'})",4
+588,0.505456132693147,"frozenset({'non_exec_prop_low', 'has_author_F', 'num_contrib_lower', 'has_title_T'})",4
+1084,0.505456132693147,"frozenset({'num_commits_lower', 'has_error_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+1266,0.5050196420776953,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",7
+66,0.5050196420776953,"frozenset({'jupyter_prop_high', 'has_title_T'})",2
+269,0.5050196420776953,"frozenset({'has_equation_F', 'exec_inorder_higher', 'has_links_F'})",3
+1078,0.5050196420776953,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_error_F', 'has_equation_F'})",5
+194,0.5050196420776953,"frozenset({'has_links_F', 'has_author_F', 'jupyter_prop_high'})",3
+95,0.5050196420776953,"frozenset({'has_error_F', 'is_education_T'})",2
+1085,0.5050196420776953,"frozenset({'non_exec_prop_low', 'has_error_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+210,0.5050196420776953,"frozenset({'has_author_F', 'num_contrib_lower', 'is_education_T'})",3
+656,0.5045831514622435,"frozenset({'has_equation_F', 'has_error_F', 'markdown_prop_med', 'has_comments_T'})",4
+1265,0.5045831514622435,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",7
+1094,0.5045831514622435,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower'})",5
+457,0.5045831514622435,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'jupyter_prop_high', 'has_error_F'})",4
+1067,0.5045831514622435,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'has_equation_F'})",5
+1175,0.5045831514622435,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+870,0.5041466608467918,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+1232,0.5041466608467918,"frozenset({'exec_skips_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+409,0.5041466608467918,"frozenset({'longer_ending_F', 'has_author_F', 'jupyter_prop_high', 'has_error_F'})",4
+844,0.5041466608467918,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'longer_ending_F'})",5
+1070,0.5041466608467918,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'has_error_F', 'has_comments_T', 'has_equation_F'})",5
+447,0.50371017023134,"frozenset({'has_equation_F', 'exec_inorder_higher', 'longer_ending_F', 'has_error_F'})",4
+1229,0.50371017023134,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'markdown_prop_med', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+20,0.50371017023134,"frozenset({'longer_beginning_T', 'num_contrib_lower'})",2
+1058,0.50371017023134,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+1177,0.50371017023134,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+790,0.50371017023134,"frozenset({'num_commits_lower', 'exec_inorder_higher', 'has_links_F', 'num_contrib_lower'})",4
+481,0.50371017023134,"frozenset({'has_error_F', 'longer_ending_F', 'exec_skips_lower', 'num_contrib_lower'})",4
+1197,0.50371017023134,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",6
+716,0.50371017023134,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'has_error_F', 'markdown_prop_med'})",4
+642,0.5032736796158882,"frozenset({'has_equation_F', 'num_commits_lower', 'exec_skips_lower', 'jupyter_prop_high'})",4
+21,0.5032736796158882,"frozenset({'longer_beginning_T', 'has_comments_T'})",2
+603,0.5032736796158882,"frozenset({'exec_inorder_higher', 'has_links_F', 'has_author_F', 'exec_skips_lower'})",4
+408,0.5032736796158882,"frozenset({'longer_ending_F', 'exec_skips_lower', 'has_author_F', 'jupyter_prop_high'})",4
+1109,0.5032736796158882,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower'})",5
+319,0.5032736796158882,"frozenset({'exec_inorder_higher', 'has_links_F', 'markdown_prop_med'})",3
+740,0.5032736796158882,"frozenset({'exec_skips_lower', 'non_exec_prop_low', 'jupyter_prop_high', 'has_comments_T'})",4
+368,0.5032736796158882,"frozenset({'non_exec_prop_low', 'has_title_T', 'has_comments_T'})",3
+662,0.5032736796158882,"frozenset({'has_equation_F', 'has_error_F', 'non_exec_prop_low', 'markdown_prop_med'})",4
+1129,0.5028371890004365,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_comments_T'})",5
+1180,0.5028371890004365,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+926,0.5028371890004365,"frozenset({'non_exec_prop_low', 'has_author_F', 'has_error_F', 'has_comments_T', 'has_equation_F'})",5
+1202,0.5028371890004365,"frozenset({'jupyter_prop_high', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'exec_inorder_higher'})",6
+842,0.5028371890004365,"frozenset({'jupyter_prop_high', 'has_author_F', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+1263,0.5028371890004365,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",7
+363,0.5028371890004365,"frozenset({'num_commits_lower', 'has_links_F', 'non_exec_prop_low'})",3
+1195,0.5024006983849847,"frozenset({'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",6
+166,0.5024006983849847,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_links_F'})",3
+204,0.5024006983849847,"frozenset({'has_author_F', 'has_title_T', 'markdown_prop_med'})",3
+946,0.5024006983849847,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'markdown_prop_med', 'has_author_F', 'has_comments_T'})",5
+976,0.5024006983849847,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F'})",5
+869,0.501964207769533,"frozenset({'num_contrib_lower', 'num_commits_lower', 'has_equation_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+1254,0.501964207769533,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_contrib_lower', 'num_commits_lower', 'has_comments_T', 'exec_inorder_higher'})",6
+395,0.501964207769533,"frozenset({'has_equation_F', 'longer_ending_F', 'has_author_F', 'markdown_prop_med'})",4
+638,0.501964207769533,"frozenset({'has_equation_F', 'non_exec_prop_low', 'jupyter_prop_high', 'has_comments_T'})",4
+1121,0.501964207769533,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'jupyter_prop_high', 'num_commits_lower', 'exec_inorder_higher'})",5
+452,0.501964207769533,"frozenset({'has_error_F', 'longer_ending_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+241,0.5015277171540812,"frozenset({'exec_inorder_higher', 'has_author_F', 'md_format_F'})",3
+1217,0.5015277171540812,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T'})",6
+889,0.5015277171540812,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_equation_F'})",5
+875,0.5015277171540812,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'has_comments_T', 'exec_inorder_higher', 'longer_ending_F'})",5
+1086,0.5015277171540812,"frozenset({'exec_skips_lower', 'has_error_F', 'has_comments_T', 'has_equation_F', 'exec_inorder_higher'})",5
+1181,0.5015277171540812,"frozenset({'exec_skips_lower', 'num_contrib_lower', 'markdown_prop_med', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+438,0.5015277171540812,"frozenset({'has_equation_F', 'longer_ending_F', 'jupyter_prop_high', 'num_contrib_lower'})",4
+1196,0.5015277171540812,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'num_commits_lower', 'has_author_F', 'has_equation_F', 'exec_inorder_higher'})",6
+1230,0.5010912265386294,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'has_author_F', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+872,0.5010912265386294,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'num_contrib_lower', 'exec_inorder_higher', 'longer_ending_F'})",5
+900,0.5010912265386294,"frozenset({'markdown_prop_med', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'has_equation_F'})",5
+1120,0.5010912265386294,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",5
+1090,0.5010912265386294,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_error_F', 'has_equation_F', 'exec_inorder_higher'})",5
+466,0.5010912265386294,"frozenset({'exec_inorder_higher', 'longer_ending_F', 'has_error_F', 'markdown_prop_med'})",4
+660,0.5006547359231777,"frozenset({'has_equation_F', 'has_error_F', 'num_commits_lower', 'markdown_prop_med'})",4
+1059,0.5006547359231777,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_comments_T', 'has_equation_F'})",5
+1257,0.5006547359231777,"frozenset({'num_contrib_lower', 'markdown_prop_med', 'num_commits_lower', 'has_error_F', 'has_comments_T', 'exec_inorder_higher'})",6
+847,0.5006547359231777,"frozenset({'non_exec_prop_low', 'markdown_prop_med', 'has_author_F', 'exec_inorder_higher', 'longer_ending_F'})",5
+1214,0.5002182453077259,"frozenset({'exec_skips_lower', 'jupyter_prop_high', 'num_commits_lower', 'has_author_F', 'has_comments_T', 'exec_inorder_higher'})",6
+937,0.5002182453077259,"frozenset({'non_exec_prop_low', 'exec_skips_lower', 'has_author_F', 'has_error_F', 'has_equation_F'})",5
+948,0.5002182453077259,"frozenset({'non_exec_prop_low', 'jupyter_prop_high', 'markdown_prop_med', 'num_commits_lower', 'has_author_F'})",5
+719,0.5002182453077259,"frozenset({'has_error_F', 'exec_skips_lower', 'jupyter_prop_high', 'markdown_prop_med'})",4
+1188,0.5002182453077259,"frozenset({'non_exec_prop_low', 'num_contrib_lower', 'num_commits_lower', 'has_author_F', 'has_error_F', 'has_equation_F'})",6
