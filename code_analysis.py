@@ -342,7 +342,6 @@ def exports(cell):
         # check each possible export regex
         for export in regex.export:
             if re.search(export, line) and not re.search(regex.comment, line):
-                print(line)
                 return True
 
     return False
