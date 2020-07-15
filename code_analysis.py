@@ -309,7 +309,7 @@ def has_papermill(nb_id):
 ''' feature - testing '''
 
 # checks if a notebook imported pytest, test, or unittest
-def has_pytest(nb_id):
+def has_testing(nb_id):
 
     # get the code cells
     code_cells = data.get_code_cells(nb_id)
