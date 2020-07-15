@@ -129,6 +129,24 @@ def get_nb_commits(nb_id):
     response = api.request(strip_url(nb_commit_url))
     return response
 
+# retrieves the files in the directory of the notebook in the repository
+def get_files(nb_id):
+
+    # get notebook path
+    nb_path = get_path(nb_id)
+
+    # get notebook name and replace it in the path
+    nb_name = get_nb_name(nb_id)
+    nb_path = nb_path.replace(nb_name, '')
+
+    # get the content url for the directory
+    repo_metadata = get_repo_metadata(nb_id)
+    nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path)
+
+    # query the api to the url
+    response = api.request(strip_url(nb_dir_url))
+    return response
+
 ''' notebook access'''
 
 # given a notebook id, returns the cells in the notebook as a python list

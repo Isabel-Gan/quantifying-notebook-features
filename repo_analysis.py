@@ -60,3 +60,18 @@ def get_commit_messages(nb_id):
     commit_msgs = list(map(lambda commit : commit['commit']['message'], commits))
 
     return list(commit_msgs)
+
+''' feature - manage dependencies and imports '''
+
+# checks if there is a requirements.txt in the same directory as the notebook
+def has_requirements(nb_id):
+
+    # get the files in the notebook directory
+    dir_files = data.get_files(nb_id)
+
+    # check the files for requirements.txt
+    for file in dir_files:
+        if file['name'] == 'requirements.text':
+            return True 
+    
+    return False
