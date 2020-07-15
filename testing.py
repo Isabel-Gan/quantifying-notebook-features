@@ -29,7 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(repo_analysis.has_requirements)
+test_func(code_analysis.has_export)
 
 ''' testing all functions - print out results '''
 

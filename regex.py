@@ -16,5 +16,10 @@ education = ["project", "hint", "rubric", "answer", "question", "pass",
                         "due", "bootcamp", "assessment", "final_project",
                         "week([_\- ]|\B)([0-9]+)", "day([_\- ]|\B)([0-9]+)"]\
 
-# used to detect markdown header
+# used to detect markdown header (and python comments)
 md_header = "#([\S\s]+)"
+comment = md_header
+
+# regex associated with exporting to a file
+export = ["(.*)\.(.*)dump(.*)", "(.*)\.(.*)save(.*)", "(.*)\.(.*)store(.*)", "(.*)\.(.*)write(.*)",
+            "(.*)\.to_csv", "(.*)\.to_pickle", "outfile", "open\((.*),(.*)([a,w,x])(.*)\)"]

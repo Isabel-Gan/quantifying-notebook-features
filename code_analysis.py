@@ -1,4 +1,6 @@
+import re
 import data_access as data  
+import regex
 
 ''' feature - proportion of code cells with output '''
 
@@ -312,11 +314,48 @@ def has_pytest(nb_id):
     # get the code cells
     code_cells = data.get_code_cells(nb_id)
 
-    # look for pytest import
+    # look for testing imports
     for cell in code_cells:
         if has_import(cell, 'pytest') or \
             has_import(cell, 'test') or \
             has_import(cell, 'unittest'):
+            return True 
+    
+    return False
+
+''' feature - exports to a file '''
+
+# checks if a code cell includes exporting to a file
+def exports(cell):
+
+    # get field holding the code
+    keys = cell.keys()
+    field = ""
+    if 'input' in keys:
+        field = 'input'
+    elif 'source' in keys:
+        field = 'source'
+
+    # check each line of the code
+    for line in cell[field]:
+        
+        # check each possible export regex
+        for export in regex.export:
+            if re.search(export, line) and not re.search(regex.comment, line):
+                print(line)
+                return True
+
+    return False
+
+# determines if a notebook exports to a file
+def has_export(nb_id):
+
+    # get code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # check each code cell for an export
+    for cell in code_cells:
+        if exports(cell):
             return True 
     
     return False
