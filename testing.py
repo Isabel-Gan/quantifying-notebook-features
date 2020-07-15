@@ -30,6 +30,7 @@ def test_func(func):
 
 # PUT TESTS HERE
 test_func(code_analysis.has_papermill)
+test_func(code_analysis.has_pytest)
 
 ''' testing all functions - print out results '''
 

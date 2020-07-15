@@ -271,8 +271,8 @@ def num_functions(nb_id):
 
 ''' feature - parameterization '''
 
-# checks whether a line in a code cell imports papermill
-def papermill(cell):
+# checks whether a line in a code cell imports a given module
+def has_import(cell, module):
 
     # get field holding the code
     keys = cell.keys()
@@ -282,14 +282,14 @@ def papermill(cell):
     elif 'source' in keys:
         field = 'source'
 
-    # check for papermill import statement
-    papermill_import = 'import papermill'
+    # check for import statement
+    import_statement = 'import ' + module
+    from_statement = 'from ' + module
     for line in cell[field]:
-        if papermill_import in line:
+        if import_statement in line or from_statement in line:
             return True
 
     return False
-
 
 # checks if a notebook imported papermill (notebook parameterization tool)
 def has_papermill(nb_id):
@@ -299,7 +299,24 @@ def has_papermill(nb_id):
 
     # look for papermill import
     for cell in code_cells:
-        if papermill(cell):
+        if has_import(cell, 'papermill'):
             return True
+    
+    return False
+
+''' feature - testing '''
+
+# checks if a notebook imported pytest, test, or unittest
+def has_pytest(nb_id):
+
+    # get the code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # look for pytest import
+    for cell in code_cells:
+        if has_import(cell, 'pytest') or \
+            has_import(cell, 'test') or \
+            has_import(cell, 'unittest'):
+            return True 
     
     return False
