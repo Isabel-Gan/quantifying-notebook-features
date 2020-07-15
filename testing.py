@@ -29,8 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(code_analysis.has_papermill)
-test_func(code_analysis.has_pytest)
+test_func(nb_analysis.num_headers)
 
 ''' testing all functions - print out results '''
 

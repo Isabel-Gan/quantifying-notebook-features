@@ -249,3 +249,34 @@ def get_speaking_language(nb_id):
 
     # get the language of the markdown cells
     return speaking_language(md_cells)
+
+''' feature - notebook structure '''
+
+# returns the number of markdown headers within a single cell
+def count_headers(cell):
+
+    num_headers = 0
+
+    # check the cell source
+    if 'source' in cell.keys():
+        for line in cell['source']:
+            if re.match(regex.md_header, line.strip()):
+                num_headers += 1
+
+    # return the total 
+    return num_headers
+
+# returns the number of markdown headers in a notebook
+def num_headers(nb_id):
+
+    # get the markdown cells
+    md_cells = data.get_md_cells(nb_id)
+
+    # count the number of headers across the cells
+    num_headers = 0
+    for cell in md_cells:
+        num_headers += count_headers(cell)
+
+    # return the total
+    return num_headers
+
