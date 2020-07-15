@@ -268,3 +268,38 @@ def num_functions(nb_id):
     
     # return the total
     return num_defs
+
+''' feature - parameterization '''
+
+# checks whether a line in a code cell imports papermill
+def papermill(cell):
+
+    # get field holding the code
+    keys = cell.keys()
+    field = ""
+    if 'input' in keys:
+        field = 'input'
+    elif 'source' in keys:
+        field = 'source'
+
+    # check for papermill import statement
+    papermill_import = 'import papermill'
+    for line in cell[field]:
+        if papermill_import in line:
+            return True
+
+    return False
+
+
+# checks if a notebook imported papermill (notebook parameterization tool)
+def has_papermill(nb_id):
+    
+    # get the code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # look for papermill import
+    for cell in code_cells:
+        if papermill(cell):
+            return True
+    
+    return False
