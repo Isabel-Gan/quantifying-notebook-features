@@ -93,10 +93,10 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/github2017-ninth-run.csv'
+output_path = 'output/github2017-tenth-run.csv'
 
 # path to error csv
-error_path = 'output/github2017-ninth-errors.csv'
+error_path = 'output/github2017-tenth-errors.csv'
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
@@ -108,7 +108,7 @@ directory = os.fsencode(dataset_path + 'notebooks')
 api = GitHubAPI()
 
 # number of notebooks to run for, if applicable
-limit = 20
+# limit = 20
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -183,9 +183,9 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         err = False
 
         # increment regular counter
-        counter += 1
-        if counter == limit:
-            break
+        # counter += 1
+        # if counter == limit:
+        #     break
     
     print("finished! successfully ran " + str(success_counter) + " notebooks")
 
