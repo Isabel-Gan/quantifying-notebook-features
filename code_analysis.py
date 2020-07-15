@@ -233,3 +233,38 @@ def ex_skip_average(nb_id):
     
     # calculate the average size of a skip
     return float(sum_skips) / float(len(ex_code_cells) - 1)
+
+''' feature - modularization '''
+
+# counts the number of functions within a single cell
+def def_in_cell(cell):
+
+    # get field holding the code
+    keys = cell.keys()
+    field = ""
+    if 'input' in keys:
+        field = 'input'
+    elif 'source' in keys:
+        field = 'source'
+    
+    # for each line in the source, check for def
+    def_instances = 0
+    def_string = 'def'
+    for line in cell[field]:
+        def_instances += line.count(def_string)
+    
+    return def_instances
+
+# counts the number of functions in a notebook
+def num_functions(nb_id):
+
+    # get code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # count all the functions for each cell
+    num_defs = 0
+    for cell in code_cells:
+        num_defs += def_in_cell(cell)
+    
+    # return the total
+    return num_defs

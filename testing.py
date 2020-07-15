@@ -29,9 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-print(md_analysis.md_formatting(551103))
-print(md_analysis.md_formatting(551325))
-print(md_analysis.md_formatting(627235))
+test_func(code_analysis.num_functions)
 
 ''' testing all functions - print out results '''
 
