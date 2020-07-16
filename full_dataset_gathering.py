@@ -3,22 +3,22 @@ import os
 import pandas as pd
 
 # repository data
-repositories_path = 'repositories.csv'
+repositories_path = 'full-dataset/repositories.csv'
 repositories_df = pd.read_csv(repositories_path)
 
 # path to the directory that holds all the notebooks
-dataset_path = '../../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_DATA/'
+dataset_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_DATA/'
 
 # dictionary row to write to the csv
 row_write = {
     'nb_id': None,
     'repo_id': None,
     'name': None,
-    'path': None
+    'filepath': None
 }
 
 # path to the notebooks csv we will create
-output_path = 'notebooks.csv'
+output_path = 'full-dataset/notebooks.csv'
 
 # current ID
 nb_id = 0
