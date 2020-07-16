@@ -24,7 +24,7 @@ output_path = 'notebooks.csv'
 nb_id = 0
 
 # number of notebooks to run for, if applicable
-limit = 20
+# limit = 20
 
 # open the outfile
 with open(output_path, 'w', newline='') as outcsv:
@@ -43,8 +43,14 @@ with open(output_path, 'w', newline='') as outcsv:
         # get the path that holds the notebooks
         repo_path = dataset_path + repo_name.replace('/', '~') + '_nb/'
 
+        # try to get the repository path
+        try:
+            repo_files = os.listdir(repo_path)
+        except FileNotFoundError:
+            continue
+
         # iterate through the notebooks in the repo directory
-        for file in os.listdir(repo_path):
+        for file in repo_files:
 
             # assign a notebook id
             row_write['nb_id'] = nb_id
@@ -68,12 +74,12 @@ with open(output_path, 'w', newline='') as outcsv:
             print("wrote notebook " + filename)
 
             # check counter
-            if nb_id == limit:
-                break
+            # if nb_id == limit:
+            #     break
         
         # check counter
-        if nb_id == limit:
-            break
+        # if nb_id == limit:
+        #     break
 
         print("wrote repository " + repo_name)
         
