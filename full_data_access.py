@@ -34,7 +34,7 @@ def get_url(url):
 
 # uses the csv files to find the corresponding field given a notebook id
 def get_csv_field(field, nb_id):
-    nb_row = nb_df.loc[df_nb['nb_id'] == nb_id]
+    nb_row = nb_df.loc[nb_df['nb_id'] == nb_id]
     return nb_row[field]
 
 # uses the csv file to find the corresponding repository id given a notebook id
@@ -53,7 +53,7 @@ def get_path(nb_id):
 def get_repo_metadata(nb_id):
 
     # get the full repo name
-    repo_name = repo_df.loc[repo_df['repo_id'] == get_repo_id(nb_id)]['full name']
+    repo_name = str(repo_df.loc[repo_df['id'] == get_repo_id(nb_id)]['full name'].item())
 
     # query the api for the repo metadata
     response = api.request('repos/' + repo_name)

@@ -66,7 +66,7 @@ with open(output_path, 'w', newline='') as outcsv:
                 continue 
 
             # get the path to the notebook
-            row_write['path'] = repo_name.replace('/', '~') + '_nb/' + filename
+            row_write['filepath'] = repo_name.replace('/', '~') + '_nb/' + filename
 
             # write the row to the csv and iterate notebook IDs
             writer.writerow(row_write)
