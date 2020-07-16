@@ -1,6 +1,7 @@
 import re
 import data_access as data  
 import regex
+import signal
 
 ''' feature - proportion of code cells with output '''
 
@@ -336,13 +337,25 @@ def exports(cell):
     elif 'source' in keys:
         field = 'source'
 
+    # signal handler for regex timeout
+    def signal_handler(signum, frame):
+        raise Exception("timed out")
+
     # check each line of the code
     for line in cell[field]:
         
         # check each possible export regex
         for export in regex.export:
-            if re.search(export, line) and not re.search(regex.comment, line):
-                return True
+            print(line)
+            signal.signal(signal.SIGALRM, signal_handler)
+            signal.alarm(20)
+            try:
+                if re.search(export, line) and not re.search(regex.comment, line):
+                    return True
+            except:
+                # may get here if the regex times out
+                print("regex timeout")
+                continue
 
     return False
 

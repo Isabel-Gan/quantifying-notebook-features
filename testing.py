@@ -29,7 +29,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
-test_func(code_analysis.has_export)
+code_analysis.has_export(589664)
 
 ''' testing all functions - print out results '''
 
