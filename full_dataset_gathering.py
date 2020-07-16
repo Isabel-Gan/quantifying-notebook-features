@@ -1,6 +1,7 @@
 import csv
 import os
 import pandas as pd
+import re
 
 # repository data
 repositories_path = 'full-dataset/repositories.csv'
@@ -60,7 +61,7 @@ with open(output_path, 'w', newline='') as outcsv:
 
             # get the filename and check that it is a notebook
             filename = os.fsdecode(file)
-            if '.ipynb' in filename:
+            if re.fullmatch("(.*).ipynb", filename):
                 row_write['name'] = filename 
             else:
                 continue 
