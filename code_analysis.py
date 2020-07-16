@@ -346,7 +346,6 @@ def exports(cell):
         
         # check each possible export regex
         for export in regex.export:
-            print(line)
             signal.signal(signal.SIGALRM, signal_handler)
             signal.alarm(20)
             try:
