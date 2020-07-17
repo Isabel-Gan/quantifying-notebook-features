@@ -27,9 +27,8 @@ row_write = {
 # output for this segment
 output_path = 'full-dataset/nb_paths_segment' + str(segment_num) + '.csv'
 
-# counter and limit
-counter = 0
-limit = 20
+# will hold ongoing repo name 
+prev_repo_name = None
 
 # open the outfile
 with open(output_path, 'w', newline='') as outcsv:
@@ -58,9 +57,29 @@ with open(output_path, 'w', newline='') as outcsv:
         repo_full_name = str(repo_row['full name'].item())
         repo_name = repo_full_name.split('/')[1]
 
-        # clone the repo and go into folder
-        subprocess.run(["git", "clone", "https://github.com/" + repo_full_name])
-        os.chdir(temp_dir + repo_name)
+        # check if repo name changed
+        if prev_repo_name == None:
+
+            # first repository
+            prev_repo_name = repo_full_name
+
+            # clone the repo and go into folder
+            subprocess.run(["git", "clone", "https://github.com/" + repo_full_name])
+            os.chdir(temp_dir + repo_name)
+
+        elif repo_full_name != prev_repo_name:
+            # delete the previous repo and update
+            os.chdir(temp_dir)
+            subprocess.run(["rm", "-rf", temp_dir + repo_name])
+            prev_repo_name = repo_full_name
+
+            # clone the repo and go into folder
+            subprocess.run(["git", "clone", "https://github.com/" + repo_full_name])
+            os.chdir(temp_dir + repo_name)
+
+        elif repo_full_name == prev_repo_name:
+            # go into folder
+            os.chdir(temp_dir + repo_name)
 
         # generate the tree and iterate through the files
         p = subprocess.Popen('git ls-tree -r master --name-only', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -80,18 +99,9 @@ with open(output_path, 'w', newline='') as outcsv:
                 nb_path = filepath
                 break
 
-        # delete the repo
-        os.chdir(temp_dir)
-        subprocess.run(["rm", "-rf", temp_dir + repo_name])
-            
         # assign notebook path and write row
         row_write['nb_path'] = nb_path 
         writer.writerow(row_write)
         print(colored("found path " + str(nb_path), 'green'))
-
-        # iterate and check counter
-        counter += 1
-        if counter == limit:
-            break
     
     print(colored("successfully finished segment " + str(segment_num), 'green'))
