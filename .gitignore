@@ -21,3 +21,6 @@ output/complete-runs/analysis/cluster-data/no-md-rule-learning
 
 # temp directory for things
 temp
+
+# old scripts and files for parallelization
+full-dataset/old-work
