@@ -14,7 +14,8 @@ dataset_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_DATA/'
 row_write = {
     'nb_id': None,
     'repo_id': None,
-    'name': None,
+    'nb_name': None,
+    'repo_name': None,
     'filepath': None
 }
 
@@ -39,7 +40,7 @@ with open(output_path, 'w', newline='') as outcsv:
 
         # get the repository id and name
         repo_id = repository['id']
-        repo_name = repository['full name'] # don't need this, delete later
+        repo_name = repository['full name'] 
 
         # get the path that holds the notebooks
         repo_path = dataset_path + repo_name.replace('/', '~') + '_nb/'
@@ -59,10 +60,13 @@ with open(output_path, 'w', newline='') as outcsv:
             # populate the notebook id
             row_write['repo_id'] = repo_id 
 
+            # populate the repo name
+            row_write['repo_name'] = repo_name
+
             # get the filename and check that it is a notebook
             filename = os.fsdecode(file)
             if re.fullmatch("(.*).ipynb", filename):
-                row_write['name'] = filename 
+                row_write['nb_name'] = filename 
             else:
                 continue 
 
