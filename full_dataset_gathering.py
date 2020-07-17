@@ -16,7 +16,8 @@ row_write = {
     'repo_id': None,
     'nb_name': None,
     'repo_name': None,
-    'filepath': None
+    'filepath': None,
+    'filtered': None
 }
 
 # path to the notebooks csv we will create
@@ -62,6 +63,9 @@ with open(output_path, 'w', newline='') as outcsv:
 
             # populate the repo name
             row_write['repo_name'] = repo_name
+
+            # populate filtered
+            row_write['filtered'] = False
 
             # get the filename and check that it is a notebook
             filename = os.fsdecode(file)
