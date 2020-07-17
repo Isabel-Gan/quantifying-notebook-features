@@ -7,7 +7,7 @@ from termcolor import colored
 
 # segments of notebooks (for parallelization)
 segments = [(0, 35781), (35782, 71562), (71563, 107343), (107344, 143124)]
-segment_num = 3
+segment_num = 0
 cur_segment = segments[segment_num]
 
 # load the notebooks csv
@@ -26,12 +26,43 @@ row_write = {
 
 # output for this segment
 output_path = 'full-dataset/nb_paths_segment' + str(segment_num) + '.csv'
+output_error_path = 'full-dataset/errors_segment' + str(segment_num) + '.txt'
 
-# will hold ongoing repo name 
-prev_repo_name = None
+# will hold ongoing repo name and whether or not it errored
+prev_repo_name = (None, None)
+
+# clones a repository, raising an exception if it cannot be cloned
+def clone_repo(repo_full_name, error_file):
+
+    try:
+        # try to clone the repo
+        print(colored('cloning ' + repo_full_name + '...', 'cyan'))
+        subprocess.run(["git", "clone", "https://github.com/" + repo_full_name], timeout = 300)
+
+        # clone successful
+        print(colored("successfully cloned " + repo_full_name, 'cyan'))
+        return True
+
+    except subprocess.TimeoutExpired:
+        # delete the folder created for the repo
+        repo_name = repo_full_name.split('/')[1]
+        subprocess.run(["rm", "-rf", repo_name])
+
+        # error output
+        output_msg = 'could not clone ' + repo_full_name + ', timed out'
+        print(colored(output_msg, 'red'))
+        error_file.write(output_msg + '\n')
+        return False
+
+    except:
+        # error output
+        output_msg = 'could not clone ' + repo_full_name
+        print(colored(output_msg, 'red'))
+        error_file.write(output_msg + '\n')
+        return False
 
 # open the outfile
-with open(output_path, 'w', newline='') as outcsv:
+with open(output_path, 'w', newline='') as outcsv, open(output_error_path, 'w') as error_file:
 
     # writes column headers
     writer = csv.DictWriter(outcsv, fieldnames = row_write.keys())
@@ -53,33 +84,64 @@ with open(output_path, 'w', newline='') as outcsv:
 
         # get repository name 
         repo_id = int(notebook['repo_id'].item())
-        repo_row = repo_df.loc[repo_df['id'] == repo_id]
-        repo_full_name = str(repo_row['full name'].item())
+        repo_row = repo_df.loc[repo_df['id'] == repo_id].iloc[0]
+        repo_full_name = repo_row['full name']
         repo_name = repo_full_name.split('/')[1]
 
-        # check if repo name changed
-        if prev_repo_name == None:
+        # check previous repo name
+        if prev_repo_name[0] == None:
 
-            # first repository
-            prev_repo_name = repo_full_name
+            try:
+                # try to clone the repo
+                result = clone_repo(repo_full_name, error_file)
 
-            # clone the repo and go into folder
-            subprocess.run(["git", "clone", "https://github.com/" + repo_full_name])
-            os.chdir(temp_dir + repo_name)
+                # first repository
+                prev_repo_name = (repo_name, result)
 
-        elif repo_full_name != prev_repo_name:
-            # delete the previous repo and update
+                # go into the folder
+                if result:
+                    os.chdir(temp_dir + repo_name)
+                else:
+                    raise Exception('couldn\'t clone repo')
+            except:
+                error_file.write('notebook ' + str(nb_id) + '\n')
+                continue
+
+        elif repo_name != prev_repo_name[0]:
+
+            # delete the previous repo 
             os.chdir(temp_dir)
-            subprocess.run(["rm", "-rf", temp_dir + repo_name])
-            prev_repo_name = repo_full_name
+            subprocess.run(["rm", "-rf", temp_dir + prev_repo_name[0]])
 
-            # clone the repo and go into folder
-            subprocess.run(["git", "clone", "https://github.com/" + repo_full_name])
-            os.chdir(temp_dir + repo_name)
+            try:
+                # try to clone the repo
+                result = clone_repo(repo_full_name, error_file)
 
-        elif repo_full_name == prev_repo_name:
-            # go into folder
-            os.chdir(temp_dir + repo_name)
+                # update prev_repo
+                prev_repo_name = (repo_name, result)
+
+                # go into the folder
+                if result:
+                    os.chdir(temp_dir + repo_name)
+                else:
+                    raise Exception('couldn\'t clone repo')
+            except:
+                error_file.write('notebook ' + str(nb_id) + '\n')
+                continue
+
+        elif repo_name == prev_repo_name[0]:
+
+            # check result
+            if prev_repo_name[1]:
+                # go into folder
+                try:
+                    os.chdir(temp_dir + repo_name)
+                except FileNotFoundError:
+                    error_file.write('notebook ' + str(nb_id) + ', repo not found' + '\n')
+                    continue
+            else:
+                error_file.write('notebook ' + str(nb_id) + '\n')
+                continue
 
         # generate the tree and iterate through the files
         p = subprocess.Popen('git ls-tree -r master --name-only', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
