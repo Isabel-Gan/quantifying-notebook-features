@@ -127,10 +127,10 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'full-output/first-run.csv'
+output_path = 'full-output/segments/second-run-segment' + str(segment_num) + '.csv'
 
 # path to error csv
-error_path = 'full-output/first-errors.csv'
+output_path = 'full-output/segments/second-errors-segment' + str(segment_num) + '.csv'
 
 # dataset csv
 notebooks_df = pd.read_pickle('full-dataset/notebooks.pkl')
