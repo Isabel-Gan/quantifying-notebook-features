@@ -1,4 +1,4 @@
-import data_access as data  
+import full_data_access as data  
 import re
 import regex
 from langdetect import detect

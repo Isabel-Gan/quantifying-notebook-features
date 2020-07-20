@@ -1,4 +1,4 @@
-import data_access as data   
+import full_data_access as data   
 
 ''' feature - other files that are non-Jupyter '''
 
