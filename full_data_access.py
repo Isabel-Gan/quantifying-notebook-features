@@ -43,11 +43,15 @@ def get_repo_id(nb_id):
 
 # uses the csv file to find the corresponding file name given a notebook id
 def get_nb_name(nb_id):
-    return str(get_csv_field('name', nb_id).item())
+    return str(get_csv_field('nb_name', nb_id).item())
 
 # uses the csv file to find the corresponding path given a notebook id
 def get_path(nb_id):
-    return str(get_csv_field('path', nb_id).item())
+    return str(get_csv_field('nb_path', nb_id).item())
+
+# uses the csv file to find the corresponding filepath given a notebook id
+def get_filepath(nb_id):
+    return str(get_csv_field('filepath', nb_id).item())
 
 # given a notebook id, returns the metadata (as a python dictionary object) of its repository
 def get_repo_metadata(nb_id):
@@ -63,7 +67,7 @@ def get_repo_metadata(nb_id):
 def get_nb(nb_id):
 
     # get the file path
-    nb_file = dataset_path + get_path(nb_id)
+    nb_file = dataset_path + get_filepath(nb_id)
 
     # try to load the file
     with open(nb_file) as nb_file:
