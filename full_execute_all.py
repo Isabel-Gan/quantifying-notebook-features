@@ -1,6 +1,7 @@
 import csv
 import os
 import re
+import sys
 import pandas as pd
 from GitHubAPI_Crawler.github_api import GitHubAPI
 from termcolor import colored
@@ -14,6 +15,35 @@ import notebook_analysis as nb_analysis
 import keyword_analysis as kw_analysis   
 import repo_analysis
 import code_analysis
+
+# generates a certain number of segments
+def get_segments(num_segments):
+    
+    # segment properties
+    total_nbs = 143125
+    segments = []
+    segment_size = int(total_nbs / num_segments)
+
+    # generate each segment
+    prev_end = None
+    for i in range(num_segments):
+
+        if prev_end == None:
+            segments.append((0, segment_size))
+            prev_end = segment_size 
+        elif i == num_segments - 1:
+            segments.append((prev_end + 1, total_nbs - 1))
+        else:
+            new_end = (prev_end + 1) + segment_size
+            segments.append((prev_end + 1, new_end))
+            prev_end = new_end
+
+    return segments
+
+# get the number of segments we want
+segments = get_segments(6)
+segment_num = int(sys.argv[1])
+cur_segment = segments[segment_num]
 
 # dictionary object relating functions to their specific field in the csv
 function_columns = {
@@ -122,7 +152,13 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
     success_counter = 0
     counter = 0
     err = False 
-    for _, notebook in notebooks_df.iterrows():
+    for nb_id in range(cur_segment[0], cur_segment[1] + 1):
+
+        # get notebook row
+        notebook = notebooks_df.loc[notebooks_df['nb_id'] == nb_id].squeeze()
+
+        # notebook identifier to print
+        identifier = str((notebook['filepath'], str(notebook['nb_id'])))
 
         # get notebook and repository id
         nb_id = notebook['nb_id']
@@ -142,11 +178,12 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         try:
             # skip if there aren;t any code cells
             if len(data.get_code_cells(nb_id)) == 0:
+                print(colored(identifier + ' has no code', 'red'))
                 error_row['err_in'] = 'no code'
                 error_writer.writerow(error_row)
                 continue 
         except:
-            print(colored("nb file error in " + notebook['filepath'], 'red'))
+            print(colored("nb file error in " + identifier, 'red'))
             error_row['err_in'] = 'nb file' 
             error_writer.writerow(error_row)
             continue 
@@ -155,7 +192,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         repo_link = data.get_repo_metadata(nb_id)['url']
         response = api.request(data.strip_url(repo_link))
         if 'id' not in response.keys():
-            print(colored("api error in " + notebook['filepath'], 'red'))
+            print(colored("api error in " + identifier, 'red'))
             error_row['err_in'] = 'api'
             error_writer.writerow(error_row)
             continue 
@@ -168,7 +205,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
             try:
                 row[field] = function(nb_id)
             except:
-                print(colored('error in ' + notebook['filepath'] + ' in ' + field, 'red'))
+                print(colored('error in ' + identifier + ' in ' + field, 'red'))
                 row[field] = None
                 err = True 
 
@@ -178,7 +215,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
             
         # write the row
         writer.writerow(row)
-        print("wrote " + notebook['filepath'])
+        print("wrote " + identifier)
 
         # increment success counter if no error, reset error indicator
         if not err:
@@ -190,4 +227,5 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         if counter == limit:
             break 
 
-    print(colored("finished! successfully ran " + str(success_counter) + ' notebooks', 'green'))
+    print(colored("finished! successfully ran " + str(success_counter) + \
+                    ' notebooks for segment ' + str(segment_num), 'green'))

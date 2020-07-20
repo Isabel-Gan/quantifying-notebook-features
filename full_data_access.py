@@ -8,12 +8,10 @@ import notebook_analysis as nb_analysis
 api = GitHubAPI()
 
 # load the notebooks csv file
-nb_csv_path = 'full-dataset/notebooks.csv'
-nb_df = pd.read_csv(nb_csv_path)
+nb_df = pd.read_pickle('full-dataset/notebooks.pkl')
 
 # load the repositories csv file
-repo_csv_path = 'full-dataset/repositories.csv'
-repo_df = pd.read_csv(repo_csv_path)
+repo_df = pd.read_pickle('full-dataset/repositories.pkl')
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_DATA/'
