@@ -346,14 +346,17 @@ def exports(cell):
         
         # check each possible export regex
         for export in regex.export:
+            original_handler = signal.getsignal(signal.SIGALRM)
             signal.signal(signal.SIGALRM, signal_handler)
             signal.alarm(20)
             try:
                 if re.search(export, line) and not re.search(regex.comment, line):
+                    signal.signal(signal.SIGALRM, original_handler)
                     return True
             except:
                 # may get here if the regex times out
                 print("regex timeout")
+                signal.signal(signal.SIGALRM, original_handler)
                 continue
 
     return False
