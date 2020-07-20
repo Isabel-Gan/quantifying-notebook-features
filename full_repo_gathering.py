@@ -1,6 +1,6 @@
 import pandas as pd 
 import json
-import termcolor
+from termcolor import colored
 import sys
 from GitHubAPI_Crawler.github_api import GitHubAPI
 

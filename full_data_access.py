@@ -15,6 +15,7 @@ repo_df = pd.read_pickle('full-dataset/repositories.pkl')
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_DATA/'
+repos_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_REPO_METADATA/'
 
 ''' api access '''
 
@@ -54,12 +55,18 @@ def get_filepath(nb_id):
 # given a notebook id, returns the metadata (as a python dictionary object) of its repository
 def get_repo_metadata(nb_id):
 
-    # get the full repo name
-    repo_name = str(repo_df.loc[repo_df['id'] == get_repo_id(nb_id)]['full name'].item())
+    # get the file path
+    repo_id = get_repo_id(nb_id)
+    repo_row = repo_df.loc[repo_df['id'] == repo_id].squeeze()
+    repo_name = repo_row['full name']
+    filename = str(repo_id) + '_' + (repo_name.replace('/', '~')) + '.json'
 
-    # query the api for the repo metadata
-    response = api.request('repos/' + repo_name)
-    return response
+    # get the metadata file
+    with open(repos_path + filename, 'r') as meta_file:
+        try:
+            return json.load(meta_file)
+        except:
+            return None
 
 # given a notebook id, returns the notebook file as a python dictionary object
 def get_nb(nb_id):
