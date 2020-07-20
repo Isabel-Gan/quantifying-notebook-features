@@ -130,13 +130,13 @@ error_row = {
 output_path = 'full-output/segments/second-run-segment' + str(segment_num) + '.csv'
 
 # path to error csv
-output_path = 'full-output/segments/second-errors-segment' + str(segment_num) + '.csv'
+error_path = 'full-output/segments/second-errors-segment' + str(segment_num) + '.csv'
 
 # dataset csv
 notebooks_df = pd.read_pickle('full-dataset/notebooks.pkl')
 
 # number of notebooks to run for, if applicable
-limit = 20 
+# limit = 20 
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -223,9 +223,9 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         err = False 
 
         # increment regular counter
-        counter += 1
-        if counter == limit:
-            break 
+        # counter += 1
+        # if counter == limit:
+        #     break 
 
     print(colored("finished! successfully ran " + str(success_counter) + \
                     ' notebooks for segment ' + str(segment_num), 'green'))
