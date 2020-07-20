@@ -41,7 +41,7 @@ def get_segments(num_segments):
     return segments
 
 # get the number of segments we want
-segments = get_segments(6)
+segments = get_segments(4)
 segment_num = int(sys.argv[1])
 cur_segment = segments[segment_num]
 
