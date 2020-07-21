@@ -16,7 +16,7 @@ K = range(1, 11)
 for k in K:
     print("clustering with " + str(k) + " clusters")
     kproto = KPrototypes(n_clusters = k, init = 'Cao', n_jobs = 4, verbose = 0)
-    clusters = kproto.fit_predict(md_df, categorical = [0, 1, 2, 3, 8, 9, 10, 12, 14, 18])
+    clusters = kproto.fit_predict(md_df, categorical = [0, 1, 2, 3, 9, 10, 11, 13, 15, 19, 20, 22])
     costs_md.append(kproto.cost_)
 
 # save the costs plot
@@ -24,7 +24,7 @@ plt.plot(K, costs_md, 'bx-')
 plt.xlabel('k')
 plt.ylabel('cost')
 plt.title('Cost Graph for Optimal k for Markdown Cell Group')
-plt.savefig('10-markdown-kproto.png')
+plt.savefig('figures/10-markdown-kproto.png')
 
 # perform k-prototypes clustering on no markdown cell group
 costs_no_md = []
@@ -32,12 +32,13 @@ K = range(1, 11)
 for k in K:
     print("clustering with " + str(k) + " clusters")
     kproto = KPrototypes(n_clusters = k, init = 'Cao', n_jobs = 4, verbose = 0)
-    clusters = kproto.fit_predict(no_md_df, categorical = [0, 4, 5, 10])
+    clusters = kproto.fit_predict(no_md_df, categorical = [0, 5, 6, 11, 12, 14])
     costs_no_md.append(kproto.cost_)
 
 # save the costs plot
+plt.clf()
 plt.plot(K, costs_no_md, 'bx-')
 plt.xlabel('k')
 plt.ylabel('cost')
 plt.title('Cost Graph for Optimal k for No Markdown Cell Group')
-plt.savefig('10-no-markdown-kproto.png')
+plt.savefig('figures/10-no-markdown-kproto.png')
