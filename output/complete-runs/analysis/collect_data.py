@@ -2,13 +2,14 @@ import pandas as pd
 import csv
 
 # notebook data
-csv_directory = '../../test-dataset/notebooks_sample.csv'
+csv_directory = '../../../test-dataset/notebooks_sample.csv'
 notebooks_df = pd.read_csv(csv_directory)
 
 # dataframes of the result data
 third_run = pd.read_csv('../third-run/github2017-third-run.csv')
 sixth_run = pd.read_csv('../sixth-run/github2017-sixth-run.csv')
 eigth_run = pd.read_csv('../eigth-run/github2017-eigth-run.csv')
+tenth_run = pd.read_csv('../tenth-run/github2017-tenth-run.csv')
 
 # dataframe of most accurate error data
 errors = pd.read_csv('../sixth-run/github2017-sixth-errors.csv')
@@ -39,7 +40,13 @@ field_files = {
     'exec_inorder' : eigth_run,
     'exec_skips' : eigth_run,
     'has_error' : eigth_run,
-    'speaking_language' : eigth_run
+    'speaking_language' : eigth_run,
+    'has_export' : tenth_run,
+    'num_functions' : tenth_run,
+    'has_test' : tenth_run,
+    'num_headers' : tenth_run,
+    'has_papermill' : tenth_run,
+    'has_reqtext' : tenth_run
 }
 
 # template for a row written to the .csv file
@@ -70,7 +77,13 @@ row_write = {
     'exec_inorder' : None,
     'exec_skips' : None,
     'has_error' : None,
-    'speaking_language' : None
+    'speaking_language' : None,
+    'has_export' : None,
+    'num_functions' : None,
+    'has_test' : None,
+    'num_headers' : None,
+    'has_papermill' : None,
+    'has_reqtext' : None
 }
 
 # output path of gathered data
