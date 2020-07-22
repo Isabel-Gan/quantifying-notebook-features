@@ -75,3 +75,14 @@ def has_requirements(nb_id):
             return True 
     
     return False
+
+''' feature - number of stars '''
+
+# gets the number of starts for the repository of a notebook
+def num_stars(nb_id):
+    
+    # get the repo metadata
+    repo_meta = data.get_repo_metadata(nb_id)
+
+    # get the stargazes field
+    return int(repo_meta['stargazers_count'])
