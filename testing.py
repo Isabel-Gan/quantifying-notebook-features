@@ -1,7 +1,7 @@
 import pandas as pd
 
 # import all the scripts
-import data_access as data   
+import full_data_access as data   
 import markdown_analysis as md_analysis
 import notebook_analysis as nb_analysis 
 import repo_analysis 
@@ -17,6 +17,7 @@ nb_ids = [602217, 1051197, 466289, 958849, 972721, 1019165,
             439119, 884271, 390160, 457759, 608191, 514544,
             672138, 323880, 987671, 329885, 718440, 116896,
             625482, 295335, 502567, 912876, 672725, 654583]
+nb_ids = [0, 1, 20, 57, 100, 300, 789, 1875]
 
 # prints out the results of running a function on all notebooks
 def test_func(func):
@@ -29,6 +30,7 @@ def test_func(func):
             raise
 
 # PUT TESTS HERE
+test_func(repo_analysis.num_contributors)
 
 ''' testing all functions - print out results '''
 

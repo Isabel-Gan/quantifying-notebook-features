@@ -1,5 +1,7 @@
 import full_data_access as data   
 
+import_full = True
+
 ''' feature - other files that are non-Jupyter '''
 
 # calculates the proportion of code in the repo written in jupyter
@@ -30,12 +32,16 @@ def jupyter_prop(nb_id):
 # returns the number of contributors to a notebook's repository
 def num_contributors(nb_id):
 
-    # get the data
-    contrib_meta = data.get_repo_field(nb_id, 'contributors_url')
-
-    # count number of contributors in the object and return
-    return len(contrib_meta)
-
+    # depending on which dataset we're working with, this data is stored differently
+    if import_full:
+        # get the contributors 
+        authors = data.get_authors(nb_id)
+        return len(authors)
+    else:
+        # get the data
+        contrib_meta = data.get_repo_field(nb_id, 'contributors_url')
+        return len(contrib_meta)
+    
 # tests - delete later
 
 ''' feature - use of version control '''
