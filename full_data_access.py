@@ -116,6 +116,16 @@ def get_owner_url(nb_id):
 
     return response
 
+# returns the usernames of the authors as a python list from the csv
+def get_authors(nb_id):
+
+    #  get the row of the dataframe
+    repo_id = get_repo_id(nb_id)
+    repo = repo_df.loc[repo_df['id'] == repo_id].squeeze()
+
+    # return the authors for the repo
+    return repo['authors']
+
 # returns the commits to a repo that affect the notebook file specifically
 def get_nb_commits(nb_id):
 
