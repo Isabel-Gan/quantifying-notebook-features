@@ -9,11 +9,13 @@ api = GitHubAPI()
 
 # the dataset directory should have two directories: notebooks and repository_metadata
 # dataset_directory = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
-dataset_directory = 'test-dataset/'
+# dataset_directory = 'test-dataset/'
+dataset_directory = '../research-dataset/sample_data/data/'
 
 # the csv directory should have at least the notebooks_sample.csv file
 # csv_directory =  '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/csv/'
-csv_directory = 'test-dataset/'
+# csv_directory = 'test-dataset/'
+csv_directory = '../research-dataset/sample_data/data/csv/'
 
 # load the csv file
 nb_csv_path = csv_directory + 'notebooks_sample.csv'
