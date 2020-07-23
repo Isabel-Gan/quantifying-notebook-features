@@ -10,6 +10,7 @@ third_run = pd.read_csv('../third-run/github2017-third-run.csv')
 sixth_run = pd.read_csv('../sixth-run/github2017-sixth-run.csv')
 eigth_run = pd.read_csv('../eigth-run/github2017-eigth-run.csv')
 tenth_run = pd.read_csv('../tenth-run/github2017-tenth-run.csv')
+twelfth_run = pd.read_csv('../twelfth-run/github2017-twelfth-run.csv')
 
 # dataframe of most accurate error data
 errors = pd.read_csv('../sixth-run/github2017-sixth-errors.csv')
@@ -45,8 +46,9 @@ field_files = {
     'num_functions' : tenth_run,
     'has_test' : tenth_run,
     'num_headers' : tenth_run,
-    'has_papermill' : tenth_run,
-    'has_reqtext' : tenth_run
+    'has_param' : twelfth_run,
+    'has_reqtext' : tenth_run,
+    'num_stars' : twelfth_run
 }
 
 # template for a row written to the .csv file
@@ -82,8 +84,9 @@ row_write = {
     'num_functions' : None,
     'has_test' : None,
     'num_headers' : None,
-    'has_papermill' : None,
-    'has_reqtext' : None
+    'has_param' : None,
+    'has_reqtext' : None,
+    'num_stars' : None
 }
 
 # output path of gathered data
@@ -126,3 +129,4 @@ with open(output_path, 'w', newline='') as outcsv:
         # write the row to the csv and clear the row
         writer.writerow(row_write)  
         row_write = dict.fromkeys(row_write, None)
+        print('wrote notebook ' + str(nb_id) + ' to all_data')
