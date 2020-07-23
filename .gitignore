@@ -1,6 +1,9 @@
 # compiled python
 *.pyc
 
+# ini files
+*.ini
+
 # example analysis to help script writing
 example_analysis.ipynb
 

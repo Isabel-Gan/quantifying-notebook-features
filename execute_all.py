@@ -39,12 +39,13 @@ function_columns = {
     # 'has_error' : code_analysis.has_error, 
     # 'comm_messages' : repo_analysis.get_commit_messages,
     # 'speaking_language' : nb_analysis.get_speaking_language,
-    'has_export' : code_analysis.has_export,
-    'num_functions' : code_analysis.num_functions,
-    'has_test' : code_analysis.has_testing,
-    'num_headers' : nb_analysis.num_headers,
-    'has_papermill' : code_analysis.has_papermill,
-    'has_reqtext' : repo_analysis.has_requirements
+    # 'has_export' : code_analysis.has_export,
+    # 'num_functions' : code_analysis.num_functions,
+    # 'has_test' : code_analysis.has_testing,
+    # 'num_headers' : nb_analysis.num_headers,
+    'has_param' : code_analysis.has_param,
+    # 'has_reqtext' : repo_analysis.has_requirements,
+    'num_stars' : repo_analysis.num_stars
 }
 
 # dictionary object with fields to hold rows to write
@@ -77,12 +78,13 @@ row = {
     # 'has_error' : None,
     # 'comm_messages' : None,
     # 'speaking_language' : None,
-    'has_export' : None,
-    'num_functions' : None,
-    'has_test' : None,
-    'num_headers' : None,
-    'has_papermill' : None,
-    'has_reqtext' : None
+    # 'has_export' : None,
+    # 'num_functions' : None,
+    # 'has_test' : None,
+    # 'num_headers' : None,
+    'has_param' : None,
+    # 'has_reqtext' : None,
+    'num_stars' : None
 }
 
 # dictionary object with fields to hold error rows to write
@@ -93,13 +95,14 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/github2017-tenth-run.csv'
+output_path = 'output/github2017-twelfth-run.csv'
 
 # path to error csv
-error_path = 'output/github2017-tenth-errors.csv'
+error_path = 'output/github2017-twelfth-errors.csv'
 
 # path to dataset
-dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
+# dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
+dataset_path = '../research-dataset/sample_data/data/'
 
 # directory of notebook files
 directory = os.fsencode(dataset_path + 'notebooks')

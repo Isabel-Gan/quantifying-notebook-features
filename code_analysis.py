@@ -2,6 +2,8 @@ import re
 import full_data_access as data  
 import regex
 import signal
+import numpy as np
+import ast
 
 ''' feature - proportion of code cells with output '''
 
@@ -272,7 +274,7 @@ def num_functions(nb_id):
     # return the total
     return num_defs
 
-''' feature - parameterization '''
+''' helper function - detect imports '''
 
 # checks whether a line in a code cell imports a given module
 def has_import(cell, module):
@@ -292,19 +294,6 @@ def has_import(cell, module):
         if import_statement in line or from_statement in line:
             return True
 
-    return False
-
-# checks if a notebook imported papermill (notebook parameterization tool)
-def has_papermill(nb_id):
-    
-    # get the code cells
-    code_cells = data.get_code_cells(nb_id)
-
-    # look for papermill import
-    for cell in code_cells:
-        if has_import(cell, 'papermill'):
-            return True
-    
     return False
 
 ''' feature - testing '''
@@ -370,6 +359,77 @@ def has_export(nb_id):
     # check each code cell for an export
     for cell in code_cells:
         if exports(cell):
+            return True 
+    
+    return False
+
+''' feature - parameterization '''
+
+# checks if a notebook imported papermill (notebook parameterization tool)
+def has_param_import(nb_id):
+    
+    # get the code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # look for papermill import
+    for cell in code_cells:
+        if has_import(cell, 'papermill') or \
+            has_import(cell, 'parameterized'):
+            return True
+    
+    return False
+
+# checks if a cell defines parameters (assignment to constants)
+def is_param_cell(cell):
+
+    # get field holding the code
+    keys = cell.keys()
+    field = ""
+    if 'input' in keys:
+        field = 'input'
+    elif 'source' in keys:
+        field = 'source'
+
+    # gather the code for the cell
+    all_code = ''
+    for line in cell[field]:
+        all_code += line
+    
+    # pass it into the ast parser
+    try:
+        ast_res = ast.parse(all_code)
+        ast_tokens = ast_res.body
+    except:
+        # incorrect syntax
+        return False
+
+    # check if the cell only has assignments
+    token_names = list(map(lambda x : x.__class__.__name__, ast_tokens))
+    if list(np.unique(token_names)) == ['Assign']:
+        
+        # get tokens down to what variables were assigned to
+        all_tokens = list(map(lambda x : x.__class__.__name__, ast.walk(ast_res)))
+        assgn_tokens = list(filter(lambda x : x not in ['Assign', 'Name', 'Store', 'Module'], all_tokens))
+        
+        # check if all are numbers
+        if list(np.unique(assgn_tokens)) == ['Num']:
+            return True
+
+    return False
+
+# checks if there is parameterization in a notebook
+def has_param(nb_id):
+
+    # checks for imports
+    if has_param_import(nb_id):
+        return True 
+
+    # get code cells
+    code_cells = data.get_code_cells(nb_id)
+
+    # check for manual parameterization in the first five code cells
+    for cell in code_cells[:5]:
+        if is_param_cell(cell):
             return True 
     
     return False
