@@ -5,6 +5,8 @@ from comment_parser import comment_parser
 
 import notebook_analysis as nb_analysis
 
+dbg_print = print
+
 api = GitHubAPI()
 
 # load the notebooks csv file
@@ -16,6 +18,7 @@ repo_df = pd.read_pickle('full-dataset/repositories.pkl')
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_DATA/'
 repos_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_REPO_METADATA/'
+owners_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_REPO_OWNERS/'
 
 ''' api access '''
 
@@ -26,6 +29,7 @@ def strip_url(url):
 
 # returns the data from the given user url as a python dictionary object
 def get_url(url):
+    dbg_print('requesting for get_url')
     response = api.request(strip_url(url))
     return response
 
@@ -91,6 +95,7 @@ def get_repo_field(nb_id, field):
 
     # get the url and access the api to get the data
     url = repo_meta[field]
+    dbg_print('requesting for get_repo_field')
     response = api.request(strip_url(url))
 
     return response
@@ -107,14 +112,16 @@ def get_owner(nb_id):
 # returns the data from the url of the owner of the repo as a python dictionary object
 def get_owner_url(nb_id):
 
-    # get the owner data
-    owner_data = get_owner(nb_id)
+    # get the owner name
+    owner_name = get_owner(nb_id)['login']
 
-    # get the url and access api to get the data
-    owner_url = owner_data['url']
-    response = api.request(strip_url(owner_url))
-
-    return response
+    # get the owner url response from file
+    owner_filepath = owners_path + owner_name + '.json'
+    with open(owner_filepath, 'r') as owner_file:
+        try:
+            return json.load(owner_file)
+        except:
+            return None
 
 # returns the usernames of the authors as a python list from the csv
 def get_authors(nb_id):
@@ -140,6 +147,7 @@ def get_nb_commits(nb_id):
     nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path)
     
     # query the api to the url
+    dbg_print('requesting for get_nb_commits')
     response = api.request(strip_url(nb_commit_url))
     return response
 
@@ -158,6 +166,7 @@ def get_files(nb_id):
     nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path)
 
     # query the api to the url
+    dbg_print('requesting for get_files')
     response = api.request(strip_url(nb_dir_url))
     return response
 
