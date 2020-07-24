@@ -31,7 +31,8 @@ def strip_url(url):
 # returns the data from the given user url as a python dictionary object
 def get_url(url):
     # check if in cache already
-    if response = api_cache.is_in_cache(url) != None:
+    response = api_cache.is_in_cache(url)
+    if response != None:
         return response
     
     # not in cache
@@ -104,7 +105,8 @@ def get_repo_field(nb_id, field):
     url = repo_meta[field]
 
     # check cache
-    if response = api_cache.is_in_cache(url) != None:
+    response = api_cache.is_in_cache(url)
+    if response != None:
         return response
 
     # not in cache
@@ -179,13 +181,14 @@ def get_files(nb_id):
     nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path)
 
     # query the api to the url, check the cache first
-    if response = api_cache.is_in_cache(nb_dir_url) != None:
+    response = api_cache.is_in_cache(nb_dir_url)
+    if response != None:
         return response 
 
     # not in cache
     dbg_print('requesting for get_files')
     response = api.request(strip_url(nb_dir_url))
-    api_cache.add_to_cache(response)
+    api_cache.add_to_cache(nb_dir_url, response)
     return response
 
 ''' notebook access'''

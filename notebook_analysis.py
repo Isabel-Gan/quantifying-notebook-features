@@ -40,16 +40,19 @@ def get_contributors(nb_id):
     # for each contributor, get their login and name:
     names = []
     for contributor in contributors_data:
-        contributor_data = data.get_url(contributor['url'])
-        name = contributor_data['name']
-        login = contributor_data['login']
 
-        # check for existence and duplicates
-        if name != None and name != author_name:
-            names += [name]
+        # don't request author
+        if contributor['login'] != author_user:
+            contributor_data = data.get_url(contributor['url'])
+            name = contributor_data['name']
+            login = contributor_data['login']
 
-        if login != None and login != author_user:
-            names += [login]
+            # check for existence and duplicates
+            if name != None:
+                names += [name]
+
+            if login != None:
+                names += [login]
 
     return names
 

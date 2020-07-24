@@ -15,7 +15,7 @@ api = GitHubAPI()
 import full_data_access as data
 import markdown_analysis as md_analysis   
 import notebook_analysis as nb_analysis   
-import keyword_analysis as kw_analysis   
+# import keyword_analysis as kw_analysis   
 import repo_analysis
 import code_analysis
 
@@ -141,7 +141,7 @@ error_path = 'full-output/segments/second-errors-segment' + str(segment_num) + '
 notebooks_df = pd.read_pickle('full-dataset/notebooks.pkl')
 
 # number of notebooks to run for, if applicable
-limit = 1
+limit = 2
 
 # instantiate the api cache
 api_cache.init_cache()
@@ -198,13 +198,18 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
     
         # check the api response
         repo_link = data.get_repo_metadata(nb_id)['url']
-        dbg_print('requesting for test')
-        response = api.request(data.strip_url(repo_link))
-        if 'id' not in response.keys():
-            print(colored("api error in " + identifier, 'red'))
-            error_row['err_in'] = 'api'
-            error_writer.writerow(error_row)
-            continue 
+
+        # if in cache, then it must be valid
+        if api_cache.is_in_cache(repo_link) == None:
+            dbg_print('requesting for test')
+            response = api.request(data.strip_url(repo_link))
+            if 'id' not in response.keys():
+                print(colored("api error in " + identifier, 'red'))
+                error_row['err_in'] = 'api'
+                error_writer.writerow(error_row)
+                continue 
+            else:
+                api_cache.add_to_cache(repo_link, response)
 
         # run the notebook through all functions
         for field in function_columns:
