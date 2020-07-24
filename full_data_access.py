@@ -6,8 +6,6 @@ import api_cache
 
 import notebook_analysis as nb_analysis
 
-dbg_print = print
-
 api = GitHubAPI()
 
 # load the notebooks csv file
@@ -36,7 +34,6 @@ def get_url(url):
         return response
     
     # not in cache
-    dbg_print('requesting for get_url')
     response = api.request(strip_url(url))
     api_cache.add_to_cache(url, response)
     return response
@@ -110,7 +107,6 @@ def get_repo_field(nb_id, field):
         return response
 
     # not in cache
-    dbg_print('requesting for get_repo_field')
     response = api.request(strip_url(url))
     api_cache.add_to_cache(url, response)
     return response
@@ -162,7 +158,6 @@ def get_nb_commits(nb_id):
     nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path)
     
     # query the api to the url (we don't check the cache, since this will always be unique)
-    dbg_print('requesting for get_nb_commits')
     response = api.request(strip_url(nb_commit_url))
     return response
 
@@ -186,7 +181,6 @@ def get_files(nb_id):
         return response 
 
     # not in cache
-    dbg_print('requesting for get_files')
     response = api.request(strip_url(nb_dir_url))
     api_cache.add_to_cache(nb_dir_url, response)
     return response
