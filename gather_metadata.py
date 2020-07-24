@@ -40,31 +40,42 @@ api = GitHubAPI()
 repositories_df = pd.read_pickle('full-dataset/repositories.pkl')
 
 # output directory for repo metadata
-output_dir = '../GITHUB_NOTEBOOKS_REPO_METADATA/'
+output_dir = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_REPO_OWNERS/'
 
 # counter and limit, if applicable
 # limit = 20
 # counter = 0
 
+# previous repository owner
+prev_owner = None
+
 # for each repository
 for _, repo in repositories_df.iloc[cur_segment[0]:cur_segment[1] + 1].iterrows():
 
-    # get repo name and id
+    # get owner name
     repo_name = repo['full name']
-    repo_id = repo['id']
+    repo_owner = repo_name.split('/')[0]
+
+    # check the previous owner
+    if prev_owner == None or prev_owner != repo_owner:
+        # first or new owner
+        prev_owner = repo_owner
+    elif prev_owner == repo_owner:
+        # same owner
+        continue
 
     # query the api to get the metadata
     try:
-        metadata = api.request('repos/' + repo_name)
+        metadata = api.request('users/' + repo_owner)
     except:
         print(colored('could not get metadata for repo ' + str(repo_id) + ', ' + repo_name, 'red'))
         continue
 
     # output the metadata to a file
-    filename = str(repo_id) + '_' + (repo_name.replace('/', '~')) + '.json'
+    filename = repo_owner + '.json'
     with open(output_dir + filename, 'w') as outfile:
         json.dump(metadata, outfile)
-        print('got metadata for repo ' + str(repo_id) + ', ' + repo_name)
+        print('got owner data for ' + repo_owner)
 
         # iterate and check counter
         # counter += 1
