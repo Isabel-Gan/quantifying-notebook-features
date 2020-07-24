@@ -341,11 +341,14 @@ def exports(cell):
             try:
                 if re.search(export, line) and not re.search(regex.comment, line):
                     signal.signal(signal.SIGALRM, original_handler)
+                    signal.alarm(0)
                     return True
+                signal.alarm(0)
             except:
                 # may get here if the regex times out
                 print("regex timeout")
                 signal.signal(signal.SIGALRM, original_handler)
+                signal.alarm(0)
                 continue
 
     return False
