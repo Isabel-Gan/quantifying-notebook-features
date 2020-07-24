@@ -2,6 +2,7 @@ import pandas as pd
 import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
 from comment_parser import comment_parser
+import api_cache
 
 import notebook_analysis as nb_analysis
 
@@ -29,8 +30,14 @@ def strip_url(url):
 
 # returns the data from the given user url as a python dictionary object
 def get_url(url):
+    # check if in cache already
+    if response = api_cache.is_in_cache(url) != None:
+        return response
+    
+    # not in cache
     dbg_print('requesting for get_url')
     response = api.request(strip_url(url))
+    api_cache.add_to_cache(url, response)
     return response
 
 ''' file access '''
@@ -95,9 +102,15 @@ def get_repo_field(nb_id, field):
 
     # get the url and access the api to get the data
     url = repo_meta[field]
+
+    # check cache
+    if response = api_cache.is_in_cache(url) != None:
+        return response
+
+    # not in cache
     dbg_print('requesting for get_repo_field')
     response = api.request(strip_url(url))
-
+    api_cache.add_to_cache(url, response)
     return response
 
 # returns the data of the owner of the repo as a python dictionary object
@@ -146,7 +159,7 @@ def get_nb_commits(nb_id):
     # change the url to be specific to the notebook
     nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path)
     
-    # query the api to the url
+    # query the api to the url (we don't check the cache, since this will always be unique)
     dbg_print('requesting for get_nb_commits')
     response = api.request(strip_url(nb_commit_url))
     return response
@@ -165,9 +178,14 @@ def get_files(nb_id):
     repo_metadata = get_repo_metadata(nb_id)
     nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path)
 
-    # query the api to the url
+    # query the api to the url, check the cache first
+    if response = api_cache.is_in_cache(nb_dir_url) != None:
+        return response 
+
+    # not in cache
     dbg_print('requesting for get_files')
     response = api.request(strip_url(nb_dir_url))
+    api_cache.add_to_cache(response)
     return response
 
 ''' notebook access'''

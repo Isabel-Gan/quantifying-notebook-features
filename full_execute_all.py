@@ -5,6 +5,9 @@ import sys
 import pandas as pd
 from GitHubAPI_Crawler.github_api import GitHubAPI
 from termcolor import colored
+import api_cache
+
+dbg_print = print
 
 api = GitHubAPI()
 
@@ -71,14 +74,15 @@ function_columns = {
     'exec_inorder' : code_analysis.forwards_prop,
     'exec_skips' : code_analysis.ex_skip_average,
     'has_error' : code_analysis.has_error, 
-    'comm_messages' : repo_analysis.get_commit_messages,
+    # 'comm_messages' : repo_analysis.get_commit_messages,
     'speaking_language' : nb_analysis.get_speaking_language,
     'has_export' : code_analysis.has_export,
     'num_functions' : code_analysis.num_functions,
     'has_test' : code_analysis.has_testing,
     'num_headers' : nb_analysis.num_headers,
-    'has_papermill' : code_analysis.has_papermill,
-    'has_reqtext' : repo_analysis.has_requirements
+    'has_param' : code_analysis.has_param,
+    'has_reqtext' : repo_analysis.has_requirements,
+    'num_stars' : repo_analysis.num_stars
 }
 
 # dictionary object with fields to hold rows to write
@@ -109,14 +113,15 @@ row = {
     'exec_inorder' : None,
     'exec_skips' : None,
     'has_error' : None,
-    'comm_messages' : None,
+    # 'comm_messages' : None,
     'speaking_language' : None,
     'has_export' : None,
     'num_functions' : None,
     'has_test' : None,
     'num_headers' : None,
-    'has_papermill' : None,
-    'has_reqtext' : None
+    'has_param' : None,
+    'has_reqtext' : None,
+    'num_stars' : None
 }
 
 # dictionary object with fields to hold error rows to write
@@ -136,7 +141,10 @@ error_path = 'full-output/segments/second-errors-segment' + str(segment_num) + '
 notebooks_df = pd.read_pickle('full-dataset/notebooks.pkl')
 
 # number of notebooks to run for, if applicable
-# limit = 20 
+limit = 1
+
+# instantiate the api cache
+api_cache.init_cache()
 
 # writes to the csv
 with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline='') as errorcsv:
@@ -178,7 +186,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         try:
             # skip if there aren;t any code cells
             if len(data.get_code_cells(nb_id)) == 0:
-                print(colored(identifier + ' has no code', 'red'))
+                print(colored(identifier + ' has no code', 'yellow'))
                 error_row['err_in'] = 'no code'
                 error_writer.writerow(error_row)
                 continue 
@@ -190,6 +198,7 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
     
         # check the api response
         repo_link = data.get_repo_metadata(nb_id)['url']
+        dbg_print('requesting for test')
         response = api.request(data.strip_url(repo_link))
         if 'id' not in response.keys():
             print(colored("api error in " + identifier, 'red'))
@@ -223,9 +232,9 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         err = False 
 
         # increment regular counter
-        # counter += 1
-        # if counter == limit:
-        #     break 
+        counter += 1
+        if counter == limit:
+            break 
 
     print(colored("finished! successfully ran " + str(success_counter) + \
                     ' notebooks for segment ' + str(segment_num), 'green'))
