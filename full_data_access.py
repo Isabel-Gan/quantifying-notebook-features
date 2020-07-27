@@ -66,7 +66,7 @@ def get_repo_metadata(nb_id):
 
     # get the file path
     repo_id = get_repo_id(nb_id)
-    repo_row = repo_df.loc[repo_df['id'] == repo_id].squeeze()
+    repo_row = repo_df.loc[repo_df['id'] == repo_id].iloc[0]
     repo_name = repo_row['full name']
     filename = str(repo_id) + '_' + (repo_name.replace('/', '~')) + '.json'
 

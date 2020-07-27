@@ -139,7 +139,7 @@ error_path = 'full-output/segments/second-errors-segment' + str(segment_num) + '
 notebooks_df = pd.read_pickle('full-dataset/notebooks.pkl')
 
 # number of notebooks to run for, if applicable
-limit = 20
+# limit = 20
 
 # instantiate the api cache
 api_cache.init_cache()
@@ -195,7 +195,13 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
             continue 
     
         # check the api response
-        repo_link = data.get_repo_metadata(nb_id)['url']
+        try:
+            repo_link = data.get_repo_metadata(nb_id)['url']
+        except:
+            print(colored("api error in " + identifier, 'red'))
+            error_row['err_in'] = 'api'
+            error_writer.writerow(error_row)
+            continue 
 
         # if in cache, then it must be valid
         if api_cache.is_in_cache(repo_link) == None:
@@ -234,9 +240,9 @@ with open(output_path, 'w', newline='') as outcsv, open(error_path, 'w', newline
         err = False 
 
         # increment regular counter
-        counter += 1
-        if counter == limit:
-            break 
+        # counter += 1
+        # if counter == limit:
+        #     break 
 
     print(colored("finished! successfully ran " + str(success_counter) + \
                     ' notebooks for segment ' + str(segment_num), 'green'))
