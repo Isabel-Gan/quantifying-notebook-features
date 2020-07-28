@@ -2,21 +2,22 @@ import pandas as pd
 import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
 from comment_parser import comment_parser
+import api_cache
 
 import notebook_analysis as nb_analysis
 
 api = GitHubAPI()
 
 # load the notebooks csv file
-nb_csv_path = 'full-dataset/notebooks.csv'
-nb_df = pd.read_csv(nb_csv_path)
+nb_df = pd.read_pickle('full-dataset/notebooks.pkl')
 
 # load the repositories csv file
-repo_csv_path = 'full-dataset/repositories.csv'
-repo_df = pd.read_csv(repo_csv_path)
+repo_df = pd.read_pickle('full-dataset/repositories.pkl')
 
 # path to dataset
 dataset_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_DATA/'
+repos_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_REPO_METADATA/'
+owners_path = '../../../../DATA/jupyter_data/GITHUB_NOTEBOOKS_REPO_OWNERS/'
 
 ''' api access '''
 
@@ -27,7 +28,14 @@ def strip_url(url):
 
 # returns the data from the given user url as a python dictionary object
 def get_url(url):
+    # check if in cache already
+    response = api_cache.is_in_cache(url)
+    if response != None:
+        return response
+    
+    # not in cache
     response = api.request(strip_url(url))
+    api_cache.add_to_cache(url, response)
     return response
 
 ''' file access '''
@@ -43,27 +51,37 @@ def get_repo_id(nb_id):
 
 # uses the csv file to find the corresponding file name given a notebook id
 def get_nb_name(nb_id):
-    return str(get_csv_field('name', nb_id).item())
+    return str(get_csv_field('nb_name', nb_id).item())
 
 # uses the csv file to find the corresponding path given a notebook id
 def get_path(nb_id):
-    return str(get_csv_field('path', nb_id).item())
+    return str(get_csv_field('nb_path', nb_id).item())
+
+# uses the csv file to find the corresponding filepath given a notebook id
+def get_filepath(nb_id):
+    return str(get_csv_field('filepath', nb_id).item())
 
 # given a notebook id, returns the metadata (as a python dictionary object) of its repository
 def get_repo_metadata(nb_id):
 
-    # get the full repo name
-    repo_name = str(repo_df.loc[repo_df['id'] == get_repo_id(nb_id)]['full name'].item())
+    # get the file path
+    repo_id = get_repo_id(nb_id)
+    repo_row = repo_df.loc[repo_df['id'] == repo_id].iloc[0]
+    repo_name = repo_row['full name']
+    filename = str(repo_id) + '_' + (repo_name.replace('/', '~')) + '.json'
 
-    # query the api for the repo metadata
-    response = api.request('repos/' + repo_name)
-    return response
+    # get the metadata file
+    with open(repos_path + filename, 'r') as meta_file:
+        try:
+            return json.load(meta_file)
+        except:
+            return None
 
 # given a notebook id, returns the notebook file as a python dictionary object
 def get_nb(nb_id):
 
     # get the file path
-    nb_file = dataset_path + get_path(nb_id)
+    nb_file = dataset_path + get_filepath(nb_id)
 
     # try to load the file
     with open(nb_file) as nb_file:
@@ -82,8 +100,15 @@ def get_repo_field(nb_id, field):
 
     # get the url and access the api to get the data
     url = repo_meta[field]
-    response = api.request(strip_url(url))
 
+    # check cache
+    response = api_cache.is_in_cache(url)
+    if response != None:
+        return response
+
+    # not in cache
+    response = api.request(strip_url(url))
+    api_cache.add_to_cache(url, response)
     return response
 
 # returns the data of the owner of the repo as a python dictionary object
@@ -98,14 +123,26 @@ def get_owner(nb_id):
 # returns the data from the url of the owner of the repo as a python dictionary object
 def get_owner_url(nb_id):
 
-    # get the owner data
-    owner_data = get_owner(nb_id)
+    # get the owner name
+    owner_name = get_owner(nb_id)['login']
 
-    # get the url and access api to get the data
-    owner_url = owner_data['url']
-    response = api.request(strip_url(owner_url))
+    # get the owner url response from file
+    owner_filepath = owners_path + owner_name + '.json'
+    with open(owner_filepath, 'r') as owner_file:
+        try:
+            return json.load(owner_file)
+        except:
+            return None
 
-    return response
+# returns the usernames of the authors as a python list from the csv
+def get_authors(nb_id):
+
+    #  get the row of the dataframe
+    repo_id = get_repo_id(nb_id)
+    repo = repo_df.loc[repo_df['id'] == repo_id].squeeze()
+
+    # return the authors for the repo
+    return repo['authors']
 
 # returns the commits to a repo that affect the notebook file specifically
 def get_nb_commits(nb_id):
@@ -120,7 +157,7 @@ def get_nb_commits(nb_id):
     # change the url to be specific to the notebook
     nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path)
     
-    # query the api to the url
+    # query the api to the url (we don't check the cache, since this will always be unique)
     response = api.request(strip_url(nb_commit_url))
     return response
 
@@ -138,8 +175,14 @@ def get_files(nb_id):
     repo_metadata = get_repo_metadata(nb_id)
     nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path)
 
-    # query the api to the url
+    # query the api to the url, check the cache first
+    response = api_cache.is_in_cache(nb_dir_url)
+    if response != None:
+        return response 
+
+    # not in cache
     response = api.request(strip_url(nb_dir_url))
+    api_cache.add_to_cache(nb_dir_url, response)
     return response
 
 ''' notebook access'''

@@ -27,3 +27,6 @@ temp
 
 # old scripts and files for parallelization
 full-dataset/old-work
+
+# segment files that have been combined
+full-output/segments/
