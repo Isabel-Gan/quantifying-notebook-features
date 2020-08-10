@@ -44,8 +44,8 @@ row = {
 }
 
 # dataframes
-results_df = pd.read_csv('second-run.csv')
-errors_df = pd.read_csv('second-errors.csv')
+results_df = pd.read_csv('complete-runs/second-run.csv')
+errors_df = pd.read_csv('complete-runs/second-errors.csv')
 
 notebooks_df = pd.read_pickle('../full-dataset/notebooks.pkl')
 
