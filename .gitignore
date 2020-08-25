@@ -29,3 +29,6 @@ full-dataset/old-work
 
 # segment files that have been combined
 full-output/segments/
+
+# for playing around/data exploration
+output/complete-runs/analysis/playground.ipynb
