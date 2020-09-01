@@ -6,6 +6,8 @@ import api_cache
 
 import notebook_analysis as nb_analysis
 
+dbg_print = lambda x : x
+
 api = GitHubAPI()
 
 # load the notebooks csv file
@@ -100,6 +102,7 @@ def get_repo_field(nb_id, field):
 
     # get the url and access the api to get the data
     url = repo_meta[field]
+    dbg_print(url)
 
     # check cache
     response = api_cache.is_in_cache(url)
@@ -155,7 +158,7 @@ def get_nb_commits(nb_id):
     url_template = repo_metadata['commits_url']
 
     # change the url to be specific to the notebook
-    nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path)
+    nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path).replace('%', '%25')
     
     # query the api to the url (we don't check the cache, since this will always be unique)
     response = api.request(strip_url(nb_commit_url))
@@ -164,16 +167,22 @@ def get_nb_commits(nb_id):
 # retrieves the files in the directory of the notebook in the repository
 def get_files(nb_id):
 
+    dbg_print(nb_id)
+
     # get notebook path
     nb_path = get_path(nb_id)
 
     # get notebook name and replace it in the path
     nb_name = get_nb_name(nb_id)
+    dbg_print(nb_name)
     nb_path = nb_path.replace(nb_name, '')
+    dbg_print(nb_path)
 
     # get the content url for the directory
     repo_metadata = get_repo_metadata(nb_id)
-    nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path)
+    nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path).replace('%', '%25')
+
+    dbg_print(nb_dir_url)
 
     # query the api to the url, check the cache first
     response = api_cache.is_in_cache(nb_dir_url)
