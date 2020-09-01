@@ -50,6 +50,10 @@ def count_images(nb_id):
 
         for output in cell['outputs']:
 
+            # check if output has output type
+            if 'output_type' not in output.keys():
+                continue
+
             # field associated with displaying an image
             if output['output_type'] == "display_data":
 
