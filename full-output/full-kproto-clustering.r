@@ -55,20 +55,39 @@ library("clustMixType")
 # dev.off()
 
 # load in the data
-no_dup_original <- read.csv('csv-files/full_no_repo_dups.csv')
+# no_dup_original <- read.csv('csv-files/full_no_repo_dups.csv')
 
 # drop the first three columns
-no_dup_df <- no_dup_original[ , !(names(no_dup_original) %in% c("X", "nb_id", "repo_id"))]
+# no_dup_df <- no_dup_original[ , !(names(no_dup_original) %in% c("X", "nb_id", "repo_id"))]
+
+# kproto clustering for no repo dups
+# Es <- numeric(10)
+# for (i in 1:10) {
+#     kpres <- kproto(no_dup_df, k = i, nstart = 10)
+#     Es[i] <- kpres$tot.withinss
+# }
+
+# create plot and save to file
+# jpeg("no_repo_dups_clusters.jpg", width = 350, height = 350)
+# plot(1:10, Es, type = "b", ylab = "Objective Function", xlab = "# Clusters",
+#     main = "No Repository Duplicates - Scree Plot")
+# dev.off()
+
+# load in the data
+outliers_original <- read.csv('csv-files/full_reduced_outliers.csv')
+
+# drop the first three columns
+outliers_df <- outliers_original[ , !(names(outliers_original) %in% c("X", "nb_id", "repo_id"))]
 
 # kproto clustering for no repo dups
 Es <- numeric(10)
 for (i in 1:10) {
-    kpres <- kproto(no_dup_df, k = i, nstart = 10)
+    kpres <- kproto(outliers_df, k = i, nstart = 10)
     Es[i] <- kpres$tot.withinss
 }
 
 # create plot and save to file
-jpeg("no_repo_dups_clusters.jpg", width = 350, height = 350)
+jpeg("figures/reduced_outliers_clusters.jpg", width = 350, height = 350)
 plot(1:10, Es, type = "b", ylab = "Objective Function", xlab = "# Clusters",
-    main = "No Repository Duplicates - Scree Plot")
+    main = "Reduced Outliers - Scree Plot")
 dev.off()
