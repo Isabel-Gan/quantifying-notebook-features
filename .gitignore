@@ -32,6 +32,8 @@ full-output/segments/
 
 # for playing around/data exploration
 output/complete-runs/analysis/playground.ipynb
+full-output/playground.ipynb
+full-output/playground2.ipynb
 
 # graphs generated for each column for each cluster (too many to track)
 output/complete-runs/analysis/cluster-data/md_graphs/
