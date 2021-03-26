@@ -251,6 +251,80 @@ def get_comments(nb_id):
 
     return comments
 
+''' owner information '''
+
+# given a notebook id, gets the number of repos owned by the users
+def get_repos(nb_id):
+
+    # get the owner information
+    user_info = get_owner_url(nb_id)
+
+    # get the list of repos
+    user_repos_url = user_info['repos_url']
+    user_repos = api.request(strip_url(user_repos_url))
+
+    return user_repos
+
+# given a notebook id, gets the number of repos
+def get_num_projects(nb_id):
+
+    # get the owner's repos
+    user_repos = get_repos(nb_id)
+
+    return len(user_repos)
+
+# given a notebook id, gets the number of data science repos
+def get_num_ds_projects(nb_id):
+
+    # get the owner's repos
+    user_repos = get_repos(nb_id)
+
+    # returns true if a repo is in Jupyter Notebook
+    def is_jn(repo):
+
+        # get languages info
+        languages_url = repo['languages_url']
+        languages_info = api.request(strip_url(languages_url))
+
+        # iterate through languages, get the highest one
+        max_language_num = 0
+        max_language = None
+        for language in languages_info:
+            if languages_info[language] > max_language_num:
+                max_language_num = languages_info[language]
+                max_language = language
+
+        # check if Jupyter Notebook top language
+        return (max_language == "Jupyter Notebook")
+
+    # filter the list of repos
+    ds_repos = filter(is_jn, user_repos)
+    return len(ds_repos)
+
+# gets the number of followers for the owner of a notebook
+def get_num_followers(nb_id):
+
+    # get owner information
+    user_info = get_owner_url(nb_id)
+
+    # get followers info
+    followers_url = user_info['followers_url']
+    followers = api.request(strip_url(followers_url))
+
+    return len(followers)
+
+# gets the number of years a notebook owner's account has been active
+def get_account_age(nb_id):
+
+    # get the owner information
+    user_info = get_owner_url(nb_id)
+
+    # get the year of account creation
+    created_date = user_info['created_at']
+    created_year = int(created_date[:4])
+
+    return (2021 - created_year)
+
 ''' misc '''
 
 # prints a json file, but nice
