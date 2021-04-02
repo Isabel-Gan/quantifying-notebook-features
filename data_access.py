@@ -341,6 +341,3 @@ def print_json(json_file):
     print(json.dumps(json_file, indent=4))
 
 # tests - delete later
-test_owner = get_owner_url(580)
-print('notebook owner: ' + test_owner['login'])
-print('number of ds projects: ' + str(get_num_ds_projects(580)))
