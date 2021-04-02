@@ -254,34 +254,31 @@ def get_comments(nb_id):
 ''' owner information '''
 
 # given a notebook id, gets the number of repos owned by the users
-def get_repos(nb_id):
+def get_repos(nb_id, page_num):
 
     # get the owner information
     user_info = get_owner_url(nb_id)
 
     # get the list of repos
     user_repos_url = user_info['repos_url']
-    user_repos = api.request(strip_url(user_repos_url))
+
+    user_repos = api.request(strip_url(user_repos_url), page = page_num, per_page = 100)
 
     return user_repos
 
 # given a notebook id, gets the number of repos
 def get_num_projects(nb_id):
 
-    # get the owner's repos
-    user_repos = get_repos(nb_id)
+    # get the owner's information
+    user_info = get_owner_url(nb_id)
 
-    return len(user_repos)
+    return user_info['public_repos']
 
-# given a notebook id, gets the number of data science repos
+# given a notebook id, gets the number of data science repos (capped at 100)
 def get_num_ds_projects(nb_id):
 
-    # get the owner's repos
-    user_repos = get_repos(nb_id)
-
-    # returns true if a repo is in Jupyter Notebook
+    # determines if a project is mostly jupyter notebook
     def is_jn(repo):
-
         # get languages info
         languages_url = repo['languages_url']
         languages_info = api.request(strip_url(languages_url))
@@ -297,9 +294,25 @@ def get_num_ds_projects(nb_id):
         # check if Jupyter Notebook top language
         return (max_language == "Jupyter Notebook")
 
-    # filter the list of repos
-    ds_repos = filter(is_jn, user_repos)
-    return len(ds_repos)
+    # count the number of jupyter notebook projects (capped)
+    cur_page_num = 1
+    MAX_JN_PROJS = 80
+    num_jn_projs = 0
+
+    user_repos = get_repos(nb_id, cur_page_num)
+    while (len(user_repos) != 0 and num_jn_projs <= MAX_JN_PROJS):
+
+        # filter the list of repos
+        ds_repos = filter(is_jn, user_repos)
+
+        # add to total
+        num_jn_projs += len(list(ds_repos))
+
+        # get another round of repositories
+        cur_page_num += 1
+        user_repos = get_repos(nb_id, cur_page_num)
+
+    return num_jn_projs
 
 # gets the number of followers for the owner of a notebook
 def get_num_followers(nb_id):
@@ -307,11 +320,7 @@ def get_num_followers(nb_id):
     # get owner information
     user_info = get_owner_url(nb_id)
 
-    # get followers info
-    followers_url = user_info['followers_url']
-    followers = api.request(strip_url(followers_url))
-
-    return len(followers)
+    return user_info['followers']
 
 # gets the number of years a notebook owner's account has been active
 def get_account_age(nb_id):
@@ -332,3 +341,6 @@ def print_json(json_file):
     print(json.dumps(json_file, indent=4))
 
 # tests - delete later
+test_owner = get_owner_url(580)
+print('notebook owner: ' + test_owner['login'])
+print('number of ds projects: ' + str(get_num_ds_projects(580)))
