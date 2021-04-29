@@ -2,10 +2,22 @@ import pandas as pd
 import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
 from comment_parser import comment_parser
+import stscraper as scraper
 
 import notebook_analysis as nb_analysis
 
 api = GitHubAPI()
+
+# setup for strudel scraper
+token_list = [
+    "2c63eba1e23215528553a9c9f3a06c08dd7985d8",
+    "cf3d822ce1baa10e92ae7338ba7de537b7f2a72b",
+    "94ce748e9e8f4d5205c96de69aa7c6f2fd9dcffa",
+    "8e23c7305dc44a8c0457e0210f39c08e2961149b",
+    "023c7f060f01bee9cb166b8819ca66793c14da7f",
+    "5bbc77e2335fd65136840cb36c2502172fcb348a"
+]
+gh_api = scraper.GitHubAPI(','.join(token_list))
 
 # the dataset directory should have two directories: notebooks and repository_metadata
 # dataset_directory = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'
@@ -109,8 +121,8 @@ def get_owner_url(nb_id):
     owner_data = get_owner(nb_id)
 
     # get the url and access api to get the data
-    owner_url = owner_data['url']
-    response = api.request(strip_url(owner_url))
+    owner_login = owner_data['login']
+    response = gh_api.user_info(owner_login)
 
     return response
 
@@ -253,18 +265,18 @@ def get_comments(nb_id):
 
 ''' owner information '''
 
-# given a notebook id, gets the number of repos owned by the users
-def get_repos(nb_id, page_num):
+# given a notebook id, gets the repositories owned by the user
+def get_repos(nb_id):
 
     # get the owner information
     user_info = get_owner_url(nb_id)
 
     # get the list of repos
-    user_repos_url = user_info['repos_url']
+    user_login= user_info['login']
 
-    user_repos = api.request(strip_url(user_repos_url), page = page_num, per_page = 100)
+    user_repos = gh_api.user_repos(user_login)
 
-    return user_repos
+    return list(user_repos)
 
 # given a notebook id, gets the number of repos
 def get_num_projects(nb_id):
@@ -274,45 +286,16 @@ def get_num_projects(nb_id):
 
     return user_info['public_repos']
 
-# given a notebook id, gets the number of data science repos (capped at 100)
+# given a notebook id, gets the number of Jupyter Notebook repos
 def get_num_ds_projects(nb_id):
 
-    # determines if a project is mostly jupyter notebook
-    def is_jn(repo):
-        # get languages info
-        languages_url = repo['languages_url']
-        languages_info = api.request(strip_url(languages_url))
+    # get the repos
+    user_repos = get_repos(nb_id)
 
-        # iterate through languages, get the highest one
-        max_language_num = 0
-        max_language = None
-        for language in languages_info:
-            if languages_info[language] > max_language_num:
-                max_language_num = languages_info[language]
-                max_language = language
+    # count how many are Jupyter Notebook
+    is_jn = lambda repo : repo['language'] == 'Jupyter Notebook'
 
-        # check if Jupyter Notebook top language
-        return (max_language == "Jupyter Notebook")
-
-    # count the number of jupyter notebook projects (capped)
-    cur_page_num = 1
-    MAX_JN_PROJS = 80
-    num_jn_projs = 0
-
-    user_repos = get_repos(nb_id, cur_page_num)
-    while (len(user_repos) != 0 and num_jn_projs <= MAX_JN_PROJS):
-
-        # filter the list of repos
-        ds_repos = filter(is_jn, user_repos)
-
-        # add to total
-        num_jn_projs += len(list(ds_repos))
-
-        # get another round of repositories
-        cur_page_num += 1
-        user_repos = get_repos(nb_id, cur_page_num)
-
-    return num_jn_projs
+    return len(list(filter(is_jn, user_repos)))
 
 # gets the number of followers for the owner of a notebook
 def get_num_followers(nb_id):
