@@ -1,0 +1,1 @@
+SELECT * FROM `ghtorrent-2019-06`.projects WHERE owner_id = 52510697

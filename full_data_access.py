@@ -3,10 +3,19 @@ import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
 from comment_parser import comment_parser
 import api_cache
+import stscraper as scraper
 
 import notebook_analysis as nb_analysis
 
+dbg_print = lambda x : x
+
 api = GitHubAPI()
+
+# setup for strudel scraper
+token_list = [
+
+]
+gh_api = scraper.GitHubAPI(','.join(token_list))
 
 # load the notebooks csv file
 nb_df = pd.read_pickle('full-dataset/notebooks.pkl')
@@ -100,6 +109,7 @@ def get_repo_field(nb_id, field):
 
     # get the url and access the api to get the data
     url = repo_meta[field]
+    dbg_print(url)
 
     # check cache
     response = api_cache.is_in_cache(url)
@@ -155,7 +165,7 @@ def get_nb_commits(nb_id):
     url_template = repo_metadata['commits_url']
 
     # change the url to be specific to the notebook
-    nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path)
+    nb_commit_url = url_template.replace("{/sha}", "?path=" + nb_path).replace('%', '%25')
     
     # query the api to the url (we don't check the cache, since this will always be unique)
     response = api.request(strip_url(nb_commit_url))
@@ -164,16 +174,22 @@ def get_nb_commits(nb_id):
 # retrieves the files in the directory of the notebook in the repository
 def get_files(nb_id):
 
+    dbg_print(nb_id)
+
     # get notebook path
     nb_path = get_path(nb_id)
 
     # get notebook name and replace it in the path
     nb_name = get_nb_name(nb_id)
+    dbg_print(nb_name)
     nb_path = nb_path.replace(nb_name, '')
+    dbg_print(nb_path)
 
     # get the content url for the directory
     repo_metadata = get_repo_metadata(nb_id)
-    nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path)
+    nb_dir_url = repo_metadata['contents_url'].replace("{+path}", nb_path).replace('%', '%25')
+
+    dbg_print(nb_dir_url)
 
     # query the api to the url, check the cache first
     response = api_cache.is_in_cache(nb_dir_url)
@@ -286,6 +302,60 @@ def get_comments(nb_id):
             continue
 
     return comments
+
+''' owner information '''
+
+# given a notebook id, gets the repositories owned by the user
+def get_repos(nb_id):
+
+    # get the owner information
+    user_info = get_owner_url(nb_id)
+
+    # get the list of repos
+    user_login = user_info['login']
+
+    user_repos = gh_api.user_repos(user_login)
+
+    return list(user_repos)
+
+# given a notebook id, gets the number of repos
+def get_num_projects(nb_id):
+
+    # get the owner's information
+    user_info = get_owner_url(nb_id)
+
+    return user_info['public_repos']
+
+# given a notebook id, gets the number of Jupyter Notebook repos
+def get_num_ds_projects(nb_id):
+
+    # get the repos
+    user_repos = get_repos(nb_id)
+
+    # count how many are Jupyter Notebook
+    is_jn = lambda repo : repo['language'] == 'Jupyter Notebook'
+
+    return len(list(filter(is_jn, user_repos)))
+
+# gets the number of followers for the owner of a notebook
+def get_num_followers(nb_id):
+
+    # get owner information
+    user_info = get_owner_url(nb_id)
+
+    return user_info['followers']
+
+# gets the number of years a notebook owner's account has been active
+def get_account_age(nb_id):
+
+    # get the owner information
+    user_info = get_owner_url(nb_id)
+
+    # get the year of account creation
+    created_date = user_info['created_at']
+    created_year = int(created_date[:4])
+
+    return (2021 - created_year)
 
 ''' misc '''
 

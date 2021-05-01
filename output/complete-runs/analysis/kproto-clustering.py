@@ -16,7 +16,7 @@ K = range(1, 11)
 for k in K:
     print("clustering with " + str(k) + " clusters")
     kproto = KPrototypes(n_clusters = k, init = 'Cao', n_jobs = 4, verbose = 0)
-    clusters = kproto.fit_predict(md_df, categorical = [0, 1, 2, 3, 9, 10, 11, 13, 15, 19, 20, 22])
+    clusters = kproto.fit_predict(md_df, categorical = [0, 1, 2, 3, 9, 10, 11, 13, 15, 19, 20, 22, 24])
     costs_md.append(kproto.cost_)
 
 # save the costs plot
@@ -32,7 +32,7 @@ K = range(1, 11)
 for k in K:
     print("clustering with " + str(k) + " clusters")
     kproto = KPrototypes(n_clusters = k, init = 'Cao', n_jobs = 4, verbose = 0)
-    clusters = kproto.fit_predict(no_md_df, categorical = [0, 5, 6, 11, 12, 14])
+    clusters = kproto.fit_predict(no_md_df, categorical = [0, 5, 6, 11, 12, 14, 15])
     costs_no_md.append(kproto.cost_)
 
 # save the costs plot

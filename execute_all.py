@@ -43,9 +43,13 @@ function_columns = {
     # 'num_functions' : code_analysis.num_functions,
     # 'has_test' : code_analysis.has_testing,
     # 'num_headers' : nb_analysis.num_headers,
-    'has_param' : code_analysis.has_param,
+    # 'has_param' : code_analysis.has_param,
     # 'has_reqtext' : repo_analysis.has_requirements,
-    'num_stars' : repo_analysis.num_stars
+    # 'num_stars' : repo_analysis.num_stars,
+    'num_projects' : data.get_num_projects,
+    'num_ds_projects' : data.get_num_ds_projects,
+    'num_followers' : data.get_num_followers,
+    'account_age' : data.get_account_age
 }
 
 # dictionary object with fields to hold rows to write
@@ -82,9 +86,13 @@ row = {
     # 'num_functions' : None,
     # 'has_test' : None,
     # 'num_headers' : None,
-    'has_param' : None,
+    # 'has_param' : None,
     # 'has_reqtext' : None,
-    'num_stars' : None
+    # 'num_stars' : None
+    'num_projects' : None,
+    'num_ds_projects' : None,
+    'num_followers' : None,
+    'account_age' : None
 }
 
 # dictionary object with fields to hold error rows to write
@@ -95,10 +103,10 @@ error_row = {
 }
 
 # path to output csv
-output_path = 'output/github2017-twelfth-run.csv'
+output_path = 'output/github2017-fourteenth-run.csv'
 
 # path to error csv
-error_path = 'output/github2017-twelfth-errors.csv'
+error_path = 'output/github2017-fourteenth-errors.csv'
 
 # path to dataset
 # dataset_path = '../../../../DATA/jupyter_data/GITHUB_2017_DATASET/sample_data/data/'

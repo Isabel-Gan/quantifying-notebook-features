@@ -12,8 +12,7 @@ playground.py
 playground-output/
 
 # don't include the jupyter notebook checkpoints
-output/complete-runs/.ipynb_checkpoints/
-output/complete-runs/features-eda/.ipynb_checkpoints/
+.ipynb_checkpoints/
 
 # vscode configuration
 .vscode
@@ -30,3 +29,12 @@ full-dataset/old-work
 
 # segment files that have been combined
 full-output/segments/
+
+# for playing around/data exploration
+output/complete-runs/analysis/playground.ipynb
+full-output/playground.ipynb
+full-output/playground2.ipynb
+
+# graphs generated for each column for each cluster (too many to track)
+output/complete-runs/analysis/cluster-data/md_graphs/
+output/complete-runs/analysis/cluster-data/no_md_graphs/

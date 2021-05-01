@@ -14,7 +14,13 @@ def output_cells(nb_id):
     code_cells = data.get_code_cells(nb_id)
 
     # filter and get the length of the filtered list
-    output_cells = list(filter(lambda cell : len(cell['outputs']) > 0, code_cells))
+    def condition(cell):
+        try:
+            return len(cell['outputs']) > 0
+        except:
+            return False
+
+    output_cells = list(filter(condition, code_cells))
     return len(output_cells)
 
 # calculates the proportion of code cells with output
@@ -37,7 +43,16 @@ def count_images(nb_id):
     image_outputs = 0
     has_image = False
     for cell in output_cells:
+
+        # check that the outputs field is present, move to next cell if not
+        if 'outputs' not in cell.keys():
+            continue
+
         for output in cell['outputs']:
+
+            # check if output has output type
+            if 'output_type' not in output.keys():
+                continue
 
             # field associated with displaying an image
             if output['output_type'] == "display_data":

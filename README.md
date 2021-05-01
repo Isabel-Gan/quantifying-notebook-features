@@ -2,19 +2,51 @@
 
 A collection of Python scripts to quantify and detect features of Jupyter notebooks. 
 
-API Crawler from https://github.com/shuiblue/GitHubAPI-Crawler 
+Modules/projects and datasets imported:
 
-Markdown parser from https://mistune.readthedocs.io/en/latest/index.html 
+- [API Crawler](https://github.com/shuiblue/GitHubAPI-Crawler)
 
-Language detector from https://pypi.org/project/langdetect/ and ISO 639 code translator from https://pypi.org/project/iso-639/
+- [Markdown Parser](https://mistune.readthedocs.io/en/latest/index.html)
 
-Testing dataset is a small subset from https://library.ucsd.edu/dc/object/bb2733859v
+- [Python Comment Parser](https://pypi.org/project/comment-parser/)
+
+- [HTML to Text Converter](https://pypi.org/project/html2text/)
+
+- [Language Detector](https://pypi.org/project/langdetect/) and [ISO 639 Code Translator](https://pypi.org/project/iso-639/)
+
+- [LRU Cache](https://pypi.org/project/pylru/) for API cache
+
+- [Colored Terminal Output](https://pypi.org/project/termcolor2/)
+
+- Testing dataset is a small subset from https://library.ucsd.edu/dc/object/bb2733859v
 
 Created and used for Summer 2020 research on improving computational notebooks under Christian Kaestner and Shurui Zhou  at CMU ISR.
 
 ## file information
 
+`api_cache.py`: uses an LRU cache implementation to handle operations on a cache of API response objects 
+
+`full_data_access.py`: used to access the api and interact directly with notebook and repository metadata files in the **full** dataset, makes a number of changes compared to `data_access.py`, to make running more efficient on the bigger dataset:
+
+- some functions make references to files instead of the API (dataset is on the feature server)
+
+- uses `api_cache.py` to cache API response objects
+
 `data_access.py`: used to access the api and interact directly with the notebook and repository metadata files in the dataset
+
+`full_execute_all.py`: script to run all functions on the entire **full** dataset, outputting data in csv files (parallelized)
+
+`execute_all.py`: script to run all functions on an entire dataset, outputs the data in csv files
+
+### gathering the full dataset
+
+`full_dataset_gathering.py`: gathers notebook data of the 143k notebook dataset into `full-dataset/notebooks.csv`
+
+`full_path_gathering.py`: gathers the paths (repository) of each notebook in `notebooks.csv` (parallelized)
+
+`gather_metadata.py`: gathers the repository metadata .json files for each repository in `full-dataset/repositories.csv` into a directory 
+
+### feature scripts
 
 `keyword_analysis.py`: searches the notebook markdown, code cells, and path for certain sets of keywords
 
@@ -26,13 +58,15 @@ Created and used for Summer 2020 research on improving computational notebooks u
 
 `repo_analysis.py`: does a variety of analysis relating to the repository of the notebook
 
-`testing.py`: functionality to test all/single functions and compare results against manually detected features
-
-`execute_all.py`: script to run all functions on an entire dataset, outputs the data in csv files
-
 `regex.py`: various regular expressions used to detect links, equations, etc. in notebooks
 
+`testing.py`: functionality to test all/single functions and compare results against manually detected features
+
 ## directory information
+
+`full-dataset/`: includes .csv files pertaining to the full, 143k notebook dataset
+
+`full-output`: includes the results of running `full_execute_all.py` on the full dataset
 
 `output/`: includes the results of running `execute_all.py` on a dataset
 
