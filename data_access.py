@@ -10,12 +10,7 @@ api = GitHubAPI()
 
 # setup for strudel scraper
 token_list = [
-    "2c63eba1e23215528553a9c9f3a06c08dd7985d8",
-    "cf3d822ce1baa10e92ae7338ba7de537b7f2a72b",
-    "94ce748e9e8f4d5205c96de69aa7c6f2fd9dcffa",
-    "8e23c7305dc44a8c0457e0210f39c08e2961149b",
-    "023c7f060f01bee9cb166b8819ca66793c14da7f",
-    "5bbc77e2335fd65136840cb36c2502172fcb348a"
+
 ]
 gh_api = scraper.GitHubAPI(','.join(token_list))
 
