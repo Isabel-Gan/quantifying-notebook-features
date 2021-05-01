@@ -3,12 +3,19 @@ import json
 from GitHubAPI_Crawler.github_api import GitHubAPI
 from comment_parser import comment_parser
 import api_cache
+import stscraper as scraper
 
 import notebook_analysis as nb_analysis
 
 dbg_print = lambda x : x
 
 api = GitHubAPI()
+
+# setup for strudel scraper
+token_list = [
+
+]
+gh_api = scraper.GitHubAPI(','.join(token_list))
 
 # load the notebooks csv file
 nb_df = pd.read_pickle('full-dataset/notebooks.pkl')
@@ -295,6 +302,60 @@ def get_comments(nb_id):
             continue
 
     return comments
+
+''' owner information '''
+
+# given a notebook id, gets the repositories owned by the user
+def get_repos(nb_id):
+
+    # get the owner information
+    user_info = get_owner_url(nb_id)
+
+    # get the list of repos
+    user_login = user_info['login']
+
+    user_repos = gh_api.user_repos(user_login)
+
+    return list(user_repos)
+
+# given a notebook id, gets the number of repos
+def get_num_projects(nb_id):
+
+    # get the owner's information
+    user_info = get_owner_url(nb_id)
+
+    return user_info['public_repos']
+
+# given a notebook id, gets the number of Jupyter Notebook repos
+def get_num_ds_projects(nb_id):
+
+    # get the repos
+    user_repos = get_repos(nb_id)
+
+    # count how many are Jupyter Notebook
+    is_jn = lambda repo : repo['language'] == 'Jupyter Notebook'
+
+    return len(list(filter(is_jn, user_repos)))
+
+# gets the number of followers for the owner of a notebook
+def get_num_followers(nb_id):
+
+    # get owner information
+    user_info = get_owner_url(nb_id)
+
+    return user_info['followers']
+
+# gets the number of years a notebook owner's account has been active
+def get_account_age(nb_id):
+
+    # get the owner information
+    user_info = get_owner_url(nb_id)
+
+    # get the year of account creation
+    created_date = user_info['created_at']
+    created_year = int(created_date[:4])
+
+    return (2021 - created_year)
 
 ''' misc '''
 
